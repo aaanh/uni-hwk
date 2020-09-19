@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm> // the library for the wheel
 
 using namespace std;
 
@@ -6,46 +7,58 @@ int main() {
     int  a1, a2, a3;
     cout << "Enter 3 integers separated by [Space]: ";
     cin >> a1 >> a2 >> a3;
-    // cout << a1 << a2 << a3 << endl;
+    // cout << a1 << a2 << a3 << endl; // for debugging
+    int arr[] = {a1, a2, a3};
 
-    int sort_min = min(a1, min(a2, a3));
-    int sort_max = max(a1, max(a2, a3));
-    int sort_mid;
-    a1 < sort_min ? 
-
-    if (a1 > a2 && a1 > a3) {
-        cout << (a2 < a3 ? a2 : a3)
-        << ", "
-        << (a2 < a3 ? a3 : a2)
-        << ", "
-        << a1 << endl;
-    } else if (a1 < a2 || a1 < a3) {
-        cout << a1
-        << ", "
-        << (a2 < a3 ? a2 : a3)
-        << ", "
-        << (a2 < a3 ? a3 : a2) << endl;
+    // Not reinventing the wheel
+    sort(arr, arr + 3); // arr +3 is the size
+    cout << "Sorted using built-in algorithm: ";
+    for (int i = 0; i < 3; i++) {
+        cout << arr[i];
+        if (i == 2) {
+            break;
+        } else {
+            cout << ", ";
+        }
     }
 
-    // int arr_1[] = {a1, a2};
-    // int arr_2[] = {a3};
-    // int arr_temp[2];
+    // Reinventing the wheel
+    int num_min, num_mid, num_max;
+    // cout << a1 << a2 << a3 << endl;
 
-    // if (a2 < a1) {
-    //     int arr_temp[] = {a2, a1} ;
-    // };
+    if (a1 < a2 && a1 < a3) {
+        num_min = a1;
+        if (a2 < a3) {
+            num_mid = a2;
+            num_max = a3;
+            
+        } else {
+            num_mid = a3;
+            num_max = a2;
+            
+        }
+    } else if (a1 > a2 && a1 > a3) {
+        num_max = a1;
+        if (a2 < a3) {
+            num_min = a2;
+            num_mid = a3;
+        } else {
+            num_min = a3;
+            num_mid = a2;
+        }
+    } else {
+        num_mid = a1;
+        if (a2 < a3) {
+            num_min = a2;
+            num_max = a3;
+        } else {
+            num_min = a3;
+            num_max = a2;
+        }
+    }
 
-    // if (min(a1, a2) > a3) {
-    //     cout << arr_temp[0]
-    //     << ", "
-    //     << arr_temp[1]
-    //     << ", "
-    //     << arr_2[0] << endl;
-    // } else {
-    //     cout << arr_2[0]
-    //     << ", "
-    //     << arr_temp[0]
-    //     << ", "
-    //     << arr_temp[1] << endl;
-    // }
+    cout << endl;
+    cout << "Sorted using decision tree: " << num_min << ", " << num_mid << ", " << num_max << endl;
+
+    return 0;
 }
