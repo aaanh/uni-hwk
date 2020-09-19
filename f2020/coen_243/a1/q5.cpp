@@ -58,7 +58,7 @@ int main() {
     }
 
     cout << endl;
-    cout << "Sorted using decision tree: " << num_min << ", " << num_mid << ", " << num_max << endl;
+    cout << "Sorted using if-else tree: " << num_min << ", " << num_mid << ", " << num_max << endl;
 
     return 0;
 }
