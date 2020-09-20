@@ -5,16 +5,17 @@ using namespace std;
 
 int main() {
     int n, counter;
-    bool PrimeCheck(int integer);
+    bool PrimeCheck(int integer); // declare function usage
     
     cout << "Enter an integer for prime check: ";
-    
     cin >> n;
     
-    PrimeCheck(n) ? cout << n << " is a prime number." : cout << n << " is not a prime number.";
+    PrimeCheck(n) ? cout << n << " is a prime number." : cout << n << " is not a prime number."; // ternary operator
 
     return 0;
 }
+
+// create a new function to make program more modular
 
 bool PrimeCheck(int integer) {
     int n = integer;
