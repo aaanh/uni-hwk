@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    int n, counter;
+    int n;
     bool PrimeCheck(int integer); // declare function usage
     
     cout << "Enter an integer for prime check: ";
@@ -15,7 +15,7 @@ int main() {
     return 0;
 }
 
-// create a new function to make program more modular
+// create a new function to make program more modular and cleaner
 
 bool PrimeCheck(int integer) {
     int n = integer;
