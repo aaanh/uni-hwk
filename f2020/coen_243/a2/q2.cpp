@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// creating functions
+
 int function1(int lower, int upper) {
     for (int i = lower; i <= upper; i++) {
         if (i % 3 == 0 && i % 7 == 0) {
@@ -19,25 +21,29 @@ void function2(int lower, int upper, int *r) {
 
 double function3(int lower, int upper) {
     double sum = 0;
-
     for (int i = lower; i <= upper; i++) {
-        sum += 1/static_cast<double>(i);
+        sum += 1/static_cast<double>(i); // typecasting for double calculation
     }
-
     return sum;
 }
 
+// main program
+
 int main() {
+
+    // init vars
     int lower, upper;
     char switch_case;
     int result;
 
+    // user input prompts
+
     cout << "Please enter 2 integers as lower and upper bound respectively: ";
     cin >> lower >> upper;
-    // cout << lower << endl;
-    // cout << upper << endl;
     cout << "Please enter a, b, or c: ";
     cin >> switch_case;
+
+    // case switching and processing
 
     switch (switch_case) {
         case 'a':

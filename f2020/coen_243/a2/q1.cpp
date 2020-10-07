@@ -8,12 +8,12 @@ int main() {
     string username;
     int h, w;
 
-    // Import functions for modularity
+    // Declaring functions for modularity
     bool CheckWidth(int w);
     bool DrawAgain();
     void PressEnter();
 
-    // Program intro
+    // Program intro (just a bit RPG and pop subculture references for added amusement)
     cout << "# You woke up a bit disoriented but before you can process anything. You hear a voice in your head." << endl;
     PressEnter();
     cout << "# Administrator: You're finally awake. Got hit by truck-kun?" << endl;
@@ -28,7 +28,6 @@ int main() {
     cout << "-----------------------------------" << endl;
 
     // Program body
-    // Drawing step
     do {
         int  tries = 0;
         do {
@@ -85,6 +84,8 @@ int main() {
     return 0;
 }
 
+// function to check width specs
+
 bool CheckWidth(int w) {
     if (w % 2 == 0 && w > 2) {
         return true;
@@ -93,6 +94,8 @@ bool CheckWidth(int w) {
         return false;
     }
 }
+
+// DrawAgain flag function
 
 bool DrawAgain() {
     char flag;
@@ -107,30 +110,10 @@ bool DrawAgain() {
     }
 }
 
+// I don't want to keep writing the same lines multiple times
+
 void PressEnter() {
     cout << "Press enter to continue...";
     getchar();
     cout << endl;
 }
-
-// int HouseDimensions(string username, bool dimension) {
-//     string u = username;
-//     int  tries = 0;
-//     int h, w;
-//     if (tries < 3) {
-//             tries++;
-//             cout << "Please enter the dimensions for your house (H x W)" << endl;
-//             cout << "Note: Width must be even and larger than 2" << endl;
-//             cout << "-----------------------------------" << endl;
-//             cout << "Try #" << tries;
-//             cout << "> Enter dimensions here: ";
-//             cin >> h >> w;
-//             cout << "\n> You entered: "
-//                     << "Height = " << h << "; "
-//                     << "Width = " << w
-//                     << "\n\n";
-//         } else {
-//             cout << tries << " tries were made. Program will exit. \nGoodbye, " << u << "\n\n";
-//             exit(EXIT_FAILURE);
-//         };
-// }
