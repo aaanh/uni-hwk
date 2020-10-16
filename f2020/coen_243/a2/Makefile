@@ -8,6 +8,10 @@ ifeq ($(OS), Windows_NT)
 all: $(patsubst %.cpp, %.exe, $(wildcard *.cpp))
 endif
 
+ifeq ($(shell uname -s), Darwin)
+all: $(patsubst %.cpp, %.out, $(wildcard *.cpp))
+endif
+
 # Rule how to create arbitrary .out files
 
 %.out: %.cpp Makefile
