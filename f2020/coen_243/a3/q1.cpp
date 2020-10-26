@@ -8,7 +8,7 @@ int main() {
     int num_of_salespeople;
     int gross;
     int a, b, c, d, e, f, g, h, i;
-    a = b = d = e = f = g = h = i = 0;
+    a = b = c = d = e = f = g = h = i = 0;
     
 
     cout << "Enter number of salespeople: ";

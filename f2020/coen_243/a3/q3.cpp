@@ -65,15 +65,16 @@ int main() {
     }
 
     // put object at index = 0
+
     
     // control menu
     do {
-        cout << "Controller menu:" << endl;
-            << "1. Right" << endl;
-            << "2. Left" << endl;
-            << "3. Display" << endl;
-            << "4. Reboot" << endl;
-            << "5. Show array" << endl;
+        cout << "Controller menu:" << endl
+            << "1. Right" << endl
+            << "2. Left" << endl
+            << "3. Display" << endl
+            << "4. Reboot" << endl
+            << "5. Show array" << endl
             << "6. Exit" << endl;
         cin >> choice;
         menu(choice);
