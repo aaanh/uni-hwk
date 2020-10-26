@@ -2,6 +2,14 @@
 
 using namespace std;
 
+// global var initialization
+
+array<int, 9> main_arr;
+int cur_pos = 0; // store current position, init to 0
+int choice;
+
+// function definitions
+
 void moveRight() {
 
 }
@@ -21,6 +29,8 @@ void rebootPos() {
 void showArray() {
 
 }
+
+// main driver
 
 void menu(int choice) {
     switch(choice) {
@@ -48,14 +58,13 @@ void menu(int choice) {
 }
 
 int main() {
-    array<int, 9> main_arr;
-    int cur_pos = 0; // store current position, init to 0
-    int choice;
 
     // initialize the array
     for (size_t i = 0; i < main_arr.size(); i++) {
         main_arr[i] = 0;
     }
+
+    // put object at index = 0
     
     // control menu
     do {
@@ -67,6 +76,7 @@ int main() {
             << "5. Show array" << endl;
             << "6. Exit" << endl;
         cin >> choice;
+        menu(choice);
     } while (choice != 6);
 
 
