@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 
 using namespace std;
 
@@ -22,11 +23,14 @@ void displayGrid() {
 
 }
 
-void rebootPos() {
-
+void rebootPos(array *arr) {
+    for (size_t i = 0; i < arr.size(); ++i) {
+        *arr[i] = 0;
+    }
+    arr[0] = "^";
 }
 
-void showArray() {
+void showArray(array *arr) {
 
 }
 
@@ -63,9 +67,6 @@ int main() {
     for (size_t i = 0; i < main_arr.size(); i++) {
         main_arr[i] = 0;
     }
-
-    // put object at index = 0
-
     
     // control menu
     do {
