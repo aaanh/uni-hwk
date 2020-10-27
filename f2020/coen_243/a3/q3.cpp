@@ -8,50 +8,55 @@ using namespace std;
 array<int, 9> main_arr;
 int cur_pos = 0; // store current position, init to 0
 int choice;
+int size = main_arr.size();
 
 // function definitions
 
-void moveRight() {
+// void moveRight() {
 
-}
+// }
 
-void moveLeft() {
+// void moveLeft() {
 
-}
+// }
 
-void displayGrid() {
+// void displayGrid() {
 
-}
+// }
 
-void rebootPos(array *arr) {
-    for (size_t i = 0; i < arr.size(); ++i) {
-        *arr[i] = 0;
+array<int, 9> rebootPos(array<int, 9> main_arr, int size) {
+    array<int, 9> loc_arr = main_arr;
+    for (size_t i = 0; i < size; i++) {
+        loc_arr[i] = 0;
     }
-    arr[0] = "^";
+    loc_arr[0] = 1;
+    return loc_arr;
 }
 
-void showArray(array *arr) {
-
+void showArray(array<int, 9> main_arr, int size) {
+    for (size_t i = 0; i < size; i++) {
+        cout << main_arr[i];
+    }
 }
 
-// main driver
+// menu
 
 void menu(int choice) {
     switch(choice) {
-        case 1:
-            moveRight();
-            break;
-        case 2:
-            moveLeft();
-            break;
-        case 3:
-            displayGrid();
-            break;
+        // case 1:
+        //     moveRight();
+        //     break;
+        // case 2:
+        //     moveLeft();
+        //     break;
+        // case 3:
+        //     displayGrid();
+        //     break;
         case 4:
-            rebootPos();
+            main_arr = rebootPos(main_arr, size);
             break;
         case 5:
-            showArray();
+            showArray(main_arr, size);
             break;
         case 6:
             cout << "Program will now exit" << endl;
@@ -61,23 +66,23 @@ void menu(int choice) {
     }   
 }
 
-int main() {
+// main driver function
 
-    // initialize the array
-    for (size_t i = 0; i < main_arr.size(); i++) {
-        main_arr[i] = 0;
-    }
+int main() {
     
     // control menu
     do {
-        cout << "Controller menu:" << endl
+        
+        cout << "\nController menu:" << endl
             << "1. Right" << endl
             << "2. Left" << endl
             << "3. Display" << endl
             << "4. Reboot" << endl
             << "5. Show array" << endl
             << "6. Exit" << endl;
+        cout << "Enter option: ";
         cin >> choice;
+        cout << endl;
         menu(choice);
     } while (choice != 6);
 
