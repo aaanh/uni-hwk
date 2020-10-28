@@ -1,57 +1,139 @@
 #include <iostream>
 #include <array>
+#include <iomanip>
 
 using namespace std;
 
+// Opted for functon return value instead of referencing address
+// Because that is a major pain
+
 // global var initialization
 
-array<int, 9> main_arr;
+array<int, 10> main_arr;
 int cur_pos = 0; // store current position, init to 0
 int choice;
 int size = main_arr.size();
 
 // function definitions
 
-// void moveRight() {
+// Helper function
 
-// }
+array<int, 10> setAlltoZeros(array<int, 10> main_arr, int size) {
+    array<int, 10> loc_arr = main_arr;
+    for (size_t i = 0; i < size; ++i) {
+        loc_arr[i] = 0;
+    }
+    return loc_arr;
+}
 
-// void moveLeft() {
+// Display and visual representations
 
-// }
+void showArray(array<int, 10> main_arr, int size) {
+    cout << "Array: ";
+    for (size_t i = 0; i < size; i++) {
+        cout << setw(2) << main_arr[i] << setw(2);
+    }
+    cout << endl;
+}
 
-// void displayGrid() {
+void displayGrid(array<int, 10> main_arr, int size) {
+    cout << "|";
+    for (size_t i = 0; i < size; ++i) {
+        if (main_arr[i] == 0) {
+            cout << setw(2) << " " << setw(2) << "|";
+        } else {
+            cout << setw(2) << "^" << setw(2) << "|";
+        }
+    }
+    cout << endl;
+    cout << "|";
+    for (size_t i = 0; i < size; ++i) {
+            cout << setw(2) << i << setw(2) << "|";
+    }
+    cout << endl;
+}
 
-// }
+// Movement
 
-array<int, 9> rebootPos(array<int, 9> main_arr, int size) {
-    array<int, 9> loc_arr = main_arr;
+array<int, 10> moveRight(array<int, 10> main_arr, int size, int *cur_pos) {
+    int steps;
+    int new_pos;
+    array<int, 10> loc_arr = main_arr;
+    // cout << "breakpoint" << endl;
+    // cout << *cur_pos << endl;
+    // cout << &cur_pos << endl;
+
+    cout << "Move right for (steps): ";
+    cin >> steps;
+    new_pos = *cur_pos + steps;
+    cout << endl;
+
+    if (new_pos > 10) {
+        *cur_pos = 10;
+        loc_arr[size - 1] = 1;
+        displayGrid(loc_arr, size);
+        return loc_arr;
+    } else {
+        *cur_pos = new_pos;
+        loc_arr[new_pos] = 1;
+        displayGrid(loc_arr, size);
+        return loc_arr;
+    }
+}
+
+array<int, 10> moveLeft(array<int, 10> main_arr, int size, int *cur_pos) {
+    int steps;
+    int new_pos;
+    array<int, 10> loc_arr = main_arr;
+
+    cout << "Move right for (steps): ";
+    cin >> steps;
+    new_pos = *cur_pos - steps;
+    cout << endl;
+    // cout << new_pos << endl;
+
+    if (new_pos < 0) {
+        *cur_pos = 0;
+        loc_arr[0] = 1;
+        displayGrid(loc_arr, size);
+        return loc_arr;
+    } else {
+        *cur_pos = new_pos;
+        loc_arr[new_pos] = 1;
+        displayGrid(loc_arr, size);
+        return loc_arr;
+    }
+
+}
+
+array<int, 10> rebootPos(array<int, 10> main_arr, int size) {
+    array<int, 10> loc_arr = main_arr; // init a local var to store the main_var
     for (size_t i = 0; i < size; i++) {
         loc_arr[i] = 0;
     }
     loc_arr[0] = 1;
-    return loc_arr;
-}
-
-void showArray(array<int, 9> main_arr, int size) {
-    for (size_t i = 0; i < size; i++) {
-        cout << main_arr[i];
-    }
+    cout << "Position reset to 0..." << endl;
+    displayGrid(loc_arr, size);
+    return loc_arr; // then return the processed local var
 }
 
 // menu
 
 void menu(int choice) {
     switch(choice) {
-        // case 1:
-        //     moveRight();
-        //     break;
-        // case 2:
-        //     moveLeft();
-        //     break;
-        // case 3:
-        //     displayGrid();
-        //     break;
+        case 1:
+            cout << "\nOut-of-bounds movements will move the bot to last grid" << endl;
+            main_arr = setAlltoZeros(main_arr, size);
+            main_arr = moveRight(main_arr, size, &cur_pos);
+            break;
+        case 2:
+            cout << "\nOut-of-bounds movements will move the bot to first grid" << endl; 
+            main_arr = setAlltoZeros(main_arr, size);
+            main_arr = moveLeft(main_arr, size, &cur_pos);
+            break;
+        case 3:
+            displayGrid(main_arr, size);
+            break;
         case 4:
             main_arr = rebootPos(main_arr, size);
             break;
@@ -59,7 +141,7 @@ void menu(int choice) {
             showArray(main_arr, size);
             break;
         case 6:
-            cout << "Program will now exit" << endl;
+            cout << "Program will now exit..." << endl << endl;
             exit(0);
             break;
 
@@ -69,14 +151,25 @@ void menu(int choice) {
 // main driver function
 
 int main() {
+
+    // Welcome message:
+    cout << "Welcome to that program to control your object's position in a 2D space" << endl;
+    cout << string(50, '-') << endl;
+    
+    // init object at index 0
+    main_arr[0] = 1;
+    
+    // display init grid and array
+    displayGrid(main_arr, size);
+    showArray(main_arr, size);
+    cout << string(50, '-') << endl;
     
     // control menu
     do {
-        
         cout << "\nController menu:" << endl
             << "1. Right" << endl
             << "2. Left" << endl
-            << "3. Display" << endl
+            << "3. Display grid" << endl
             << "4. Reboot" << endl
             << "5. Show array" << endl
             << "6. Exit" << endl;
