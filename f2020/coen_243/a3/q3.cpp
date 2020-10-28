@@ -154,6 +154,7 @@ int main() {
 
     // Welcome message:
     cout << "Welcome to that program to control your object's position in a 2D space" << endl;
+    cout << "Hoang Anh (C) 2020. COEN 243 - Concordia U. Montreal, Canada." << endl;
     cout << string(50, '-') << endl;
     
     // init object at index 0
