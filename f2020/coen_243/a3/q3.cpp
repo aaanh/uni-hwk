@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ array<int, 10> main_arr;
 int cur_pos = 0; // store current position, init to 0
 int choice;
 int size = main_arr.size();
+vectopr<int> history = {};
+int steps;
 
 // function definitions
 
@@ -51,6 +54,16 @@ void displayGrid(array<int, 10> main_arr, int size) {
             cout << setw(2) << i << setw(2) << "|";
     }
     cout << endl;
+}
+
+// History: undo, redo
+
+void cancelOps(vector<int> history, int steps) {
+
+}
+
+void replayOps(vector<int> history, int steps) {
+
 }
 
 // Movement
@@ -141,6 +154,21 @@ void menu(int choice) {
             showArray(main_arr, size);
             break;
         case 6:
+            char cancel_choice;
+            cout << "Cancel last n ops. Enter n: ";
+            cin >> steps;
+            cancelOps(history, steps);
+            cout << "Do you want to replay cancelled ops? y(1)/n(0): ";
+            cin >> cancel_choice;
+            if (cancel_choice == 'y' || cancel_choice == '1') {
+                replayOps(history, steps);
+            }
+            break;
+        case 7:
+            cout << "Replaying last cancelled " << steps << " ops...";
+            replayOps(history, steps);
+            break;
+        case 8:
             cout << "Program will now exit..." << endl << endl;
             exit(0);
             break;
@@ -173,7 +201,9 @@ int main() {
             << "3. Display grid" << endl
             << "4. Reboot" << endl
             << "5. Show array" << endl
-            << "6. Exit" << endl;
+            << "6. Cancel and Replay operations" << endl
+            << "7. Replay operations" << endl
+            << "8. Exit" << endl;
         cout << "Enter option: ";
         cin >> choice;
         cout << endl;
