@@ -14,7 +14,7 @@ array<int, 10> main_arr;
 int cur_pos = 0; // store current position, init to 0
 int choice;
 int size = main_arr.size();
-vectopr<int> history = {};
+vectopr<int> hist = {};
 int steps;
 
 // function definitions
@@ -58,13 +58,18 @@ void displayGrid(array<int, 10> main_arr, int size) {
 
 // History: undo, redo
 
-void cancelOps(vector<int> history, int steps) {
-
-}
-
 void replayOps(vector<int> history, int steps) {
 
 }
+
+void cancelOps(vector<int> hist, array<int, 10> main_arr, int steps) {
+    array<int, 10> loc_arr = main_arr;
+    vector<int> loc_hist = hist;
+    int loc_steps = steps;
+
+    
+}
+
 
 // Movement
 
@@ -207,6 +212,8 @@ int main() {
         cout << "Enter option: ";
         cin >> choice;
         cout << endl;
+        hist.push_back(cur_pos);
+        cout << "Log: " << hist << endl;
         menu(choice);
     } while (choice != 6);
 
