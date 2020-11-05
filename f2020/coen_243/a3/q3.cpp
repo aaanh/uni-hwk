@@ -58,15 +58,33 @@ void displayGrid(array<int, 10> main_arr, int size) {
 
 // History: undo, redo
 
-// void replayOps(vector<int> history, int steps) {
-
-// }
-
-array<int, 10> cancelOps(vector<int> hist, int steps) {
+array<int, 10> replayOps(int old_pos, int size) {
     array<int, 10> loc_arr;
-    setAlltoZeros(loc_arr, size);
+    loc_arr = setAlltoZeros(loc_arr, size);
+    cout << "Old pos: " << old_pos << endl;
+    loc_arr[old_pos] = 1;
+    return loc_arr;
+}
+
+array<int, 10> cancelOps(vector<int> hist, int size, int steps, int *cur_pos) {
+    array<int, 10> loc_arr;
+    int old_pos = *cur_pos; // save cur_pos for replay
+
+    loc_arr = setAlltoZeros(loc_arr, size);
+
     cout << "hist index: " << hist[hist.size() - steps];
+    *cur_pos = hist[hist.size() - steps];
+    
     loc_arr[hist[hist.size() - steps]] = 1;
+    
+    // replay or not
+    char replay_choice;
+    cout << "\nReplay canncelled ops? (y)es/(n)o: ";
+    cin >> replay_choice;
+    if (replay_choice == 'y') {
+        loc_arr = replayOps(old_pos, size);
+    }
+
     return loc_arr;
 }
 
@@ -161,13 +179,13 @@ void menu(int choice) {
         case 6:
             cout << "Cancel last n ops. Enter n: ";
             cin >> steps;
-            main_arr = cancelOps(hist, steps);
+            main_arr = cancelOps(hist, size, steps, &cur_pos);
             break;
         // case 7:
         //     cout << "Replaying last cancelled " << steps << " ops...";
         //     replayOps(history, steps);
         //     break;
-        case 8:
+        case 7:
             cout << "Program will now exit..." << endl << endl;
             exit(0);
             break;
@@ -195,7 +213,9 @@ int main() {
     // control menu
     do {
         cout << "\n------------" << endl;
-        hist.push_back(cur_pos);
+        if (choice <= 2 || choice == 6) {
+            hist.push_back(cur_pos);
+        }
         cout << "Log: ";
         for (int i : hist) {
             cout << i << " ";
@@ -208,13 +228,12 @@ int main() {
             << "4. Reboot" << endl
             << "5. Show array" << endl
             << "6. Cancel and Replay operations" << endl
-            << "7. Replay operations" << endl
-            << "8. Exit" << endl;
+            << "7. Exit" << endl;
         cout << "Enter option: ";
         cin >> choice;
         cout << endl;
         menu(choice);
-    } while (choice != 8);
+    } while (choice != 7);
 
     return 0;
 }
