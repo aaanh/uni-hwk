@@ -14,7 +14,7 @@ array<int, 10> main_arr;
 int cur_pos = 0; // store current position, init to 0
 int choice;
 int size = main_arr.size();
-vectopr<int> hist = {};
+vector<int> hist = {};
 int steps;
 
 // function definitions
@@ -58,16 +58,16 @@ void displayGrid(array<int, 10> main_arr, int size) {
 
 // History: undo, redo
 
-void replayOps(vector<int> history, int steps) {
+// void replayOps(vector<int> history, int steps) {
 
-}
+// }
 
-void cancelOps(vector<int> hist, array<int, 10> main_arr, int steps) {
-    array<int, 10> loc_arr = main_arr;
-    vector<int> loc_hist = hist;
-    int loc_steps = steps;
-
-    
+array<int, 10> cancelOps(vector<int> hist, int steps) {
+    array<int, 10> loc_arr;
+    setAlltoZeros(loc_arr, size);
+    cout << "hist index: " << hist[hist.size() - steps];
+    loc_arr[hist[hist.size() - steps]] = 1;
+    return loc_arr;
 }
 
 
@@ -159,20 +159,14 @@ void menu(int choice) {
             showArray(main_arr, size);
             break;
         case 6:
-            char cancel_choice;
             cout << "Cancel last n ops. Enter n: ";
             cin >> steps;
-            cancelOps(history, steps);
-            cout << "Do you want to replay cancelled ops? y(1)/n(0): ";
-            cin >> cancel_choice;
-            if (cancel_choice == 'y' || cancel_choice == '1') {
-                replayOps(history, steps);
-            }
+            main_arr = cancelOps(hist, steps);
             break;
-        case 7:
-            cout << "Replaying last cancelled " << steps << " ops...";
-            replayOps(history, steps);
-            break;
+        // case 7:
+        //     cout << "Replaying last cancelled " << steps << " ops...";
+        //     replayOps(history, steps);
+        //     break;
         case 8:
             cout << "Program will now exit..." << endl << endl;
             exit(0);
@@ -200,6 +194,13 @@ int main() {
     
     // control menu
     do {
+        cout << "\n------------" << endl;
+        hist.push_back(cur_pos);
+        cout << "Log: ";
+        for (int i : hist) {
+            cout << i << " ";
+        }
+        cout << "\n------------" << endl;
         cout << "\nController menu:" << endl
             << "1. Right" << endl
             << "2. Left" << endl
@@ -212,10 +213,8 @@ int main() {
         cout << "Enter option: ";
         cin >> choice;
         cout << endl;
-        hist.push_back(cur_pos);
-        cout << "Log: " << hist << endl;
         menu(choice);
-    } while (choice != 6);
+    } while (choice != 8);
 
     return 0;
 }
