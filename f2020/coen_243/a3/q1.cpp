@@ -10,12 +10,10 @@ int main() {
     int a, b, c, d, e, f, g, h, i;
     a = b = c = d = e = f = g = h = i = 0;
     
+    array<int, 10> sales_array;
+    
+    cout << "Gross sales for 10 employees..." << endl;
 
-    cout << "Enter number of salespeople: ";
-    cin >> num_of_salespeople;
-    
-    array<int, 5> sales_array;
-    
     for (size_t j = 0; j < sales_array.size(); ++j) {
         cout << "Enter gross for salesperson #" << j+1 << ": ";
         cin >> gross;
