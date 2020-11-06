@@ -8,7 +8,7 @@ using namespace std;
 // Opted for functon return value instead of referencing address
 // Because that is a major pain
 
-// global var initialization
+// -------------------------------- global var initialization --------------------------------
 
 array<int, 10> main_arr;
 int cur_pos = 0; // store current position, init to 0
@@ -17,9 +17,9 @@ int size = main_arr.size();
 vector<int> hist = {};
 int steps;
 
-// function definitions
+// -------------------------------- function definitions --------------------------------
 
-// Helper function
+// Helper function --------------------------------
 
 array<int, 10> setAlltoZeros(array<int, 10> main_arr, int size) {
     array<int, 10> loc_arr = main_arr;
@@ -29,7 +29,7 @@ array<int, 10> setAlltoZeros(array<int, 10> main_arr, int size) {
     return loc_arr;
 }
 
-// Display and visual representations
+//  Display and visual representations --------------------------------
 
 void showArray(array<int, 10> main_arr, int size) {
     cout << "Array: ";
@@ -56,13 +56,18 @@ void displayGrid(array<int, 10> main_arr, int size) {
     cout << endl;
 }
 
-// History: undo, redo
+// History: cancel and replay --------------------------------
 
 array<int, 10> replayOps(int old_pos, int size) {
     array<int, 10> loc_arr;
     loc_arr = setAlltoZeros(loc_arr, size);
     cout << "Old pos: " << old_pos << endl;
+    
+    cout << endl;
     loc_arr[old_pos] = 1;
+    for (int i : loc_arr) {
+        cout << i << " ";
+    }
     return loc_arr;
 }
 
@@ -83,9 +88,10 @@ array<int, 10> cancelOps(vector<int> hist, int size, int steps, int *cur_pos) {
     cin >> replay_choice;
     if (replay_choice == 'y') {
         loc_arr = replayOps(old_pos, size);
+        return loc_arr;
+    } else {
+        return loc_arr;
     }
-
-    return loc_arr;
 }
 
 
@@ -95,9 +101,6 @@ array<int, 10> moveRight(array<int, 10> main_arr, int size, int *cur_pos) {
     int steps;
     int new_pos;
     array<int, 10> loc_arr = main_arr;
-    // cout << "breakpoint" << endl;
-    // cout << *cur_pos << endl;
-    // cout << &cur_pos << endl;
 
     cout << "Move right for (steps): ";
     cin >> steps;
@@ -126,7 +129,6 @@ array<int, 10> moveLeft(array<int, 10> main_arr, int size, int *cur_pos) {
     cin >> steps;
     new_pos = *cur_pos - steps;
     cout << endl;
-    // cout << new_pos << endl;
 
     if (new_pos < 0) {
         *cur_pos = 0;
@@ -153,7 +155,7 @@ array<int, 10> rebootPos(array<int, 10> main_arr, int size) {
     return loc_arr; // then return the processed local var
 }
 
-// menu
+// -------------------------------- menu --------------------------------
 
 void menu(int choice) {
     switch(choice) {
@@ -181,10 +183,6 @@ void menu(int choice) {
             cin >> steps;
             main_arr = cancelOps(hist, size, steps, &cur_pos);
             break;
-        // case 7:
-        //     cout << "Replaying last cancelled " << steps << " ops...";
-        //     replayOps(history, steps);
-        //     break;
         case 7:
             cout << "Program will now exit..." << endl << endl;
             exit(0);
@@ -210,17 +208,20 @@ int main() {
     showArray(main_arr, size);
     cout << string(50, '-') << endl;
     
-    // control menu
+    // Action menu loop
     do {
-        cout << "\n------------" << endl;
+        // Record obj's cur_pos for history actions
         if (choice <= 2 || choice == 6) {
             hist.push_back(cur_pos);
         }
-        cout << "Log: ";
+
+        // Show position log of obj
+        cout << "\nLog: ";
         for (int i : hist) {
             cout << i << " ";
         }
-        cout << "\n------------" << endl;
+
+        // Print menu
         cout << "\nController menu:" << endl
             << "1. Right" << endl
             << "2. Left" << endl
