@@ -4,20 +4,52 @@
 
 using namespace std;
 
-class Time {
+// class Time {
+//     private:
+//         int hour;
+//         int minute;
+//         int second;
+
+//     public:
+//         Time(); // constructor
+//         void setTime(int h, int m, int s) {
+//             hour = h;
+//             minute = m;
+//             second = s;
+//         };
+//         void printUniversal();
+//         void printStandard();
+// };
+
+class Employee {
+    private:
+        int salary;
+
     public:
-        Time(); // constructor
-        void setTime(int, int, int);
-        void printUniversal();
-        void printStandard();
-    
+        // Setter
+        void setSalary(int s) {
+            salary = s;
+        }
+        // Getter
+        int getSalary() {
+            return salary;
+        }
+};
+
+class Time {
     private:
         int hour;
         int minute;
         int second;
-};
+        
+    public:
+        
+}
 
 int main() {
-    Time t1;
-    Time t2;
+
+    Employee emp1;
+    emp1.setSalary(50000);
+    cout << emp1.getSalary() << endl;
+    return 0;
 }
