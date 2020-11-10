@@ -5,6 +5,7 @@
         "iomanip": "cpp",
         "iostream": "cpp",
         "__tuple": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "vector": "cpp"
     }
 }
