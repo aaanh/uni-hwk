@@ -11,8 +11,8 @@ class Telephone {
         string number;
 
     public:
-        void setAreaCode();
-        void setNumber();
+        void setAreaCode(int area_code);
+        void setNumber(string number);
 };
 
 class Employee {
@@ -29,9 +29,9 @@ class Employee {
     public:
         void printId();
         
-        void printFirstName();
+        void printFirstName(string f_name);
         void editFirstName();
-        void printLastName();
+        void printLastName(string l_name);
         void editLastName();
         void printFullName();
 
