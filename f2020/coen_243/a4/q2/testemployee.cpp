@@ -1,8 +1,11 @@
 #include <iostream>
-#include "string.h"
+#include "employee.h"
 
 using namespace std;
 
 int main() {
-    
+    Employee emp;    
+    emp.printFullName();
+    emp.printPhone();
+    emp.printId();
 }

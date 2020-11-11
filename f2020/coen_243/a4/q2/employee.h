@@ -11,8 +11,11 @@ class Telephone {
         string number;
 
     public:
+        Telephone();
         void setAreaCode(int area_code);
         void setNumber(string number);
+        void updateNumber();
+        void printNumber();
 };
 
 class Employee {
@@ -27,30 +30,32 @@ class Employee {
         Telephone telephone;
 
     public:
+        Employee(); // Constructor
+        
+        void setId(int id);
         void printId();
         
         void printFirstName(string f_name);
-        void editFirstName();
+        void editFirstName(string f_name);
         void printLastName(string l_name);
-        void editLastName();
+        void editLastName(string l_name);
         void printFullName();
-
         void printHiredYear();
 
         void printDOB();
         void editDOB();
 
-        void printSalary();
-        void editSalary();
+        // void printSalary();
+        // void editSalary();
 
-        void printAddress();
-        void editAdress();
+        // void printAddress();
+        // void editAdress();
 
         void printPhone();
-        void editPhone();
+        void editPhone(Telephone tel);
 
-        void compareLastName();
-        void compareSalaryHiredYear();
+        // void compareLastName();
+        // void compareSalaryHiredYear();
 
 };
 
