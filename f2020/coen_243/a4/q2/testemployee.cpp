@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
     Employee emp;    
-    emp.printFullName();
-    emp.printPhone();
+    emp.GetId();
+    Employee emp1;   
+    emp1.GetId();
 }

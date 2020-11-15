@@ -12,10 +12,10 @@ class Telephone {
 
     public:
         Telephone();
-        void setAreaCode(int area_code);
-        void setNumber(string number);
-        void updateNumber();
-        void printNumber();
+        void SetAreaCode(int area_code);
+        void SetNumber(string number);
+        void UpdateNumber();
+        void PrintNumber();
 };
 
 class Employee {
@@ -23,7 +23,8 @@ class Employee {
         string f_name;
         string l_name;
         string dob;
-        static int id;
+        static int id_count;
+        int id;
         string address;
         int year_hired;
         double salary;
@@ -33,18 +34,18 @@ class Employee {
     public:
         Employee(); // Constructor
         
-        void printFirstName(string f_name);
-        void editFirstName(string f_name);
-        void printLastName(string l_name);
-        void editLastName(string l_name);
-        void printFullName();
-        void printHiredYear();
+        void PrintFirstName(string f_name);
+        void EditFirstName(string f_name);
+        void PrintLastName(string l_name);
+        void EditLastName(string l_name);
+        void PrintFullName();
+        void PrintHiredYear();
 
-        void getId();
-        void setId();
+        void GetId();
+        void SetId();
 
-        void printDOB();
-        void editDOB();
+        void PrintDOB();
+        void EditDOB();
 
         // void printSalary();
         // void editSalary();
@@ -52,8 +53,8 @@ class Employee {
         // void printAddress();
         // void editAdress();
 
-        void printPhone();
-        void editPhone(Telephone tel);
+        void PrintPhone();
+        void EditPhone(Telephone tel);
 
         // void compareLastName();
         // void compareSalaryHiredYear();
