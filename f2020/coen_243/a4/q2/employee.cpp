@@ -39,7 +39,6 @@ void Telephone::printNumber() {
 }
 
 Employee::Employee() {
-    int id;
     string f_name;
     string l_name;
     string dob;
@@ -58,14 +57,6 @@ Employee::Employee() {
     cin >> l_name;
     Employee::editLastName(l_name);
     Employee::editPhone(tel);
-    cout << "Employee's ID: " << endl;
-    cout << "> ";
-    cin >> id;
-    Employee::setId(id);
-}
-
-void Employee::printId() {
-    cout << "- Employee ID: " << id << endl;
 }
 
 void Employee::printFirstName(string f_name) {
@@ -88,11 +79,6 @@ void Employee::printFullName() {
     cout << "- Employee's full name: " << this->l_name << ", " << this->f_name << endl;
 }
 
-void Employee::setId(int id) {
-    cout << "Employee's ID: ";
-    this->id = id;
-}
-
 void Employee::editPhone(Telephone tel) {
     this->telephone.updateNumber();
 }
@@ -100,4 +86,12 @@ void Employee::editPhone(Telephone tel) {
 void Employee::printPhone() {
     cout << "Employee's number: ";
     this->telephone.printNumber();
+}
+
+void Employee::setId() {
+
+}
+
+void Employee::getId() {
+
 }

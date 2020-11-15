@@ -20,20 +20,18 @@ class Telephone {
 
 class Employee {
     private:
-        int id;
         string f_name;
         string l_name;
         string dob;
+        static int id;
         string address;
         int year_hired;
         double salary;
         Telephone telephone;
 
+
     public:
         Employee(); // Constructor
-        
-        void setId(int id);
-        void printId();
         
         void printFirstName(string f_name);
         void editFirstName(string f_name);
@@ -41,6 +39,9 @@ class Employee {
         void editLastName(string l_name);
         void printFullName();
         void printHiredYear();
+
+        void getId();
+        void setId();
 
         void printDOB();
         void editDOB();

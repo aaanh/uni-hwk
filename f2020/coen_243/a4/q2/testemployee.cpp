@@ -7,5 +7,4 @@ int main() {
     Employee emp;    
     emp.printFullName();
     emp.printPhone();
-    emp.printId();
 }
