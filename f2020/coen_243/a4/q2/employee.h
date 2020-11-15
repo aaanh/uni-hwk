@@ -51,7 +51,7 @@ class Employee {
         // void editSalary();
 
         // void printAddress();
-        // void editAdress();
+        // void editAddress();
 
         void PrintPhone();
         void EditPhone(Telephone tel);
