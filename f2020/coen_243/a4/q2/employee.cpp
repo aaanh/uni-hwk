@@ -10,7 +10,6 @@ Telephone::Telephone() {
 
     Telephone::SetAreaCode(ac);
     Telephone::SetNumber(num);
-
 }
 
 void Telephone::SetAreaCode(int ac) {
