@@ -41,6 +41,9 @@ string Telephone::GetNumber() {
 int Employee::id_count = 0;
 
 Employee::Employee() {
+    ++id_count;
+    this->id = this->id_count;
+
     string f_name;
     string l_name;
     string dob;
@@ -48,20 +51,50 @@ Employee::Employee() {
     int year_hired;
     double salary;
     Telephone tel;
+    int area_code;
+    string number;
 
-    cout << "Creating new employee..." << endl;
-    cout << "Employee's first name: " << endl;
+    cout << "\nCreating new employee..." << endl;
+    cout << "Employee #" << id << endl;
+
+    cout << "Enter first name: " << endl;
     cout << "> ";
     cin >> f_name;
     Employee::EditFirstName(f_name);
-    cout << "Employee's last name: " << endl;
+
+    cout << "Enter last name: " << endl;
     cout << "> ";
     cin >> l_name;
     Employee::EditLastName(l_name);
-    Employee::EditPhone(tel);
+
+    cout << "Enter date of birth: " << endl;
+    cout << "> ";
+    cin >> dob;
+
+    cout << "Enter hired year: " << endl;
+    cout << "> ";
+    cin >> year_hired;
+    cin.ignore(256, '\n');
+    this->year_hired = year_hired;
+
+    cout << "Enter address: " << endl;
+    cout << "> ";
+    getline(cin, address);
+    this->address = address;
     
-    ++id_count;
-    this->id = this->id_count;
+    cout << "Enter salary: " << endl;
+    cout << "> ";
+    getline(cin, address);
+    this->address = address;
+
+    cout << "Enter telephone: " << endl;
+    cout << "> Area code: ";
+    cin >> area_code;
+    cin.ignore(256, '\n');
+    this->telephone.SetAreaCode(area_code);
+    cout << "> Phone number: ";
+    getline(cin, number);
+    this->telephone.SetNumber(number);
 }
 
 string Employee::GetFirstName() {
@@ -92,10 +125,46 @@ string Employee::GetPhone() {
     return this->telephone.GetNumber();
 }
 
-void Employee::SetId() {
-    
-}
-
 int Employee::GetId() {
     return id;
+}
+
+string Employee::GetDOB() {
+    return dob;
+}
+
+void Employee::EditDOB(string dob) {
+    this->dob = dob;
+}
+
+double Employee::GetSalary() {
+    return salary;
+}
+
+void Employee::EditSalary(double salary) {
+    this->salary = salary;
+}
+
+string Employee::GetAddress() {
+    return address;
+}
+
+void Employee::EditAddress(string address) {
+    this->address = address;
+}
+
+int Employee::GetHiredYear() {
+    return this->year_hired;
+}
+
+bool Employee::CompareLastName(Employee emp_target) {
+    return (this->l_name.compare(emp_target.GetLastName()));
+}
+
+bool Employee::CompareSalaryHiredYear(Employee emp_target) {
+    bool res;
+    if (this->salary == emp_target.GetSalary() || this->year_hired == emp_target.GetHiredYear()) {
+        res = true;
+    } else res = false;
+    return res;
 }

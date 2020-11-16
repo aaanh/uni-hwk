@@ -4,7 +4,7 @@
 
     -   First name: string f_name \[OK\]
     -   Last name: string l_name \[OK\]
-    -   Date of birth: string dob \[X\]
+    -   Date of birth: string dob \[OK\]
     -   ID counter: static int id_counter \[OK\]
     -   Object ID: int id \[OK\]
     -   Address: string address \[X\]
@@ -12,6 +12,7 @@
     -   Salary: double salary \[X\]
 
 -   Functions:
+
     -   Completed:
         -   PrintFirstName(string)
         -   EditFirstName(string)
@@ -21,9 +22,9 @@
         -   EditPhone(Telephone)
         -   PrintPhone()
         -   GetId()
-    -   In progress:
         -   PrintDOB()
         -   EditDOB()
+    -   In progress:
         -   printSalary()
         -   EditSalary()
         -   PrintAddress()

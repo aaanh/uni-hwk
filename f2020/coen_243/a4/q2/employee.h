@@ -30,35 +30,36 @@ class Employee {
         double salary;
         Telephone telephone;
 
-
     public:
         Employee(); // Constructor
         
+        int GetId();
+
         string GetFirstName();
         void EditFirstName(string f_name);
+
         string GetLastName();
         void EditLastName(string l_name);
+
+        int GetHiredYear();
+
         string GetFullName();
-        string GetHiredYear();
 
-        int GetId();
-        void SetId();
+        string GetDOB();
+        void EditDOB(string dob);
 
-        void GetDOB();
-        void EditDOB();
+        double GetSalary();
+        void EditSalary(double salary);
 
-        // void GetSalary();
-        // void EditSalary();
-
-        // void GetAddress();
-        // void EditAddress();
+        string GetAddress();
+        void EditAddress(string address);
 
         string GetPhone();
         void EditPhone(Telephone tel);
 
-        // void CompareLastName();
-        // void CompareSalaryHiredYear();
+        bool CompareLastName(Employee emp_target);
 
+        bool CompareSalaryHiredYear(Employee emp_target);
 };
 
 #endif
