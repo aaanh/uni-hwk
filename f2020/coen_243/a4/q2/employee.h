@@ -15,7 +15,7 @@ class Telephone {
         void SetAreaCode(int area_code);
         void SetNumber(string number);
         void UpdateNumber();
-        void PrintNumber();
+        string GetNumber();
 };
 
 class Employee {
@@ -34,30 +34,30 @@ class Employee {
     public:
         Employee(); // Constructor
         
-        void PrintFirstName(string f_name);
+        string GetFirstName();
         void EditFirstName(string f_name);
-        void PrintLastName(string l_name);
+        string GetLastName();
         void EditLastName(string l_name);
-        void PrintFullName();
-        void PrintHiredYear();
+        string GetFullName();
+        string GetHiredYear();
 
-        void GetId();
+        int GetId();
         void SetId();
 
-        void PrintDOB();
+        void GetDOB();
         void EditDOB();
 
-        // void printSalary();
-        // void editSalary();
+        // void GetSalary();
+        // void EditSalary();
 
-        // void printAddress();
-        // void editAddress();
+        // void GetAddress();
+        // void EditAddress();
 
-        void PrintPhone();
+        string GetPhone();
         void EditPhone(Telephone tel);
 
-        // void compareLastName();
-        // void compareSalaryHiredYear();
+        // void CompareLastName();
+        // void CompareSalaryHiredYear();
 
 };
 

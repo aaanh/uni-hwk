@@ -34,8 +34,8 @@ void Telephone::UpdateNumber() {
     this->SetNumber(num);
 }
 
-void Telephone::PrintNumber() {
-    cout << "+" << this->area_code << " " << this->number << endl;
+string Telephone::GetNumber() {
+    return (to_string(this->area_code) + " " + this->number);
 }
 
 int Employee::id_count = 0;
@@ -64,39 +64,38 @@ Employee::Employee() {
     this->id = this->id_count;
 }
 
-void Employee::PrintFirstName(string f_name) {
-    cout << "- First name: " << f_name << endl;
+string Employee::GetFirstName() {
+    return this->f_name;
 }
 
 void Employee::EditFirstName(string f_name) {
     this->f_name = f_name;
 }
 
-void Employee::PrintLastName(string l_name) {
-    cout << "- Last name: " << l_name << endl;
+string Employee::GetLastName() {
+    return this->l_name;
 }
 
 void Employee::EditLastName(string l_name) {
     this->l_name = l_name;
 }
 
-void Employee::PrintFullName() {
-    cout << "- Employee's full name: " << this->l_name << ", " << this->f_name << endl;
+string Employee::GetFullName() {
+    return (this->l_name + ", " + this->f_name);
 }
 
 void Employee::EditPhone(Telephone tel) {
     this->telephone.UpdateNumber();
 }
 
-void Employee::PrintPhone() {
-    cout << "Employee's number: ";
-    this->telephone.PrintNumber();
+string Employee::GetPhone() {
+    return this->telephone.GetNumber();
 }
 
 void Employee::SetId() {
     
 }
 
-void Employee::GetId() {
-    cout << "Employee's ID: " << id << endl;
+int Employee::GetId() {
+    return id;
 }
