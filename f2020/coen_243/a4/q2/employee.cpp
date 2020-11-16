@@ -70,28 +70,30 @@ Employee::Employee() {
     cout << "Enter date of birth: " << endl;
     cout << "> ";
     cin >> dob;
+    Employee::EditDOB(dob);
 
     cout << "Enter hired year: " << endl;
     cout << "> ";
     cin >> year_hired;
-    cin.ignore(256, '\n');
     this->year_hired = year_hired;
+    cin.ignore(256, '\n');
 
     cout << "Enter address: " << endl;
     cout << "> ";
     getline(cin, address);
     this->address = address;
+    cin.ignore(256, '\n');
     
     cout << "Enter salary: " << endl;
     cout << "> ";
-    getline(cin, address);
-    this->address = address;
+    cin >> salary;
+    this->salary = salary;
 
     cout << "Enter telephone: " << endl;
     cout << "> Area code: ";
     cin >> area_code;
-    cin.ignore(256, '\n');
     this->telephone.SetAreaCode(area_code);
+    cin.ignore(256, '\n');
     cout << "> Phone number: ";
     getline(cin, number);
     this->telephone.SetNumber(number);
