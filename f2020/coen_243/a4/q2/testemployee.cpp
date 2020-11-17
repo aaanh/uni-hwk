@@ -21,6 +21,7 @@ void modify(Employee emp) {
             case 1:
                 {
                     string f_name;
+                    cout << "Old first name: " << emp.GetFirstName() << endl;
                     cout << "Enter new first name: ";
                     cin >> f_name;
                     emp.EditFirstName(f_name);
@@ -30,6 +31,7 @@ void modify(Employee emp) {
             case 2:
                 {
                     string l_name;
+                    cout << "Old last name: " << emp.GetLastName() << endl;
                     cout << "Enter new last name: ";
                     cin >> l_name;
                     emp.EditLastName(l_name);
@@ -40,20 +42,49 @@ void modify(Employee emp) {
             case 3:
                 {
                     string dob;
+                    cout << "Old DOB: " << emp.GetDOB() << endl;
                     cout << "Enter new DOB: ";
                     cin >> dob;
                     emp.EditDOB(dob);
+                    cout << "New DOB: " << emp.GetDOB() << endl;
                     break;
                 }
             case 4:
                 {
                     double salary;
+                    cout << "Old salary: " << emp.GetSalary() << endl;
                     cout << "Enter new salary: ";
                     cin >> salary;
                     emp.EditSalary(salary);
+                    cout << "New salary: " << emp.GetSalary() << endl;
+                    break;
                 }
             case 5:
+                {
+                    string address;
+                    cout << "Old address: " << emp.GetAddress() << endl;
+                    cout << "Enter new adress: ";
+                    getline(cin, address);
+                    cout << "New address: " << emp.GetAddress() << endl;
+                    break;
+                }
             case 6:
+                {   
+                    int ac;
+                    string num;
+                    Telephone tel;
+                    cout << "Old phone number: " << emp.GetPhone() << endl;
+                    cout << "Enter new area code: ";
+                    cin >> ac;
+                    cin.ignore(256, '\n');
+                    cout << "Enter new number: ";
+                    getline(cin, num);
+                    tel.SetAreaCode(ac);
+                    tel.SetNumber(num);
+                    emp.EditPhone(tel);
+                    cout << "New phone number: " << emp.GetPhone() << endl;
+                    break;
+                }
             case 7:
             default:
                 break;
@@ -98,7 +129,7 @@ int main() {
     cout << emp2.CompareSalaryHiredYear(emp1);
     
     cout << "\n------" << endl;
-    cout << "Which employee do you want to modify information for? 1/2";
+    cout << "Which employee do you want to modify information for? 1-2: ";
     cin >> choice;
     choice == 1 ? modify(emp1) : modify(emp2);
 }

@@ -7,29 +7,30 @@
     -   Date of birth: string dob \[OK\]
     -   ID counter: static int id_counter \[OK\]
     -   Object ID: int id \[OK\]
-    -   Address: string address \[X\]
-    -   Year hired: int year_hired \[X\]
-    -   Salary: double salary \[X\]
+    -   Address: string address \[OK\]
+    -   Year hired: int year_hired \[OK\]
+    -   Salary: double salary \[OK\]
 
 -   Functions:
 
     -   Completed:
-        -   PrintFirstName(string)
+        -   GetFirstName()
         -   EditFirstName(string)
-        -   PrintLastName(string)
+        -   GetLastName()
         -   EditLastName(string)
-        -   PrintFullName()
+        -   GetFullName()
         -   EditPhone(Telephone)
-        -   PrintPhone()
+        -   GetPhone()
         -   GetId()
-        -   PrintDOB()
-        -   EditDOB()
+        -   GetDOB()
+        -   EditDOB(string)
+        -   GetSalary()
+        -   EditSalary(double)
+        -   GetAddress()
+        -   CompareLastName(Employee)
+        -   CompareSalaryHiredYear(Employee)
     -   In progress:
-        -   printSalary()
-        -   EditSalary()
-        -   PrintAddress()
-        -   CompareLastName()
-        -   CompareSalaryHiredYear()
+        -   null
 
 # Telephone class
 
@@ -40,4 +41,4 @@
     -   SetAreaCode(int)
     -   SetNumber(string)
     -   UpdateNumber()
-    -   PrintNumber()
+    -   GetNumber()
