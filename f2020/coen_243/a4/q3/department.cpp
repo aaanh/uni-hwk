@@ -9,7 +9,6 @@ Department::Department() {
     string new_name;
     string new_id;
     string new_history;
-    Employee emps[25];
     
     cout << "Enter department name: ";
     getline(cin, new_name);
@@ -27,7 +26,6 @@ Department::Department() {
     cout << "Department Name    : " << Department::GetName() << endl;
     cout << "Department ID      : " << Department::GetId() << endl;
     cout << "Department History : " << Department::GetHistory() << endl;
-
 }
 
 string Department::GetId() {
@@ -54,9 +52,9 @@ void Department::EditHistory(string new_history) {
     this->history = new_history;
 }
 
-// void Department::AddMember(Employee new_emp) {
-
-// }
+void Department::AddMember(Employee new_emp) {
+    Employee emps[25];
+}
 
 // void Department::RemoveMember(int ex_emp) {
 
