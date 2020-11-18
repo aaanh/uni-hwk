@@ -3,7 +3,7 @@
 
 #include <string>
 #include <array>
-#include "../q2/employee.h"
+#include "employee.h"
 
 using namespace std;
 
@@ -12,10 +12,13 @@ class Department {
         string id;
         string name;
         string history;
-        array<Employee, 25> employees;
+        Employee emps[25];
 
     public:
+        Department();
+
         string GetId();
+        void EditId(string new_id);
         
         string GetName();
         void EditName(string new_name);
@@ -24,8 +27,12 @@ class Department {
         void EditHistory(string new_history);
 
         void AddMember(Employee new_emp);
-        
+        void RemoveMember();
 
+        bool SearchEmployee(int id);
+
+        void PrintEmployeeList();
+        void PrintEmployeeCount();
 };
 
 #endif
