@@ -4,46 +4,15 @@
 
 using namespace std;
 
-Telephone::Telephone() {
-    int ac = 0;
-    string num{"null"};
-
-    Telephone::SetAreaCode(ac);
-    Telephone::SetNumber(num);
-}
-
-void Telephone::SetAreaCode(int ac) {
-    this->area_code = ac;
-}
-
-void Telephone::SetNumber(string num) {
-    this->number = num;
-}
-
-void Telephone::UpdateNumber() {
-    int ac;
-    string num;
-    
-    cout << "Phone area code: ";
-    cin >> ac;
-    cin.ignore(256, '\n');
-    this->SetAreaCode(ac);
-
-    cout << "Phone number: ";
-    getline(cin, num);
-    this->SetNumber(num);
-}
-
-string Telephone::GetNumber() {
-    return (to_string(this->area_code) + " " + this->number);
-}
-
 int Employee::id_count = 0;
 
 Employee::Employee() {
     ++id_count;
     this->id = this->id_count;
+}
 
+void Employee::EmployeeInit() {
+    
     string f_name;
     string l_name;
     string dob;
@@ -89,14 +58,8 @@ Employee::Employee() {
     cin >> salary;
     this->salary = salary;
 
-    cout << "Enter telephone: " << endl;
-    cout << "> Area code: ";
-    cin >> area_code;
-    this->telephone.SetAreaCode(area_code);
-    cin.ignore(256, '\n');
-    cout << "> Phone number: ";
-    getline(cin, number);
-    this->telephone.SetNumber(number);
+    tel.TelephoneInit();
+
 }
 
 string Employee::GetFirstName() {
@@ -169,4 +132,47 @@ bool Employee::CompareSalaryHiredYear(Employee emp_target) {
         res = true;
     } else res = false;
     return res;
+}
+
+Telephone::Telephone() {
+    
+}
+
+void Telephone::TelephoneInit() {
+    int ac = 0;
+    string num;
+
+    cout << "Enter area code: ";
+    cin >> ac;
+    cin.ignore(256, '\n');
+    cout << "Enter number: ";
+    getline(cin, num);
+    Telephone::SetAreaCode(ac);
+    Telephone::SetNumber(num);
+}
+
+void Telephone::SetAreaCode(int ac) {
+    this->area_code = ac;
+}
+
+void Telephone::SetNumber(string num) {
+    this->number = num;
+}
+
+void Telephone::UpdateNumber() {
+    int ac;
+    string num;
+    
+    cout << "Phone area code: ";
+    cin >> ac;
+    cin.ignore(256, '\n');
+    this->SetAreaCode(ac);
+
+    cout << "Phone number: ";
+    getline(cin, num);
+    this->SetNumber(num);
+}
+
+string Telephone::GetNumber() {
+    return (to_string(this->area_code) + " " + this->number);
 }

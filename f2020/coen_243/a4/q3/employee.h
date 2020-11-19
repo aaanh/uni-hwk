@@ -16,6 +16,7 @@ class Telephone {
         void SetNumber(string number);
         void UpdateNumber();
         string GetNumber();
+        void TelephoneInit();
 };
 
 class Employee {
@@ -32,6 +33,7 @@ class Employee {
 
     public:
         Employee(); // Constructor
+        void EmployeeInit();
         
         int GetId();
 
