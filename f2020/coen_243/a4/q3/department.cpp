@@ -59,9 +59,9 @@ void Department::EditHistory(string new_history) {
 }
 
 void Department::AddMember(Employee emp) {
-    for (size_t i{0}; i <= sizeof(this->emps); i++) {
-        if (this->emps[i].GetFirstName() == "") {
-            this->emps[i] = emp;
+    for (Employee emp_loc : this->emps) {
+        if (emp_loc.GetFirstName() == "") {
+            emp_loc = emp;
             break;
         }
     }
@@ -71,9 +71,15 @@ Employee Department::GetMember(int i) {
     return this->emps[i];
 }
 
-// void Department::RemoveMember() {
-
-// }
+void Department::RemoveMember(int ex_emp_id) {
+    Employee emp_blank;
+    for (Employee emp : this->emps) {
+        if (emp.GetId() == ex_emp_id) {
+            emp = emp_blank;
+            break;
+        }
+    }
+}
 
 bool Department::SearchEmployee(int id) {
     bool flag;

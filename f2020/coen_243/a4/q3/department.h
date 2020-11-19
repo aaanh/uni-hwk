@@ -27,7 +27,7 @@ class Department {
         void EditHistory(string new_history);
 
         void AddMember(Employee emp);
-        void RemoveMember();
+        void RemoveMember(int ex_emp_id);
         Employee GetMember(int index);
 
         bool SearchEmployee(int id);
