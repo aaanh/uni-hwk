@@ -49,7 +49,7 @@ void Employee::EmployeeInit() {
 
     cout << "Enter address: " << endl;
     cout << "> ";
-    getline(cin, address);
+    cin >> address;
     this->address = address;
     cin.ignore(256, '\n');
     

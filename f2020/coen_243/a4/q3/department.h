@@ -34,6 +34,8 @@ class Department {
 
         void PrintEmployeeList();
         void PrintEmployeeCount();
+
+        void Debugger();
 };
 
 #endif
