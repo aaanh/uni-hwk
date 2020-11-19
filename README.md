@@ -2,7 +2,7 @@
 
 Computer engineering and programming related assignments.
 
-All rights reserved on all materials otherwise specified and excluding third-party copyrighted materials.
+All rights reserved on all materials unless otherwise specified and excluding third-party copyrighted materials.
 
 Nguyen Hoang Anh &copy; 2020
 
