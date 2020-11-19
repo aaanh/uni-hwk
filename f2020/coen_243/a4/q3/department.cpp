@@ -59,9 +59,9 @@ void Department::EditHistory(string new_history) {
 }
 
 void Department::AddMember(Employee emp) {
-    for (Employee emp_loc : this->emps) {
-        if (emp_loc.GetFirstName() == "") {
-            emp_loc = emp;
+    for (size_t i = 0; i <= sizeof(this->emps); i++) {
+        if (this->emps[i].GetFirstName().empty() == true) {
+            this->emps[i] = emp;
             break;
         }
     }
@@ -73,9 +73,14 @@ Employee Department::GetMember(int i) {
 
 void Department::RemoveMember(int ex_emp_id) {
     Employee emp_blank;
-    for (Employee emp : this->emps) {
-        if (emp.GetId() == ex_emp_id) {
-            emp = emp_blank;
+    emp_blank.EditAddress("");
+    emp_blank.EditFirstName("");
+    emp_blank.EditLastName("");
+    emp_blank.EditSalary(0);
+    emp_blank.EditDOB("");
+    for (size_t i = 0; i <= sizeof(this->emps); i++) {
+        if (this->emps[i].GetId() == ex_emp_id) {
+            this->emps[i] = emp_blank;
             break;
         }
     }
@@ -96,7 +101,7 @@ void Department::PrintEmployeeList() {
     cout << "List of employees: " << endl;
     cout << "ID" << "\t\t\t" << "Full name" << endl; 
     for (Employee emp : this->emps) {
-        if (emp.GetFirstName().empty() == 0) {
+        if (emp.GetFirstName().empty() == false) {
             cout << emp.GetId() << "\t\t\t" << emp.GetFirstName() << endl;
         }
     };
@@ -105,7 +110,7 @@ void Department::PrintEmployeeList() {
 void Department::PrintEmployeeCount() {
     int num_of_emps = 0;
     for (Employee emp : this->emps) {
-        if (emp.GetFirstName().empty() == 0) {
+        if (emp.GetFirstName().empty() == false) {
             num_of_emps++;
         }
     };
@@ -116,5 +121,10 @@ void Department::Debugger() {
     cout << "IO Stream checked" << endl;
     cout << this->emps[0].GetFirstName().empty() << endl;
     cout << this->emps[0].GetFirstName() << endl;
-    
+    cout << "GetFirstName().empty() -> " << this->emps[0].GetFirstName().empty() << endl;
+    for (Employee emp : this-> emps) {
+        cout << emp.GetFirstName() << endl;
+        cout << emp.GetFirstName().empty() << endl;
+        cout << (emp.GetFirstName().empty() == false) << endl;
+    }
 }
