@@ -6,6 +6,7 @@
         "iostream": "cpp",
         "__tuple": "cpp",
         "array": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xstring": "cpp"
     }
 }
