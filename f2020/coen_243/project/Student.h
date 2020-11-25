@@ -9,18 +9,28 @@ using namespace std;
 class Student {
     public:
         // Getters
-        string GetLastName();
-        string GetFirstName();
-        int GetId();  
-        string GetDOB();
-        string GetGPA();
-        
+        string GetLastName(); // 1
+        string GetFirstName(); // 2
+        int GetId(); // 3
+        string GetDOB(); // 4
+        string GetGPA(); // 5
+        double GetCredit(); // 6
+        char GetProgram(); // 7 // (B)achelor 140, (M)aster 16, (P)hD 12
 
         // Setters
-        void SetLastName(string new_l_name);
-        void SetFirstName(string new_f_name);
-        void SetDOB(string new_dob);
-        void SetGPA(double new_gpa);
+        void SetLastName(string new_l_name); // 1
+        void SetFirstName(string new_f_name); // 2
+        void SetDOB(string new_dob); // 3
+        void SetGPA(double new_gpa); // 4
+        void SetId(int new_id); // 5
+        void SetCredit(double new_credit); // 6
+        void SetProgram(char new_prog); // 7
+
+        // Additional features
+        bool CompleteProgram(char cur_prog, int id);
+        string StudentStatus(double cur_gpa);
+        void PrintStudentInfo(int id);
+        int CompareGPA(int id_a, int id_b);
 
     private:
         static int id_count;
