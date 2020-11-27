@@ -17,8 +17,8 @@ Student::Student(string f_name, string l_name, string dob, double gpa, double cr
     this->f_name = f_name;
     this->l_name = l_name;
     this->dob = dob;
-    this->gpa = gpa;
-    this->credit = credit;
+    this->gpa_latest = gpa;
+    this->completed_credit = credit;
     this->program = program;
 }
 
@@ -84,7 +84,11 @@ void Student::SetProgram(char new_prog) {
 // Additional features
 
 bool Student::CompleteProgram(char cur_prog, int id) {
-
+    bool bComplete;
+    if (this->program == 'B') bComplete = (this->completed_credit == 140);
+    if (this->program == 'M') bComplete = (this->completed_credit == 16);
+    if (this->program == 'P') bComplete = (this->completed_credit == 12);
+    return bComplete;
 }
 
 string Student::StudentStatus(double cur_gpa) {
