@@ -6,8 +6,20 @@
 
 using namespace std;
 
+static int id_count;
+
 Student::Student() {
-    
+    this->id = id_count;
+    id_count++;
+}
+
+Student::Student(string f_name, string l_name, string dob, double gpa, double credit, char program) {
+    this->f_name = f_name;
+    this->l_name = l_name;
+    this->dob = dob;
+    this->gpa = gpa;
+    this->credit = credit;
+    this->program = program;
 }
 
 // Getter implementations
@@ -20,7 +32,7 @@ string Student::GetFirstName() {
 }
 
 int Student::GetId() {
-    
+    return this->id;
 }
 
 string Student::GetDOB() {
