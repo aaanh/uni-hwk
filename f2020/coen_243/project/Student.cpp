@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "Headers/Student.h"
 
 #include <iostream>
 #include <string>
@@ -8,11 +8,11 @@ using namespace std;
 
 // Getter implementations
 string Student::GetLastName() {
-    
+    return this->l_name;
 }
 
 string Student::GetFirstName() {
-
+    return this->f_name;
 }
 
 int Student::GetId() {

@@ -1,5 +1,5 @@
-#include "Student.h"
-
+#include "Headers/Student.h"
+#include "Headers/Staff.h"
 
 #include <iostream>
 #include <string>
