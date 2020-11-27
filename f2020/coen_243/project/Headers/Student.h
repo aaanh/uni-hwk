@@ -1,5 +1,4 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -8,12 +7,16 @@ using namespace std;
 
 class Student {
     public:
+        // Constructors
+        Student();
+        Student(string f_name, string l_name, string dob, double gpa, double credit, char program);
+        
         // Getters
         string GetLastName(); // 1
         string GetFirstName(); // 2
         int GetId(); // 3
         string GetDOB(); // 4
-        string GetGPA(); // 5
+        double GetGPA(); // 5
         double GetCredit(); // 6
         char GetProgram(); // 7 // (B)achelor 140, (M)aster 16, (P)hD 12
 
@@ -49,5 +52,3 @@ class Student {
 
         char program;
 };
-
-#endif
