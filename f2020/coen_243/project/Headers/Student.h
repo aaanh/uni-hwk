@@ -32,7 +32,7 @@ class Student {
         // Additional features
         bool CompleteProgram(char cur_prog, int id);
         string StudentStatus(double cur_gpa);
-        void PrintStudentInfo(int id);
+        void PrintStudentInfo();
         int CompareGPA(int id_a, int id_b);
 
     private:
