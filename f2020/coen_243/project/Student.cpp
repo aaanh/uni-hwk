@@ -85,8 +85,8 @@ void Student::SetProgram(char new_prog) {
 
 bool Student::CompleteProgram() {
     bool bComplete;
-    if (this->program == 'B') bComplete = (this->completed_credit == 140)
-    else if (this->program == 'M') bComplete = (this->completed_credit == 16)
+    if (this->program == 'B') bComplete = (this->completed_credit == 140);
+    else if (this->program == 'M') bComplete = (this->completed_credit == 16);
     else if (this->program == 'P') bComplete = (this->completed_credit == 12);
     return bComplete;
 }
@@ -112,7 +112,7 @@ string Student::StudentStatus() {
     }
 }
 
-void PrintStudentInfo() {
+void Student::PrintStudentInfo() {
     cout << "Student ID       : " << this->GetId() << endl;
     cout << "First name       : " << this->GetFirstName() << endl;
     cout << "Last name        : " << this->GetLastName() << endl;
@@ -122,6 +122,12 @@ void PrintStudentInfo() {
     cout << "Program          : " << this->GetProgram() << endl;
 }
 
-int CompareGPA(Student student_to_compare) {
-    
+int Student::CompareGPA(Student student_to_compare) {
+    if (student_to_compare.GetGPA() > this->GetGPA()) {
+        return student_to_compare.GetId();
+    } else if (student_to_compare.GetGPA() < this->GetGPA()) {
+        return this->GetId();
+    } else {
+        return 0;
+    }
 }

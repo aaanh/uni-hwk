@@ -30,10 +30,10 @@ class Student {
         void SetProgram(char new_prog); // 7
 
         // Additional features
-        bool CompleteProgram(char cur_prog, int id);
-        string StudentStatus(double cur_gpa);
+        bool CompleteProgram();
+        string StudentStatus();
         void PrintStudentInfo();
-        int CompareGPA(int id_a, int id_b);
+        int CompareGPA(Student student_to_compare);
 
     private:
         static int id_count;
