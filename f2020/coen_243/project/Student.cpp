@@ -83,22 +83,45 @@ void Student::SetProgram(char new_prog) {
 
 // Additional features
 
-bool Student::CompleteProgram(char cur_prog, int id) {
+bool Student::CompleteProgram() {
     bool bComplete;
-    if (this->program == 'B') bComplete = (this->completed_credit == 140);
-    if (this->program == 'M') bComplete = (this->completed_credit == 16);
-    if (this->program == 'P') bComplete = (this->completed_credit == 12);
+    if (this->program == 'B') bComplete = (this->completed_credit == 140)
+    else if (this->program == 'M') bComplete = (this->completed_credit == 16)
+    else if (this->program == 'P') bComplete = (this->completed_credit == 12);
     return bComplete;
 }
 
-string Student::StudentStatus(double cur_gpa) {
-
+string Student::StudentStatus() {
+    /*
+        A+  :   >= 3.5
+        A   :   >= 3 < 3.5
+        B   :   >= 2.5 < 3
+        C   :   >= 2.0 < 2.5
+        D   :   < 2.0
+    */
+    if (this->gpa_latest >= 3.5) {
+        return "A+";
+    } else if (this->gpa_latest >= 3.0 && this->gpa_latest < 3.5) {
+        return "A";
+    } else if (this->gpa_latest >= 2.5 && this->gpa_latest < 3.0) {
+        return "B";
+    } else if (this->gpa_latest >= 2.0 && this->gpa_latest < 2.5) {
+        return "C";
+    } else if (this->gpa_latest < 2.0) {
+        return "D";
+    }
 }
 
 void PrintStudentInfo() {
-
+    cout << "Student ID       : " << this->GetId() << endl;
+    cout << "First name       : " << this->GetFirstName() << endl;
+    cout << "Last name        : " << this->GetLastName() << endl;
+    cout << "DOB              : " << this->GetDOB() << endl;
+    cout << "GPA              : " << this->GetGPA() << endl;
+    cout << "Completed credits: " << this->GetCredit() << endl;
+    cout << "Program          : " << this->GetProgram() << endl;
 }
 
-int CompareGPA(int id_a, int id_b) {
+int CompareGPA(Student student_to_compare) {
     
 }
