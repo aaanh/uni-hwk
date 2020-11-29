@@ -34,6 +34,7 @@ class Student {
         string StudentStatus();
         void PrintStudentInfo();
         int CompareGPA(Student student_to_compare);
+        void InternalDebugger();
 
     private:
         static int id_count;

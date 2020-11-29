@@ -6,14 +6,16 @@
 
 using namespace std;
 
-static int id_count;
+int Student::id_count = 0;
 
 Student::Student() {
+    ++id_count;
     this->SetId(id_count);
-    id_count++;
 }
 
 Student::Student(string f_name, string l_name, string dob, double gpa, double credit, char program) {
+    ++id_count;
+    this->SetId(id_count);
     this->f_name = f_name;
     this->l_name = l_name;
     this->dob = dob;
@@ -109,6 +111,8 @@ string Student::StudentStatus() {
         return "C";
     } else if (this->gpa_latest < 2.0) {
         return "D";
+    } else {
+        return "0";
     }
 }
 
@@ -130,4 +134,9 @@ int Student::CompareGPA(Student student_to_compare) {
     } else {
         return 0;
     }
+}
+
+void Student::InternalDebugger() {
+    cout << "ID count: " << this->id_count << endl;
+    cout << "Get ID: " << this->GetId() << endl;
 }

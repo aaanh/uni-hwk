@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     ifstream students_db;
-    students_db.open("students.csv");
+    students_db.open("Data/students.csv");
     
     string line;
 
