@@ -20,10 +20,10 @@ class Staff {
         double GetCurrentSalary();
 
         // Setters
-        void SetFirstName();
-        void SetLastName();
-        void SetID();
-        void SetHiredDate();
+        void SetFirstName(string new_f_name);
+        void SetLastName(string new_l_name);
+        void SetID(int new_id);
+        void SetHiredDate(string hired_date);
         void SetBonusCode();
         void SetSalary();
 
@@ -34,7 +34,7 @@ class Staff {
         string CompareExp();
 
     private:
-        static int 
+        static int id_count;
         string f_name;
         string l_name;
 
@@ -43,4 +43,4 @@ class Staff {
         string hired_date;
         string bonus_code;
         double current_salary;
-}
+};
