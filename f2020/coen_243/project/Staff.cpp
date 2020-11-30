@@ -14,5 +14,13 @@ Staff::Staff(string f_name, string l_name, string phone, string hired_date, stri
 }
 
 string Staff::GetFirstName() {
-    
+    return this->f_name
+}
+
+string Staff::GetLastName() {
+    return this->f_name
+}
+
+string Staff::GetFirstName() {
+    return this->f_name
 }

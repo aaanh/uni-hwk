@@ -34,6 +34,7 @@ class Staff {
         string CompareExp();
 
     private:
+        static int 
         string f_name;
         string l_name;
 
