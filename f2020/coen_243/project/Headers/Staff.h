@@ -8,7 +8,7 @@ using namespace std;
 class Staff {
     public:
         Staff(); // constructor no args
-        Staff(string f_name, string l_name, string phone, string hired_date, string bonus_code, string cur_salary); // constructor w/ args
+        Staff(string f_name, string l_name, string phone, string hired_date, char bonus_code, double cur_salary); // constructor w/ args
 
         // Getters
         string GetFirstName();
@@ -16,9 +16,9 @@ class Staff {
         
         int GetID();
         string GetHiredDate();
-        string GetBonusCode();
+        char GetBonusCode();
         double GetCurrentSalary();
-        double GetPhone();
+        string GetPhone();
 
         // Setters
         void SetFirstName(string new_f_name);
@@ -43,6 +43,6 @@ class Staff {
         int id;
         string phone_number;
         string hired_date;
-        string bonus_code;
+        char bonus_code;
         double current_salary;
 };

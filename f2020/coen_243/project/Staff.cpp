@@ -13,15 +13,15 @@ Staff::Staff() {
     ++id_count;
 }
 
-Staff::Staff(string f_name, string l_name, string phone, string hired_date, string bonus_code, string cur_salary) {
+Staff::Staff(string f_name, string l_name, string phone, string hired_date, char bonus_code, double cur_salary) {
     ++id_count;
-    this->SetFirstName(f_name);
-    this->SetLastName(l_name);
-    this->SetID(id_count);
-    this->SetPhone(phone);
-    this->SetHiredDate(hired_date);
-    this->SetBonusCode(bonus_code);
-    this->SetSalary(cur_salary);
+    this->f_name = f_name;
+    this->l_name = l_name;
+    this->phone_number = phone;
+    this->hired_date = hired_date;
+    this->bonus_code = bonus_code;
+    this->current_salary = cur_salary;
+    this->id = id_count;
     
 }
 
@@ -30,7 +30,7 @@ string Staff::GetFirstName() {
 }
 
 string Staff::GetLastName() {
-    return this->f_name;
+    return this->l_name;
 }
 
 int Staff::GetID() {
@@ -41,7 +41,7 @@ string Staff::GetHiredDate() {
     return this->hired_date;
 }
 
-string Staff::GetBonusCode() {
+char Staff::GetBonusCode() {
     return this->bonus_code;
 }
 
@@ -97,42 +97,29 @@ void Staff::PrintStaffInfo() {
 }
 
 double Staff::CalculateSalary() {
-    string bonus_code = this->GetBonusCode();
+    char bonus_code = this->GetBonusCode();
     double current_salary = this->GetCurrentSalary();
     double new_salary;
-    switch(bonus_code) {
-        case 'A':
-        case 'a':
-        {
-            new_salary = current_salary + current_salary*0.08;
-        }
-        case 'B':
-        case 'b':
-        {
-            new_salary = current_salary + current_salary*0.06;
-        }
-        case 'C':
-        case 'c':
-        {
-            new_salary = current_salary + current_salary*0.03;
-        }
-        case 'D':
-        case 'd':
-        {
-            new_salary = current_salary + current_salary*0.01;
-        }
-        case 'E':
-        case 'e':
-        {
-            new_salary = current_salary;
-        }
-        default:
-        {
-            cout << "Invalid bonus code" << endl;
-            cout << "Salary unchanged" << endl;
-            return current_salary;
-        }
+    
+    if (bonus_code == 'A' || bonus_code == 'a') {
+        new_salary = current_salary + current_salary*0.08;
     }
+    else if (bonus_code == 'B' || bonus_code == 'b') {
+        new_salary = current_salary + current_salary*0.06;
+    }
+    else if (bonus_code == 'C' || bonus_code == 'c') {
+        new_salary = current_salary + current_salary*0.04;
+    }
+    else if (bonus_code == 'D' || bonus_code == 'd') {
+        new_salary = current_salary + current_salary*0.02;
+    }
+    else if (bonus_code == 'E' || bonus_code == 'e') {
+        new_salary = current_salary;
+    } else {
+        cout << "Invalid bonus code. Salary unchanged" << endl;
+        new_salary = current_salary;
+    }
+    
     return new_salary;
 }
 
