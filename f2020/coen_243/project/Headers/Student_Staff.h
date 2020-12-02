@@ -7,14 +7,19 @@
 #include <vector>
 #include "Student.h"
 #include "Staff.h"
+#include <string>
+#include <filesystem>
 
 using namespace std;
 
 class Student_Staff {
     private:
-        vector<Student::Student> students;
-        vector<Staff::Staff> staffs;
+        vector<Student> students;
+        vector<Staff> staffs;
+
     public:
+        Student_Staff();
+        // Student_Staff(fstream ifStudents, fstream ifStaffs);
         void RetrieveStudents();
         void RetrieveStaff();
 };

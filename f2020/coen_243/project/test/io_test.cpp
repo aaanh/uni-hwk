@@ -1,12 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <filesystem>
 
 using namespace std;
 
+namespace fs = std::filesystem;
+
 int main() {
     ifstream students_db;
-    students_db.open("Data/students.csv");
+    students_db.open("../Data/students.csv");
     
     string line;
 
@@ -40,7 +43,7 @@ int main() {
         cout << "Unable to open file." << endl;
     }
 
-
+    cout << fs::current_path() << endl;
 
     return 0;
 }
