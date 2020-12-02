@@ -2,6 +2,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -91,7 +92,9 @@ void Staff::PrintStaffInfo() {
     cout << "Name: " << this->GetLastName() << ", " << this->GetFirstName() << endl;
     cout << "Hired date: " << this->GetHiredDate() << endl;
     cout << "Bonus code: " << this->GetBonusCode() << endl;
-    cout << "Salary: " << this->GetCurrentSalary() << endl;
+    cout << fixed << showpoint;
+    cout << setprecision(2);
+    cout << "Salary: $" << this->GetCurrentSalary() << endl;
     cout << "Phone number: " << this->GetPhone() << endl;
     cout << "----------------" << endl;
 }

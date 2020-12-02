@@ -9,7 +9,7 @@ class Student {
     public:
         // Constructors
         Student();
-        Student(string f_name, string l_name, string dob, double gpa, double credit, char program);
+        Student(string f_name, string l_name, string dob, double gpa, double credit, char program, int start_year);
         
         // Getters
         string GetLastName(); // 1
@@ -19,6 +19,7 @@ class Student {
         double GetGPA(); // 5
         double GetCredit(); // 6
         char GetProgram(); // 7 // (B)achelor 140, (M)aster 16, (P)hD 12
+        int GetStartYear();
 
         // Setters
         void SetLastName(string new_l_name); // 1
@@ -28,6 +29,7 @@ class Student {
         void SetId(int new_id); // 5
         void SetCredit(double new_credit); // 6
         void SetProgram(char new_prog); // 7
+        void SetStartYear(int new_start_year);
 
         // Additional features
         bool CompleteProgram();

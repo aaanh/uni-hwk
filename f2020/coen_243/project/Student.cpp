@@ -13,7 +13,7 @@ Student::Student() {
     this->SetId(id_count);
 }
 
-Student::Student(string f_name, string l_name, string dob, double gpa, double credit, char program) {
+Student::Student(string f_name, string l_name, string dob, double gpa, double credit, char program, int start_year) {
     ++id_count;
     this->SetId(id_count);
     this->f_name = f_name;
@@ -22,6 +22,7 @@ Student::Student(string f_name, string l_name, string dob, double gpa, double cr
     this->gpa_latest = gpa;
     this->completed_credit = credit;
     this->program = program;
+    this->start_year = start_year;
 }
 
 // Getter implementations
@@ -51,6 +52,10 @@ double Student::GetCredit() {
 
 char Student::GetProgram() {
     return this->program;
+}
+
+int Student::GetStartYear() {
+    return this->start_year;
 }
 
 // Setter Implementations
@@ -83,13 +88,18 @@ void Student::SetProgram(char new_prog) {
     this->program = new_prog;
 }
 
+void Student::SetStartYear(int new_start_year) {
+    this->start_year = new_start_year;
+}
+
 // Additional features
 
 bool Student::CompleteProgram() {
-    bool bComplete;
+    bool bComplete = false;
     if (this->program == 'B') bComplete = (this->completed_credit == 140);
     else if (this->program == 'M') bComplete = (this->completed_credit == 16);
     else if (this->program == 'P') bComplete = (this->completed_credit == 12);
+    else cout << "Invalid program code" << endl;
     return bComplete;
 }
 
@@ -124,6 +134,7 @@ void Student::PrintStudentInfo() {
     cout << "GPA              : " << this->GetGPA() << endl;
     cout << "Completed credits: " << this->GetCredit() << endl;
     cout << "Program          : " << this->GetProgram() << endl;
+    cout << "Start year       : " << this->GetStartYear() << endl;
 }
 
 int Student::CompareGPA(Student student_to_compare) {
