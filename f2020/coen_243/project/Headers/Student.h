@@ -19,7 +19,7 @@ class Student {
         double GetGPA(); // 5
         double GetCredit(); // 6
         char GetProgram(); // 7 // (B)achelor 140, (M)aster 16, (P)hD 12
-        int GetStartYear();
+        int GetStartYear(); // 8
 
         // Setters
         void SetLastName(string new_l_name); // 1
@@ -29,7 +29,7 @@ class Student {
         void SetId(int new_id); // 5
         void SetCredit(double new_credit); // 6
         void SetProgram(char new_prog); // 7
-        void SetStartYear(int new_start_year);
+        void SetStartYear(int new_start_year); // 8
 
         // Additional features
         bool CompleteProgram();

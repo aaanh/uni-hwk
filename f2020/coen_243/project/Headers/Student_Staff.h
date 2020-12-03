@@ -22,4 +22,5 @@ class Student_Staff {
         // Student_Staff(fstream ifStudents, fstream ifStaffs);
         void RetrieveStudents();
         void RetrieveStaff();
+        void InternalDebugger();
 };

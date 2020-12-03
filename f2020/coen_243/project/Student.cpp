@@ -9,8 +9,7 @@ using namespace std;
 int Student::id_count = 0;
 
 Student::Student() {
-    ++id_count;
-    this->SetId(id_count);
+    
 }
 
 Student::Student(string f_name, string l_name, string dob, double gpa, double credit, char program, int start_year) {
@@ -135,6 +134,7 @@ void Student::PrintStudentInfo() {
     cout << "Completed credits: " << this->GetCredit() << endl;
     cout << "Program          : " << this->GetProgram() << endl;
     cout << "Start year       : " << this->GetStartYear() << endl;
+    cout << "-------------------------------\n";
 }
 
 int Student::CompareGPA(Student student_to_compare) {
