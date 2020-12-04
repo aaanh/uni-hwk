@@ -3,8 +3,8 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-// Get working platform name
-std::string getOsName()
+// Get working platform name using macros
+string getOsName()
 {
     #ifdef _WIN32
     return "Windows 32-bit";
