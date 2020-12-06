@@ -22,5 +22,12 @@ class Student_Staff {
         // Student_Staff(fstream ifStudents, fstream ifStaffs);
         void RetrieveStudents();
         void RetrieveStaff();
+
+        vector<Student> GetStudents();
+        vector<Staff> GetStaffs();
+
         void InternalDebugger();
+        void HighestGPA(vector<Student> students);
+        int NumOfUndergrads(vector<Student> students);
+        void SameHiredYear(vector<Staff> staff, string hired_year);
 };

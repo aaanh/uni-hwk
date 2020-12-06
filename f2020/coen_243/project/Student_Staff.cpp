@@ -98,15 +98,35 @@ Student_Staff::Student_Staff() {
                 Student new_student(f_name, l_name, dob, gpa, credits, program, start_year);
                 // add new student to vector
                 this->students.push_back(new_student);
-            
             }
         }
-
+        // ----------
         // Staff data
-        // {
-        //     string line;
-        //     string f_name, l_name, dob, 
-        // }
+        {
+            string line;
+            string f_name, l_name, phone, hired_date, temp_salary,temp_bonus_code;
+            double salary;
+            char bonus_code;
+            
+            while(getline(ifStaffsFile, line)) {
+                stringstream ss(line);
+                getline(ss, f_name, ',');
+                getline(ss, l_name, ',');
+                getline(ss, phone, ',');
+                getline(ss, hired_date, ',');
+                getline(ss, temp_bonus_code, ',');
+                getline(ss, temp_salary, ',');
+
+                // type conversion for non-string data
+                salary = stod(temp_salary);
+                bonus_code = temp_bonus_code[0];
+                
+                // declare temp self-destructible student object
+                Staff new_staff(f_name, l_name, phone, hired_date, bonus_code, salary);
+                // add new student to vector
+                this->staffs.push_back(new_staff);
+            }
+        }
 
         cout << "File parsed successfully" << endl;
         // throw "File parse error. Please check data format and syntax.";
@@ -124,7 +144,56 @@ void Student_Staff::RetrieveStudents() {
     }
 }
 
+void Student_Staff::RetrieveStaff() {
+    cout << "\n> Retrieved staffs:" << endl;
+    for (auto s : this->staffs) {
+        s.PrintStaffInfo();
+    }
+}
+
 void Student_Staff::InternalDebugger() {
     this->students[0].PrintStudentInfo();
     this->students[0].PrintStudentInfo();
+}
+
+vector<Student> Student_Staff::GetStudents() {
+    return this->students;
+}
+
+vector<Staff> Student_Staff::GetStaffs() {
+    return this->staffs;
+}
+
+void Student_Staff::HighestGPA(vector<Student> students) {
+    vector<double> loc_gpa_store;
+    for (auto s : students) {
+        loc_gpa_store.push_back(s.GetGPA());
+    }
+    double highest_gpa = loc_gpa_store[0];
+    size_t student_index;
+    for (size_t i = 0; i <= loc_gpa_store.size(); ++i) {
+        if (highest_gpa <= loc_gpa_store[i]) {
+            student_index = i;
+        }
+    }
+    cout << "Student with the highest GPA\n-----------" << endl;
+    this->GetStudents()[student_index].PrintStudentInfo();
+}
+
+int Student_Staff::NumOfUndergrads(vector<Student> students) {
+    int ugrad_counter = 0;
+    for (auto s : students) {
+        if (s.GetProgram() == 'B' || s.GetProgram() == 'b') {
+            ugrad_counter++;
+        }
+    }
+    return ugrad_counter;
+}
+
+void Student_Staff::SameHiredYear(vector<Staff> staffs, string hired_year) {
+    for (auto s : staffs) {
+        if (s.GetHiredDate().substr(s.GetHiredDate().length()-4, s.GetHiredDate().length()) == hired_year) {
+            s.PrintStaffInfo();
+        }
+    }
 }
