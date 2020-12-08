@@ -19,7 +19,6 @@ class Student_Staff {
 
     public:
         Student_Staff();
-        // Student_Staff(fstream ifStudents, fstream ifStaffs);
         void RetrieveStudents();
         void RetrieveStaff();
 

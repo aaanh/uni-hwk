@@ -3,6 +3,12 @@
 using namespace std;
 namespace fs = std::filesystem;
 
+// For debug and test
+void LocPressEnter() {
+    cout << "Press [ENTER] to continue...";
+    cin.get();
+}
+
 // Get working platform name using macros
 string getOsName()
 {
@@ -37,7 +43,7 @@ Student_Staff::Student_Staff() {
     // Data folder path according to platform
     if (getOsName() == "Windows 64-bit" || getOsName() == "Windows 32-bit") {
         sCorrectedDataPath = sDataPath.substr(0, (iLengthDataPath - 4)) + "\\Data\\";
-    } else if (getOsName() == "Mac OSX") {
+    } else if (getOsName() == "Mac OSX" || getOsName() == "Linux") {
         sCorrectedDataPath = sDataPath.substr(0, (iLengthDataPath - 4)) + "/Data/";
     }
     
@@ -45,16 +51,17 @@ Student_Staff::Student_Staff() {
 
     cout << "Looking for database files in \"./Data\" folder..." << endl;
     for (const auto &entry : fs::directory_iterator(sCorrectedDataPath)) ++iFileCount;
+    LocPressEnter();
     cout << "Found " << iFileCount << " files: " << endl;
     for (const auto &entry : fs::directory_iterator(sCorrectedDataPath)) cout << "> " << entry.path() << endl;
-
+    LocPressEnter();
     cout << "Opening found files..." << endl;
     
     try {
         if (getOsName() == "Windows 64-bit" || getOsName() == "Windows 32-bit") {
             ifStudentsFile.open(sCorrectedDataPath + "\\\\students.csv");
             ifStaffsFile.open(sCorrectedDataPath + "\\\\staff.csv");
-        } else if (getOsName() == "Mac OSX") {
+        } else if (getOsName() == "Mac OSX" || getOsName() == "Linux") {
             ifStudentsFile.open(sCorrectedDataPath + "/students.csv");
             ifStaffsFile.open(sCorrectedDataPath + "/staff.csv");
         }
@@ -63,6 +70,7 @@ Student_Staff::Student_Staff() {
             throw "Failed to open files.";
         } else {
             cout << "Files opened successfully." << endl;
+            LocPressEnter();
         }
 
     } catch (string e) {
@@ -129,6 +137,7 @@ Student_Staff::Student_Staff() {
         }
 
         cout << "File parsed successfully" << endl;
+        LocPressEnter();
         // throw "File parse error. Please check data format and syntax.";
         // throw 69;
 

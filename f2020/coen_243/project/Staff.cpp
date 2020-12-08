@@ -87,7 +87,6 @@ void Staff::SetPhone(string new_phone) {
 // Additional methods
 
 void Staff::PrintStaffInfo() {
-    cout << "----------------" << endl;
     cout << "Staff ID: " << this->GetID() << endl;
     cout << "Name: " << this->GetLastName() << ", " << this->GetFirstName() << endl;
     cout << "Hired date: " << this->GetHiredDate() << endl;
