@@ -13,7 +13,7 @@ Compile and run:
 ~/path/to/project> $ make
 ```
 
--   Note: On \[L\]inux systems, you might need to make those binaries executable by:
+-   Note: On Linux/Unix systems, you might need to make those binaries executable by:
 
 ```
 ~/path/to/project/bin> $ chmod +x [output filename] or # chmod +x [output filename]

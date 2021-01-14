@@ -28,8 +28,11 @@ int main() {
     cout << ">>> 4. Number of undergrads: " ;
     cout << student_staff_list.NumOfUndergrads(student_staff_list.GetStudents()) << endl;
     PressEnter();
-    cout << ">>> 5. Same hired year among staff: " << endl;
+    cout << ">>> 5. Same hired year among staff (2015): " << endl;
     student_staff_list.SameHiredYear(student_staff_list.GetStaffs(), "2015");
+    PressEnter();
+    cout << ">>> 5. Same hired year among staff (2011): " << endl;
+    student_staff_list.SameHiredYear(student_staff_list.GetStaffs(), "2011");
     cout << "End of Student_Staff class demonstration." << endl;
     PressEnter();
     // cout << "-----------------------------------------" << endl;
@@ -42,7 +45,6 @@ int main() {
     // cout << "> Your choice: ";
     // cin >> menu_choice;
     // TestMenu(menu_choice, student_staff_list);
-
 }
 
 // void StaffClassTester(Student_Staff student_staff_list) {
