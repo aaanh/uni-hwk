@@ -12,6 +12,10 @@ Nguyen Hoang Anh &copy; 2020
 
 Montreal, Quebec. Canada
 
+---
+
+This repository utilizes Git Large File Storage to store all included PDF files. When cloning, additional charges might occur.
+
 ```
 edu
 ├─ f2020
