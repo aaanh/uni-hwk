@@ -1,26 +1,37 @@
 #include <iostream>
 #include <array>
+#include <vector>
 
 using namespace std;
 
 int main() {
-    array<int, 2020> deck;
-    cout << "Array size: " << sizeof(deck)/sizeof(int) << endl;
-
-    // Initialize the deck from 1 to 2020 and 
-
-    for (size_t i=0; i<sizeof(deck)/sizeof(int); i++) {
-        deck[i] = i+1;
-        
-        // print the debugging msg
-        cout << "Init " << deck[i] << " to deck at position: " << i+1 << endl;
-    }
+    vector<int> deck;
     
-    // Performing the ops on the deck
+    // init the vector for deck of 2020 cards
+    for (auto i=1; i <= 2020; i++) {
+        deck.push_back(i);
+        cout << "Init " << deck[i-1] << " at pos " << i - 1 << endl; 
+    }
+
+    // looping
 
     while (true) {
-        for (auto i : deck) {
-            cout << i << endl;
+        size_t iterator = 0;
+        for (size_t i = 0; i <= deck.size(); i++) {
+            int temp = deck[0];
+
+            // erase first 2 elements in vector
+            deck.erase(deck.begin());
+            deck.erase(deck.begin());
+
+            // add temp element to the tail
+            deck.push_back(temp);
+        }
+        for (size_t j = 0; j <= deck.size(); j++) {
+            int lineBreaker = 1;
+            cout << deck[j] << " ";
+            lineBreaker++;
+            if (lineBreaker == 10) cout << endl;
         }
     }
 
