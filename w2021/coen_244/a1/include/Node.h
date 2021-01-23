@@ -1,28 +1,31 @@
-#include <iostream>
-#include "Event.h"
-
 #pragma once
+
+#include <iostream>
+#include <string>
 
 using namespace std;
 
 class Node {
-    public:
-        // constructor and overloaded
-        Node();
-        Node(short id, Event value);
-
-        // accessing methods for data member value
-        void setValue(Event e);
-        Event getValue();
-
-        // accessing methods for data member id
-        void setData(short id);
-        short getId();
-
-        // Returning a new node object, same value, new id
-        Node clone();
-
     private:
-        short id;
-        Event value;
+        long uid;
+        string data_value;
+
+    public:
+        // uid counter to assign uid when constructing new object of Node class
+        static long uid_count;
+
+        Node();
+        // Overloaded constructor to be used for cloning with same data_value
+        Node(string cloned_value);
+        
+        void SetValue(string value);
+        string GetValue();
+
+        void SetUID(long uid_count);
+        long GetUID();
+
+        // Method for printing all attributes
+        void PrintNode();
+
+        Node clone();
 };

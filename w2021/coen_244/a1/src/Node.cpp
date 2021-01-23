@@ -1,27 +1,48 @@
-#include "Headers/Node.h"
+#include "../include/Node.h"
 
 using namespace std;
 
-// Constructors
+long Node::uid_count = 0;
 
 Node::Node() {
+    ++uid_count;
+    this->SetUID(uid_count);
 
+    string init_data_value;
+
+    cout << "Enter data value for node " << this->GetUID() << " : ";
+    cin >> init_data_value;
+    cin.ignore(256, '\n');
+    this->SetValue(init_data_value);
 }
 
-Node::Node(short id, Event value) {
-
+Node::Node(string cloned_value) {
+    ++uid_count;
+    this->SetUID(uid_count);
+    this->SetValue(cloned_value);
 }
 
-// Value ops
-
-void Node::setValue(Event e) {
-
+void Node::SetValue(string value) {
+    this->data_value = value;
 }
 
-Event Node::getValue() {
-
+string Node::GetValue() {
+    return this->data_value;
 }
 
-// ID ops
+void Node::SetUID(long uid_count) {
+    this->uid = uid_count;
+}
 
-// Clone ops
+long Node::GetUID() {
+    return this->uid;
+}
+
+void Node::PrintNode() {
+    cout << "UID: \t\t" << this->GetUID() << endl;
+    cout << "> Data value: \t" << this->GetValue() << endl;
+}
+
+Node Node::clone() {
+    return Node(this->data_value);
+}
