@@ -8,13 +8,13 @@ Node::Node() {
     ++uid_count; // increment static var to count uid
     this->SetUID(uid_count);
 
-    string init_data_value;
+    // string init_data_value;
 
-    // prompts user to input data_value
-    cout << "Enter data value for node " << this->GetUID() << " : ";
-    cin >> init_data_value;
-    cin.ignore(256, '\n');
-    this->SetValue(init_data_value);
+    // // prompts user to input data_value
+    // cout << "Enter data value for node " << this->GetUID() << " : ";
+    // cin >> init_data_value;
+    // cin.ignore(256, '\n');
+    // this->SetValue(init_data_value);
 }
 
 Node::Node(string cloned_value) {
@@ -40,10 +40,10 @@ long Node::GetUID() {
 }
 
 void Node::PrintNode() {
-    cout << "UID: \t\t" << this->GetUID() << endl;
-    cout << "> Data value: \t" << this->GetValue() << endl;
+    cout << "UID: \t" << this->GetUID() << endl;
+    cout << "Data value: \t" << this->GetValue() << endl;
 }
 
-Node Node::clone() {
+Node Node::Clone() {
     return Node(this->data_value);
 }

@@ -58,8 +58,8 @@ int main() {
 
     // Cloning a node
     cout << "Now cloning node_1 and node_2 into new nodes..." << endl;
-    Node cloned_node_1 = node_1.clone();
-    Node cloned_node_2 = node_2.clone();
+    Node cloned_node_1 = node_1.Clone();
+    Node cloned_node_2 = node_2.Clone();
 
     // Printing new nodes info
     cloned_node_1.PrintNode();

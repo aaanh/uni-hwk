@@ -30,5 +30,5 @@ class Node {
         void PrintNode();
 
         // Return a newly cloned node
-        Node clone();
+        Node Clone();
 };
