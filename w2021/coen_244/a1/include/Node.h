@@ -7,8 +7,8 @@ using namespace std;
 
 class Node {
     private:
-        long uid;
-        string data_value;
+        long uid; // unique id for a Node object
+        string data_value; // data value in string for a Node object
 
     public:
         // uid counter to assign uid when constructing new object of Node class

@@ -5,11 +5,12 @@ using namespace std;
 long Node::uid_count = 0;
 
 Node::Node() {
-    ++uid_count;
+    ++uid_count; // increment static var to count uid
     this->SetUID(uid_count);
 
     string init_data_value;
 
+    // prompts user to input data_value
     cout << "Enter data value for node " << this->GetUID() << " : ";
     cin >> init_data_value;
     cin.ignore(256, '\n');
