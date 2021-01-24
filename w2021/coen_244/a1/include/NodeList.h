@@ -13,6 +13,7 @@ class NodeList {
         void PrintAllNodes(); // print to console all ndoes in the node_array
         bool CheckNodeExist(size_t id = 0, string value = "N/A");
         Node GetNode(); // return a Node object that the user wants from the node_array
+        void SelfDebugger(); // debugging method for use in development
 
     private:
         static const size_t LIST_SIZE = 500; // maximum items in the node_array
