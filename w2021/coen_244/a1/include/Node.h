@@ -18,14 +18,17 @@ class Node {
         // Overloaded constructor to be used for cloning with same data_value
         Node(string cloned_value);
         
+        // Node value operations
         void SetValue(string value);
         string GetValue();
 
+        // Node unique identifier operations
         void SetUID(long uid_count);
         long GetUID();
 
         // Method for printing all attributes
         void PrintNode();
 
+        // Return a newly cloned node
         Node clone();
 };

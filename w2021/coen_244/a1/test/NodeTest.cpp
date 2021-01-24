@@ -55,6 +55,17 @@ int main() {
             cout << "\nTHROW ERROR: Out of bounds" << endl;
             break;
     }
+
+    // Cloning a node
+    cout << "Now cloning node_1 and node_2 into new nodes..." << endl;
+    Node cloned_node_1 = node_1.clone();
+    Node cloned_node_2 = node_2.clone();
+
+    // Printing new nodes info
+    cloned_node_1.PrintNode();
+    cloned_node_2.PrintNode();
+
     cout << "\n ----- End of NodeTest.cpp -----" << endl;
+    
     PressEnter();
 }
