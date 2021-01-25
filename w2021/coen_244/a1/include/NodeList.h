@@ -11,16 +11,15 @@ class NodeList {
         NodeList();
         
         void PrintAllNodes(); // print to console all ndoes in the node_array
-        bool CheckNodeExist(size_t id = 0, string value = "N/A");
-        Node GetNode(); // return a Node object that the user wants from the node_array
+        bool CheckNodeExist(size_t uid, string value); // check if node exists; returns 1 if exists, 0 otherwise
+        Node::Node GetNode(size_t uid); // return a Node object that the user wants from the node_array
         void SelfDebugger(); // debugging method for use in development
+        bool CheckNodeByUID(size_t param_uid);
+        bool CheckNodeByValue(string param_value);
 
     private:
         static const size_t LIST_SIZE = 500; // maximum items in the node_array
-        Node *items{ new Node[LIST_SIZE]{} }; // items will point to the dynamically allocated array
+        Node::Node *items{ new Node[LIST_SIZE]{} }; // items will point to the dynamically allocated array
         size_t num_items; // the number of items currently in the node_array
-
-        // init a dyn. alloc. array of length LIST_SIZE and type Node.
-        // Node *node_array{ new Node[LIST_SIZE]{} };
 
 };
