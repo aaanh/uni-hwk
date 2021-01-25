@@ -15,54 +15,58 @@ void NodeList::PrintAllNodes() {
 
 // This is input handler method for checking if node exists
 bool NodeList::CheckNodeByUID(size_t param_uid = 0) {
+    bool flag = false;
     if (param_uid == 0) {
         int uid;
         cout << "Enter UID to search: ";
         cin >> uid;
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
             if (items++->GetUID() == uid) {
-                return true;
+                flag = true;
                 break;
             }
-            else return false;
+            else flag = false;
         }
     } else {
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
             if (items++->GetUID() == param_uid) {
-                return true;
+                flag = true;
                 break;
             }
-            else return false;
+            else flag = false;
         }
     }
-    
+    return flag;
 }
 
 bool NodeList::CheckNodeByValue(string param_value = "N/A") {
+    bool flag = false;
     if (param_value == "N/A") {
         string value;
         cout << "Enter data value to search: ";
         cin >> value;
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
             if (items++->GetValue() == value) {
-                return true;
+                flag = true;
                 break;
             }
-            else return false;
+            else flag = false;
         }
     } else {
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
             if (items++->GetValue() == param_value) {
-                return true;
+                flag = true;
                 break;
             }
-            else return false;
+            else flag = false;
         }
     }
+    return flag;
 }
 
 // This method does the preprocessing for the node search
 bool NodeList::CheckNodeExist(size_t uid = 0, string value = "N/A") {
+    bool flag;
     // prompts user for input if no parameters are passed into the method
     if (uid == 0 && value == "N/A") {
         string user_query; // String variable to store user query
@@ -72,13 +76,12 @@ bool NodeList::CheckNodeExist(size_t uid = 0, string value = "N/A") {
         switch(choice) {
             case 1:
             {
-                return CheckNodeByUID();
+                flag = CheckNodeByUID();
                 break;
             }
-            
             case 2:
             {
-                return CheckNodeByValue();
+                flag = CheckNodeByValue();
                 break;
             }
             default:
@@ -87,8 +90,9 @@ bool NodeList::CheckNodeExist(size_t uid = 0, string value = "N/A") {
         }
     }
     else {
-        return CheckNodeByUID(uid) | CheckNodeByValue(value); // return true (1) if either UID or value gets a hit, false (0) otherwise
+        flag = CheckNodeByUID(uid) | CheckNodeByValue(value); // return true (1) if either UID or value gets a hit, false (0) otherwise
     }
+    return flag;
 }
 
 Node NodeList::GetNode(size_t uid) {
@@ -105,6 +109,6 @@ Node NodeList::GetNode(size_t uid) {
     return node_temp; 
 }
 
-void NodeList::SelfDebugger() {
-    
+void NodeList::ModifyNode(size_t uid, string new_value) {
+    items[uid-1].SetValue(new_value);
 }

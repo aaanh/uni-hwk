@@ -13,7 +13,7 @@ class Node {
     public:
         // uid counter to assign uid when constructing new object of Node class
         static long uid_count;
-
+        // Default constructor
         Node();
         // Overloaded constructor to be used for cloning with same data_value
         Node(string cloned_value);
