@@ -78,8 +78,10 @@ int main() {
     // 7. CheckNodeByUID(size_t) 7/10
     cout << "\nTesting CheckNodeByUID" << endl;
     long uid_compare = 1;
-    for (size_t i=1; i < node_list.GetListSize(); i+=10) { // automated looping to check for existence, iterated by step 3
-        cout << "Check existence for node with UID: " << i << endl;
+    for (size_t i=0; i < node_list.GetListSize(); i+=10) { // automated looping to check for existence, iterated by step 3
+        cout << "Check existence for node with UID: " << i+1 << endl;
+        // cout << "UID by Index: " << node_list.GetItems()[i].GetUID() << endl;
+        // cout << "UID Compare: " << uid_compare << endl;
         if (node_list.GetItems()[i].GetUID() == uid_compare) {
             cout << "Yes" << endl;
         }
@@ -117,7 +119,7 @@ int main() {
     cout << "\nTesting GetNode" << endl;
     for (size_t i = 0; i < 27; i += 2) {
         Node temp_node = node_list.GetNode(i);
-        // call PrintNode() member function of temp_node
+        // call PrintNode() member function of temp_node for demo
         temp_node.PrintNode();
     }
     cout << "\n--- All Tests Completed ---\n" << endl;
