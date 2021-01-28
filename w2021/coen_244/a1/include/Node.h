@@ -9,6 +9,8 @@ class Node {
     private:
         long uid; // unique id for a Node object
         string data_value; // data value in string for a Node object
+        // RESERVED KEYWORD: "N/A" in data_value to symbolize an empty Node
+
 
     public:
         // uid counter to assign uid when constructing new object of Node class

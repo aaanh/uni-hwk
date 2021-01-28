@@ -8,8 +8,23 @@ NodeList::NodeList() {
 
 void NodeList::PrintAllNodes() {
     // iterate through each Node object and call its PrintNode() function
+    cout << "All nodes:" << endl;
     for (size_t i = 0; i < this->LIST_SIZE; i++) {
-        items++->PrintNode();
+        this->items[i].PrintNode();
+    }
+}
+
+void NodeList::PrintEmptyNodes() {
+    cout << "Empty nodes (without data): " << endl;
+    for (size_t i = 0; i < this->LIST_SIZE; i++) {
+        if (this->items[i].GetValue() == "N/A") items[i].PrintNode();
+    }
+}
+
+void NodeList::PrintFilledNodes() {
+    cout << "Filled nodes (with data): " << endl;
+    for (size_t i = 0; i < this->LIST_SIZE; i++) {
+        if (this->items[i].GetValue() != "N/A") items[i].PrintNode();
     }
 }
 
@@ -21,7 +36,7 @@ bool NodeList::CheckNodeByUID(size_t param_uid = 0) {
         cout << "Enter UID to search: ";
         cin >> uid;
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
-            if (items++->GetUID() == uid) {
+            if (this->items[i].GetUID() == uid) {
                 flag = true;
                 break;
             }
@@ -29,7 +44,7 @@ bool NodeList::CheckNodeByUID(size_t param_uid = 0) {
         }
     } else {
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
-            if (items++->GetUID() == param_uid) {
+            if (this->items[i].GetUID() == param_uid) {
                 flag = true;
                 break;
             }
@@ -46,7 +61,7 @@ bool NodeList::CheckNodeByValue(string param_value = "N/A") {
         cout << "Enter data value to search: ";
         cin >> value;
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
-            if (items++->GetValue() == value) {
+            if (this->items[i].GetValue() == value) {
                 flag = true;
                 break;
             }
@@ -54,7 +69,7 @@ bool NodeList::CheckNodeByValue(string param_value = "N/A") {
         }
     } else {
         for (size_t i = 0; i < this->LIST_SIZE; i++) {
-            if (items++->GetValue() == param_value) {
+            if (this->items[i].GetValue() == param_value) {
                 flag = true;
                 break;
             }
@@ -65,7 +80,7 @@ bool NodeList::CheckNodeByValue(string param_value = "N/A") {
 }
 
 // This method does the preprocessing for the node search
-bool NodeList::CheckNodeExist(size_t uid = 0, string value = "N/A") {
+bool NodeList::CheckNodeExist(size_t uid, string value) {
     bool flag;
     // prompts user for input if no parameters are passed into the method
     if (uid == 0 && value == "N/A") {
@@ -110,5 +125,17 @@ Node NodeList::GetNode(size_t uid) {
 }
 
 void NodeList::ModifyNode(size_t uid, string new_value) {
-    items[uid-1].SetValue(new_value);
+    this->items[uid].SetValue(new_value);
+}
+
+void NodeList::DeleteNode(size_t uid) {
+    this->items[uid].SetValue("N/A");
+}
+
+Node *NodeList::GetItems() {
+    return this->items;
+}
+
+const size_t NodeList::GetListSize() {
+    return this->LIST_SIZE;
 }

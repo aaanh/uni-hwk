@@ -7,6 +7,8 @@ long Node::uid_count = 0;
 Node::Node() {
     ++uid_count; // increment static var to count uid
     this->SetUID(uid_count);
+    this->SetValue("N/A");
+
 
     // string init_data_value;
 
