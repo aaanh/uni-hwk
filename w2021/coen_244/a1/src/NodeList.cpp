@@ -111,17 +111,15 @@ bool NodeList::CheckNodeExist(size_t uid, string value) {
 }
 
 Node NodeList::GetNode(size_t uid) {
-    Node node_temp; // to save exhaustive search result from loop
     for (size_t i; i < LIST_SIZE; i++) {
         if (this->items[i].GetUID() == uid) {
-            node_temp = this->items[i];
+            return this->items[i];
             break;
         }
         else {
             cout << "Node with UID " << uid << "does not exist.\n";
         }
     }
-    return node_temp; 
 }
 
 void NodeList::ModifyNode(size_t uid, string new_value) {

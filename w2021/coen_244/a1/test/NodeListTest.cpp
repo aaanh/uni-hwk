@@ -117,11 +117,8 @@ int main() {
 
     // 10. GetNode(size_t) 10/10
     cout << "\nTesting GetNode" << endl;
-    for (size_t i = 0; i < 27; i += 2) {
-        Node temp_node = node_list.GetNode(i);
-        // call PrintNode() member function of temp_node for demo
-        temp_node.PrintNode();
-    }
+    Node temp_node = node_list.GetItems()[2]; // Node at index 2 of node_list
+    temp_node.PrintNode();
     cout << "\n--- All Tests Completed ---\n" << endl;
     PressEnter();
 }
