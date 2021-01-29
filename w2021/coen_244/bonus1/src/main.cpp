@@ -28,7 +28,7 @@ int main() {
             cout << setw(5);
             cout << deck[j];
             line_breaker++;
-            if (line_breaker == 100) {
+            if (line_breaker == 20) {
                 cout << endl;
                 line_breaker = 1;
             };
@@ -62,7 +62,8 @@ int main() {
             cout << setw(5);
             cout << deck[j];
             line_breaker++;
-            if (line_breaker == 100) {
+            if (line_breaker == 20) {
+                // decreased to 20 instead of 100 in specs because 100 would be impractical to display in consoles
                 cout << endl;
                 line_breaker = 1;
             };

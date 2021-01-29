@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "iomanip": "cpp"
     },
     "discord.enabled": true
 }
