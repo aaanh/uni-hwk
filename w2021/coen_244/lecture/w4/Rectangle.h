@@ -11,7 +11,8 @@ class Rectangle {
         virtual ~Rectangle();
 
         static int getInstantCount();
-        friend Rectangle clone(const Rectangle&);
+        // clone is not a member function, defined outside of the class, but since it's declared as friend, it's able to access those members in the private space
+        friend Rectangle clone(const Rectangle&); // grants another function or class access to private data members
 
     private:
         Point p1;
