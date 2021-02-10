@@ -12,17 +12,19 @@ class Reference {
 
         static int instance_count;
 
-        string GetTitle();
+        string GetTitle() const;
         void SetTitle(string);
 
-        string GetAuthor();
+        string GetAuthor() const;
         void SetAuthor(string);
 
-        int GetPubYear();
+        int GetPubYear() const;
         void SetPubYear(int);
 
-        int GetUID();
+        int GetUID() const;
         void SetUID(int);
+
+        void PrintInfo();
 
         ~Reference();
 

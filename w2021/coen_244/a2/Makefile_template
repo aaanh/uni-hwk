@@ -4,7 +4,7 @@
 #
 
 # define the Cpp compiler to use
-CXX = c++
+CXX = g++
 
 # define any compile-time flags
 CXXFLAGS	:= -std=c++17 -Wall -Wextra -g
@@ -15,10 +15,10 @@ CXXFLAGS	:= -std=c++17 -Wall -Wextra -g
 LFLAGS =
 
 # define output directory
-OUTPUT	:= bin
+OUTPUT	:= output
 
 # define source directory
-SRC		:= test
+SRC		:= src
 
 # define include directory
 INCLUDE	:= include
@@ -46,8 +46,13 @@ endif
 
 # define any directories containing header files other than /usr/include
 INCLUDES	:= $(patsubst %,-I%, $(INCLUDEDIRS:%/=%))
+
+# define the C libs
+LIBS		:= $(patsubst %,-L%, $(LIBDIRS:%/=%))
+
 # define the C source files
 SOURCES		:= $(wildcard $(patsubst %,%/*.cpp, $(SOURCEDIRS)))
+
 # define the C object files 
 OBJECTS		:= $(SOURCES:.cpp=.o)
 
