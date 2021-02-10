@@ -32,6 +32,6 @@ class Reference {
         int uid; // unique identifier
         string title;
         string author;
-        int pub_year; // year of publication
+        int pub_year; // year of publicatio n
 
 };
