@@ -16,8 +16,8 @@ Montreal, Quebec. Canada
 
 This repository utilizes Git Large File Storage to store all included PDF files. When cloning, additional charges might occur.
 
-# 主さまあああああああああああああああああああああああああああああああ
+# 主さまあああああああああああああああああーーー
 
-０ｘ０
+<center><h1> ０ｘ０ </h1></center>
 
-[Kokkoro](https://github.com/aaanh/uni-hwk/blob/master/kokkoro.PNG)
+![kokkoro](https://github.com/aaanh/uni-hwk/blob/master/kokkoro.PNG)
