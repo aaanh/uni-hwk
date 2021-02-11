@@ -8,14 +8,14 @@ class Book : public Reference
         Book(/* args */);
         ~Book();
 
-        string GetPublisherInfo() const;
-        void SetPublisherInfo(string);
+        string GetPublisher() const;
+        void SetPublisher(string);
 
         int GetNumberOfPages() const;
         void SetNumberOfPages(int);
 
     private:
-        string publisher_info;
+        string publisher;
         int number_of_pages;
 
 };

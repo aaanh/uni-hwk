@@ -14,12 +14,12 @@ Book::~Book()
 
 // publisher info
 
-string Book::GetPublisherInfo() const
+string Book::GetPublisher() const
 {
     
 }
 
-void Book::SetPublisherInfo(string) 
+void Book::SetPublisher(string publisher) 
 {
     
 }

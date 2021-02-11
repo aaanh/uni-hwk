@@ -10,3 +10,8 @@ Requirements:
 
 -   c++17 (MinGW on Windows_NT, GNU/C++ on Linux, Apple CLang on Darwin)
 -   make
+
+Usage:
+
+-   Execute `$ make` at path/to/project/root
+-   Executable binary is created in `bin/` folder

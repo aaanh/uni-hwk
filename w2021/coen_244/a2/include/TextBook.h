@@ -1,10 +1,17 @@
 #pragma once
 
-class TextBook
+#include "Book.h"
+
+class TextBook : public Book
 {
-    private:
-        /* data */
     public:
         TextBook(/* args */);
-        ~TextBook();
+        virtual ~TextBook();
+
+        string GetURL();
+        void SetURL(string);
+
+    private:
+        string url;
+
 };
