@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/**
+ * Object class Reference
+ * 
+ * 
+ */
 class Reference {
     public:
         Reference();

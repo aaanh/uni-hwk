@@ -15,3 +15,4 @@ Usage:
 
 -   Execute `$ make` at path/to/project/root
 -   Executable binary is created in `bin/` folder
+-   If permission denied, do `chmod +x ./main.o`

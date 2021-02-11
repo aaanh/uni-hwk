@@ -1,7 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <string>
 #include "Reference.h"
 
 using namespace std;
