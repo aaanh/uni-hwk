@@ -2,9 +2,12 @@
 
 class ReferenceManager
 {
-    private:
-        /* data */
     public:
         ReferenceManager(/* args */);
         ~ReferenceManager();
+
+    private:
+        const int CAPACITY{500};
+        
+
 };
