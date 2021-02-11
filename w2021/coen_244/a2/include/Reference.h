@@ -26,12 +26,14 @@ class Reference {
 
         void PrintInfo();
 
+        string GetErrorMsg(int) const; // these error msgs need to be inherited
+
         ~Reference();
 
     private:
         int uid; // unique identifier
         string title;
         string author;
-        int pub_year; // year of publicatio n
+        int pub_year; // year of publication
 
 };

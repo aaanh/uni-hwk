@@ -74,3 +74,16 @@ void Reference::PrintInfo() {
     cout << "Published year   : " << this->pub_year << endl;
     cout << endl;
 }
+
+// error msg repository
+
+string Reference::GetErrorMsg(int err) const
+{
+    switch(err) {
+        case 1: return "[RangeError 1] Illegal page range. Check start and end page."; break;
+        case 2: return "[RangeError 2] Illegal page range, or start and end page not defined."; break;
+        case 3: return "[TypeError 1] Check type of input parameters."; break; 
+        case 4: return "[TypeError 2] Check type of input parameters."; break; 
+        default: return 0; break;
+    }
+}
