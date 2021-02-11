@@ -10,14 +10,14 @@ class Article : public Reference {
     public:
         Article(); // default constructor
 
-        int GetStartPage();
-        int GetEndPage();
-        int GetNumberOfPages();
+        int GetStartPage() const;
+        int GetEndPage() const;
+        int GetNumberOfPages() const;
 
-        ~Article();
+        virtual ~Article();
 
     private:
-        static const int article_uid;
+        static int uid;
         
         string article_info;
         int start_page, end_page;
