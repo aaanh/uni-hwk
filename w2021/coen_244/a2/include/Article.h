@@ -49,9 +49,13 @@ class Article : public Reference {
          */
         int GetNumberOfPages() const;
 
+        /**
+         * Formatted print to console all available data members of article class object 
+         * 
+         */
         void PrintArticleInfo() const;
 
-        virtual ~Article();
+        virtual ~Article(); // Destructor
 
     private:
         static int uid;

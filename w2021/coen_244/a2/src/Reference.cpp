@@ -12,6 +12,11 @@ Reference::Reference(const Reference &ref)
     
 }
 
+Reference::Reference(string title="not set", string author="not set", int pub_year=-1) 
+{
+    
+}
+
 Reference::~Reference() 
 {
 
