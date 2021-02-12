@@ -49,6 +49,8 @@ class Article : public Reference {
          */
         int GetNumberOfPages() const;
 
+        void PrintArticleInfo() const;
+
         virtual ~Article();
 
     private:

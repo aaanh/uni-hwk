@@ -35,24 +35,30 @@ int Article::GetEndPage() const
 
 void Article::SetEndPage(int end_page) 
 {
-    if (GetEndPage() >= GetStartPage()) 
-    {
-        this->end_page;
-    }
-    else 
-    {
-        cout << GetErrorMsg(1) << endl;
-    } 
+    this->end_page = end_page;
 }
 
 // number of pages
 
 int Article::GetNumberOfPages() const
 {
-    if (GetStartPage() && GetEndPage())
-        return GetEndPage() - GetEndPage();
+    if (GetStartPage() <= GetEndPage())
+        return GetEndPage() - GetStartPage();
     else
     {
         cout << GetErrorMsg(2) << endl;
+        return 0;
     }
+}
+
+// print article information
+
+void Article::PrintArticleInfo() const
+{
+    cout << "Unique Identifier: " << GetUID() << endl;
+    cout << "Title            : " << GetTitle() << endl;
+    cout << "Author           : " << GetAuthor() << endl;
+    cout << "Number of pages  : " << GetNumberOfPages() << endl;
+    cout << "Published year   : " << GetPubYear() << endl;
+    cout << endl;
 }

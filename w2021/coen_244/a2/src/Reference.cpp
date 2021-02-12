@@ -48,7 +48,7 @@ int Reference::GetPubYear() const
     return this->pub_year;
 }
 
-void Reference::SetPubYear(int) 
+void Reference::SetPubYear(int pub_year) 
 {
     this->pub_year = pub_year;
 }
@@ -67,7 +67,7 @@ void Reference::SetUID(int)
 
 // print to console output
 
-void Reference::PrintInfo() {
+void Reference::PrintReferenceInfo() {
     cout << "Unique Identifier: " << this->uid << endl;
     cout << "Title            : " << this->title << endl;
     cout << "Author           : " << this->author << endl;

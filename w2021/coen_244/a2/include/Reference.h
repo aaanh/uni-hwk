@@ -6,9 +6,11 @@
 using namespace std;
 
 /**
- * Object class Reference
+ * Base class Reference
  * 
- * 
+ * Methods: <string> GetTitle(), <void> SetTitle(string), <string> GetAuthor(), <void> SetAuthor(string),
+ * <int> GetPubYear(), <void> SetPubYear(int), <int> GetUID(), <void> SetUID(),
+ * <void> PrintInfo(), <string> GetErrorMessage();
  */
 class Reference {
     public:
@@ -29,7 +31,7 @@ class Reference {
         int GetUID() const;
         void SetUID(int);
 
-        void PrintInfo();
+        void PrintReferenceInfo();
 
         string GetErrorMsg(int) const; // these error msgs need to be inherited
 
