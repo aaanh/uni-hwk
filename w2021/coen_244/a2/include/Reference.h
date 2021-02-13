@@ -11,6 +11,9 @@ using namespace std;
  * Methods: <string> GetTitle(), <void> SetTitle(string), <string> GetAuthor(), <void> SetAuthor(string),
  * <int> GetPubYear(), <void> SetPubYear(int), <int> GetUID(), <void> SetUID(),
  * <void> PrintInfo(), <string> GetErrorMessage();
+ * 
+ * Data members: 
+ * 
  */
 class Reference {
     public:

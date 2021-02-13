@@ -11,6 +11,7 @@ using namespace std;
 class Article : public Reference {
     public:
         Article(); // default constructor
+        ~Article(); // Destructor
 
         /**
          * Getter function for start page.
@@ -55,7 +56,7 @@ class Article : public Reference {
          */
         void PrintArticleInfo() const;
 
-        virtual ~Article(); // Destructor
+        
 
     private:
         static int uid;
