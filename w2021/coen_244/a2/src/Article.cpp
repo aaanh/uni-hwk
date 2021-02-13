@@ -42,12 +42,13 @@ void Article::SetEndPage(int end_page)
 
 int Article::GetNumberOfPages() const
 {
+    // If block checks if page range is legal (>= 0), if not, return error message.
     if (GetStartPage() <= GetEndPage())
         return GetEndPage() - GetStartPage();
     else
     {
-        cout << GetErrorMsg(2) << endl;
-        return 0;
+        cout << GetErrorMsg(1) << endl;
+        return -1;
     }
 }
 

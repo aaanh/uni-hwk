@@ -59,5 +59,6 @@ void TestReferenceManager() {
 
 int main()
 {
+    TestArticle();
     return 0;
 }
