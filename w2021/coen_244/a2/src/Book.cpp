@@ -7,6 +7,11 @@ Book::Book(/* args */)
     
 }
 
+Book::Book(string publisher="<Not set>", int number_of_pages=-1) 
+{
+    
+}
+
 Book::~Book() 
 {
     

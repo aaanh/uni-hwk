@@ -14,7 +14,6 @@ Article::~Article()
 
 // start page
 
-
 int Article::GetStartPage() const
 {
     return this->start_page;

@@ -2,7 +2,7 @@
 
 // constructor, destructor
 
-TextBook::TextBook(/* args */) 
+TextBook::TextBook() 
 {
     
 }
