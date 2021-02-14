@@ -11,7 +11,8 @@ using namespace std;
 class Article : public Reference {
     public:
         Article(); // default constructor
-        ~Article(); // Destructor
+        ~Article(); // destructor
+
 
         /**
          * Getter function for start page.

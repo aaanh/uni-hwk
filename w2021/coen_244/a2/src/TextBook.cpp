@@ -7,9 +7,18 @@ TextBook::TextBook()
     
 }
 
-TextBook::~TextBook() 
+TextBook::TextBook(string url="<Not set>") {
+    this->url = url;
+}
+
+TextBook::TextBook(const TextBook &ref) 
 {
     
+}
+
+TextBook::~TextBook() 
+{
+    cout << "TextBook object destroyed." << endl;
 }
 
 // url functions

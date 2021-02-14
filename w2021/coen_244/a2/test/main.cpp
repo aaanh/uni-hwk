@@ -18,38 +18,45 @@ using namespace std;
 void TestReference() {
     cout << "===== Reference test =====" << endl;
     Reference r;
-    r.SetAuthor("Anh");
+    r.SetAuthor("Anh R");
     r.SetPubYear(1920);
-    r.SetTitle("Please Kill Me Instead of the Mocking Birb");
+    r.SetTitle("Mahouka Koukou no Rettousei");
     r.PrintReferenceInfo();
+    r.~Reference();
 }
 
 void TestArticle() {
     cout << "===== Article test =====" << endl;
     Article a;
-    a.SetAuthor("Anh");
+    a.SetAuthor("Anh A");
     a.SetTitle("Saenai Hiroin no Sodatekata");
     a.SetEndPage(999);
     a.SetStartPage(444);
     a.SetPubYear(1900);
     a.PrintArticleInfo();
+    a.~Article();
 }
 
 void TestBook() {
     
     cout << "===== Book test =====" << endl;
     Book b;
-    b.SetAuthor("Anh");
+    b.SetAuthor("Anh B");
     b.SetNumberOfPages(420);
     b.SetPublisher("Newyen Publishing House");
     b.SetPubYear(1969);
-    b.SetTitle("Babe Get My Gun");
+    b.SetTitle("Monogatari");
     b.PrintBookInfo();
+    b.~Book();
 }
 
 void TestTextBook() {
     cout << "===== Textbook test =====" << endl;
     TextBook t;
+    t.SetAuthor("Anh T");
+    t.SetTitle("Adachi to Shimamura");
+    t.SetNumberOfPages(69420);
+    t.SetPubYear(420);
 }
 
 void TestReferenceManager() {
@@ -59,6 +66,10 @@ void TestReferenceManager() {
 
 int main()
 {
+    TestReference();
     TestArticle();
+    TestBook();
+    TestTextBook();
+
     return 0;
 }
