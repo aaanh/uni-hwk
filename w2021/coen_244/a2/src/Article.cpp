@@ -47,7 +47,7 @@ int Article::GetNumberOfPages() const
     else
     {
         cout << GetErrorMsg(1) << endl;
-        return -1;
+        return NULL;
     }
 }
 

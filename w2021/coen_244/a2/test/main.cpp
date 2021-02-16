@@ -70,6 +70,7 @@ int main()
     TestArticle();
     TestBook();
     TestTextBook();
+    TestReferenceManager();
 
     return 0;
 }

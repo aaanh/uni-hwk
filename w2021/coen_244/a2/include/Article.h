@@ -57,11 +57,8 @@ class Article : public Reference {
          */
         void PrintArticleInfo() const;
 
-        
-
     private:
         static int uid;
-        
         string article_info;
         int start_page, end_page;
 
