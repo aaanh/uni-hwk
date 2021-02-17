@@ -10,6 +10,7 @@
 			"cwd": "${workspaceFolder}",
 			"environment": [],
 			"externalConsole": false,
+			"program": "${workspaceRoot}/bin/main",
 			"linux": {
 				"MIMode": "gdb",
 				"miDebuggerPath": "gdb",
