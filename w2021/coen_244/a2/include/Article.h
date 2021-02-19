@@ -10,7 +10,19 @@ using namespace std;
  */
 class Article : public Reference {
     public:
-        Article(); // default constructor
+        Article(); // default constructor 
+        /**
+         * // regular constructor
+         * @param int uid
+         * @param string title
+         * @param string author
+         * @param int pub_year
+         * @param string article_info
+         * @param int start_page
+         * @param int end_page
+         * 
+         */
+        Article(int, string, string, int, string, int, int); 
         ~Article(); // destructor
 
 
@@ -58,7 +70,7 @@ class Article : public Reference {
         void PrintArticleInfo() const;
 
     private:
-        static int uid;
+        // static int uid;
         string article_info;
         int start_page, end_page;
 

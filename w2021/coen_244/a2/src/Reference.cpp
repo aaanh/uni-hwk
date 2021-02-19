@@ -4,7 +4,7 @@
 
 Reference::Reference() 
 {
-    
+
 }
 
 Reference::Reference(const Reference &ref) 
@@ -12,7 +12,7 @@ Reference::Reference(const Reference &ref)
     
 }
 
-Reference::Reference(string title="<Not set>", string author="<Not set>", int pub_year=-1) 
+Reference::Reference(int uid_base, string title_base="<Not set>", string author_base="<Not set>", int pub_year_base=-1) 
 {
     
 }

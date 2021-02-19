@@ -1,8 +1,12 @@
 #include "Article.h"
 
 // constructor, destructor
-
 Article::Article() 
+{
+
+}
+
+Article::Article(int uid, string title, string author, int pub_year, string article_info="<Not set>", int start_page=0, int end_page=0) : Reference(uid, title, author, pub_year) // implementation of init list
 {
     
 }

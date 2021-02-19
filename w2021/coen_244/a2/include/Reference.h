@@ -18,7 +18,7 @@ using namespace std;
 class Reference {
     public:
         Reference(); // Default object init with no params
-        Reference(string title, string author, int pub_year); // Object init with params
+        Reference(int, string, string, int); // Object init with params
         Reference(const Reference &ref); // Copy constructor
 
         static int instance_count;
