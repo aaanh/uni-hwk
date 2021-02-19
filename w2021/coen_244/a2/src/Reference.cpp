@@ -9,20 +9,22 @@ Reference::Reference()
 
 Reference::Reference(const Reference &ref) 
 {
-    
+    copy_ptr = new int;
+    *copy_ptr = *ref.copy_ptr; // this copies the value, i think...
+    cout << "Reference object copied completed." << endl;
 }
 
-Reference::Reference(int uid_base, 
-                    string title_base="<Not set>", 
-                    string author_base="<Not set>", 
-                    int pub_year_base=-1) 
+Reference::Reference(int uid, 
+                    string title="<Not set>", 
+                    string author="<Not set>", 
+                    int pub_year=-1) 
 {
     
 }
 
-Reference::~Reference() 
+Reference::~Reference(void) 
 {
-
+    delete copy_ptr;
 }
 
 // title

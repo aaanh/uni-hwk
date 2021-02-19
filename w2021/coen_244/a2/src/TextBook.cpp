@@ -7,8 +7,17 @@ TextBook::TextBook()
     
 }
 
-TextBook::TextBook(string url="<Not set>") {
-    this->url = url;
+TextBook::TextBook( int uid,
+                    string title,
+                    string author,
+                    int pub_year,
+                    string publisher,
+                    int number_of_pages,
+                    string url = "<Not set>"
+                    )
+                    : Book(uid, title, author, pub_year, publisher, number_of_pages)
+{
+    this->SetURL(url);
 }
 
 TextBook::TextBook(const TextBook &ref) 

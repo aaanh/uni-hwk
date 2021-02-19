@@ -2,8 +2,6 @@
 
 #include "Reference.h"
 
-using namespace std;
-
 /**
  * Article is a public derived class of Reference
  * Unique data members to <article> class: <string> article_info, <int> start_page, <int> end_page
@@ -24,6 +22,20 @@ class Article : public Reference {
          */
         Article(int, string, string, int, string, int, int); 
         ~Article(); // destructor
+
+        /**
+         * Get the string-type article_info data member from Article class object
+         * @return <string> article_info
+         * 
+         */
+        string GetArticleInfo() const;
+
+        /**
+         * Modify the article_info data member from Article class object
+         * @param string article_info
+         * 
+         */
+        void SetArticleInfo(string);
 
 
         /**

@@ -7,9 +7,17 @@ Book::Book(/* args */)
     
 }
 
-Book::Book(string publisher="<Not set>", int number_of_pages=-1) 
+Book::Book( int uid,
+            string title,
+            string author,
+            int pub_year,
+            string publisher="<Not set>", 
+            int number_of_pages=-1
+            )
+            : Reference(uid, title, author, pub_year)
 {
-    
+    this->SetPublisher(publisher);
+    this->SetNumberOfPages(number_of_pages);
 }
 
 Book::~Book() 

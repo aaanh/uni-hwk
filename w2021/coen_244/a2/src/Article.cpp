@@ -9,17 +9,31 @@ Article::Article()
 Article::Article(int uid, 
                 string title, 
                 string author, 
-                int pub_year, string article_info="<Not set>", 
-                int start_page=-1, 
-                int end_page=-1) 
+                int pub_year, 
+                string article_info="<Not set>", 
+                int start_page=-1, // default value to symbolize not set 
+                int end_page=-1 // default value to symbolize not set
+                ) 
                 : Reference(uid, title, author, pub_year) // implementation of init list
 {
-    
+    this->SetArticleInfo(article_info);
+    this->SetStartPage(start_page);
+    this->SetEndPage(end_page);
 }
 
 Article::~Article() 
 {
     
+}
+
+string Article::GetArticleInfo() const
+{
+    return this->article_info;
+}
+
+void Article::SetArticleInfo(string article_info) 
+{
+    this->article_info = article_info;
 }
 
 // start page
@@ -57,7 +71,7 @@ int Article::GetNumberOfPages() const
     else
     {
         cout << GetErrorMsg(1) << endl;
-        return NULL;
+        return -1;
     }
 }
 
@@ -68,6 +82,7 @@ void Article::PrintArticleInfo() const
     cout << "Unique Identifier: " << GetUID() << endl;
     cout << "Title            : " << GetTitle() << endl;
     cout << "Author           : " << GetAuthor() << endl;
+    cout << "Article Info     : " << GetArticleInfo() << endl;
     cout << "Number of pages  : " << GetNumberOfPages() << endl;
     cout << "Published year   : " << GetPubYear() << endl;
     cout << endl;

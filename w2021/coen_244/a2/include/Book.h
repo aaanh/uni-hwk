@@ -14,8 +14,20 @@
 class Book : public Reference
 {
     public:
-        Book(/* args */); // constructor for initialization 
-        Book( string publisher, int number_of_pages ); // constructor with default params
+        Book(); // constructor for initialization 
+        /**
+         * Constructor with initializer list
+         * 
+         * @param int uid
+         * @param string title
+         * @param string author
+         * @param int pub_year
+         * 
+         * @param string publisher
+         * @param int number_of_pages
+         * 
+         */
+        Book( int, string, string, int, string, int );
         ~Book(); // destructor 
 
         /**
