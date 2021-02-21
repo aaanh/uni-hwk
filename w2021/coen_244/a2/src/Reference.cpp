@@ -4,7 +4,7 @@
 
 Reference::Reference() 
 {
-
+    
 }
 
 Reference::Reference(const Reference &ref) 
@@ -19,7 +19,10 @@ Reference::Reference(int uid,
                     string author="<Not set>", 
                     int pub_year=-1) 
 {
-    
+    this->SetUID(uid);
+    this->SetTitle(title);
+    this->SetAuthor(author);
+    this->SetPubYear(pub_year);
 }
 
 Reference::~Reference(void) 

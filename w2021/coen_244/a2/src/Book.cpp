@@ -11,6 +11,7 @@ Book::Book( int uid,
             string title,
             string author,
             int pub_year,
+            
             string publisher="<Not set>", 
             int number_of_pages=-1
             )

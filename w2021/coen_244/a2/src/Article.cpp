@@ -9,7 +9,8 @@ Article::Article()
 Article::Article(int uid, 
                 string title, 
                 string author, 
-                int pub_year, 
+                int pub_year,
+
                 string article_info="<Not set>", 
                 int start_page=-1, // default value to symbolize not set 
                 int end_page=-1 // default value to symbolize not set
@@ -23,7 +24,7 @@ Article::Article(int uid,
 
 Article::~Article() 
 {
-    
+
 }
 
 string Article::GetArticleInfo() const

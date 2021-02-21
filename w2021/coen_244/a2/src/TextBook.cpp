@@ -11,8 +11,10 @@ TextBook::TextBook( int uid,
                     string title,
                     string author,
                     int pub_year,
+
                     string publisher,
                     int number_of_pages,
+                    
                     string url = "<Not set>"
                     )
                     : Book(uid, title, author, pub_year, publisher, number_of_pages)
