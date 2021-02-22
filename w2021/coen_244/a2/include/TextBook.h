@@ -21,7 +21,7 @@ class TextBook : public Book
          * 
          */
         TextBook(int, string, string, int, string, int, string);
-        TextBook(const TextBook &ref); // copy constructor
+        TextBook(const TextBook &t); // copy constructor
         ~TextBook(); // destructor
 
         /**
@@ -29,7 +29,7 @@ class TextBook : public Book
          * @return <string> url
          * 
          */
-        string GetURL();
+        string GetURL() const;
 
         /**
          * Modify the url data member from the TextBook class object

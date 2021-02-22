@@ -21,7 +21,7 @@ class Article : public Reference {
          * 
          */
         Article(int, string, string, int, string, int, int);
-        Article(Article &a); // copy constructor
+        Article(const Article &a); // copy constructor
         ~Article(); // destructor
 
         

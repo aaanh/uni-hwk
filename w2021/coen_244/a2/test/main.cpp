@@ -22,8 +22,12 @@ void TestReference() {
     r.SetPubYear(1920);
     r.SetTitle("Mahouka Koukou no Rettousei");
     r.PrintReferenceInfo();
+
+    // copy constructor
     Reference r_new = r;
     r_new.PrintReferenceInfo();
+
+    // yeeter
     r.~Reference();
 }
 
@@ -36,6 +40,12 @@ void TestArticle() {
     a.SetStartPage(444);
     a.SetPubYear(1900);
     a.PrintArticleInfo();
+
+    // copy constructor
+    Article a_new = a;
+    a_new.PrintArticleInfo();
+
+    // yeeter
     a.~Article();
 }
 

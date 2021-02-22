@@ -22,9 +22,19 @@ TextBook::TextBook( int uid,
     this->SetURL(url);
 }
 
-TextBook::TextBook(const TextBook &ref) 
+TextBook::TextBook(const TextBook &t) 
 {
-    
+    // Reference grandparent base class
+    SetTitle(t.GetTitle());
+    SetAuthor(t.GetAuthor());
+    SetPubYear(t.GetPubYear());
+
+    // Book parent base class
+    SetPublisher(t.GetPublisher());
+    SetNumberOfPages(t.GetNumberOfPages());
+
+    // TextBook derived class
+    SetURL(t.GetURL());
 }
 
 TextBook::~TextBook() 
@@ -34,7 +44,7 @@ TextBook::~TextBook()
 
 // url functions
 
-string TextBook::GetURL() 
+string TextBook::GetURL() const
 {
     return this->url;
 }

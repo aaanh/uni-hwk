@@ -22,7 +22,7 @@ Article::Article(int uid,
     this->SetEndPage(end_page);
 }
 
-Article::Article(Article &a) 
+Article::Article(const Article &a) 
 {
     // Reference base
     SetTitle(a.GetTitle());
