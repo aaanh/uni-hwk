@@ -22,7 +22,7 @@ class Article : public Reference {
          */
         Article(int, string, string, int, string, int, int);
         Article(const Article &a); // copy constructor
-        ~Article(); // destructor
+        virtual ~Article(); // destructor
 
         
 

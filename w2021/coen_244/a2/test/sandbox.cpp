@@ -23,6 +23,9 @@ int main() {
     cout << test[1]->GetAuthor() << endl;
     cout << test[2]->GetAuthor() << endl;
 
+    // Polymorphism
 
+    Reference *a = new Article(); // this apparently determines the accessibility of the class methods
+    a->PrintReferenceInfo(); // so there's no PrintArticleInfo() method in (pointer to) object "a".
 
 }

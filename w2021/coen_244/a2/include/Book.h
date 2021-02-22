@@ -29,7 +29,7 @@ class Book : public Reference
          */
         Book( int, string, string, int, string, int );
         Book(const Book &b);
-        ~Book(); // destructor 
+        virtual ~Book(); // destructor 
 
         /**
          * Get the publisher name from Book class object

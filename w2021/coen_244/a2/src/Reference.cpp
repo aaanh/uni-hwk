@@ -27,7 +27,7 @@ Reference::Reference(int uid,
 
 Reference::~Reference(void) 
 {
-    
+    cout << "Reference object destroyed." << endl;
 }
 
 // title

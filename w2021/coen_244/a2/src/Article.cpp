@@ -37,7 +37,7 @@ Article::Article(const Article &a)
 
 Article::~Article() 
 {
-
+    cout << "Article object destroyed." << endl;
 }
 
 string Article::GetArticleInfo() const

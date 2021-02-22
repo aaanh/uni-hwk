@@ -35,7 +35,7 @@ Book::Book(const Book &b)
 
 Book::~Book() 
 {
-    
+    cout << "Book object destroyed." << endl;
 }
 
 // publisher info

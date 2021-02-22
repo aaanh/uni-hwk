@@ -22,7 +22,7 @@ class TextBook : public Book
          */
         TextBook(int, string, string, int, string, int, string);
         TextBook(const TextBook &t); // copy constructor
-        ~TextBook(); // destructor
+        virtual ~TextBook(); // destructor
 
         /**
          * Get the uniform source locator (url) data member from the TextBook class object
