@@ -9,9 +9,9 @@ Reference::Reference()
 
 Reference::Reference(const Reference &ref) 
 {
-    copy_ptr = new int;
-    *copy_ptr = *ref.copy_ptr; // this copies the value, i think...
-    cout << "Reference object copied completed." << endl;
+    SetAuthor(ref.GetAuthor());
+    SetPubYear(ref.GetPubYear());
+    SetTitle(ref.GetTitle());
 }
 
 Reference::Reference(int uid, 

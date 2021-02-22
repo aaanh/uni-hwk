@@ -22,6 +22,8 @@ void TestReference() {
     r.SetPubYear(1920);
     r.SetTitle("Mahouka Koukou no Rettousei");
     r.PrintReferenceInfo();
+    Reference r_new = r;
+    r_new.PrintReferenceInfo();
     r.~Reference();
 }
 
@@ -73,4 +75,4 @@ int main()
     TestReferenceManager();
 
     return 0;
-}
+} 

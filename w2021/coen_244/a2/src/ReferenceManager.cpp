@@ -8,7 +8,7 @@ ReferenceManager::ReferenceManager(/* args */)
 
 ReferenceManager::ReferenceManager(int capacity) 
 {
-    
+
 }
 
 ReferenceManager::~ReferenceManager() 

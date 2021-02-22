@@ -4,7 +4,6 @@
 
 #include <array>
 
-
 class ReferenceManager
 {
     public:
