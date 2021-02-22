@@ -100,6 +100,8 @@ void TestTextBook() {
 void TestReferenceManager() {
     cout << "===== ReferenceManager test =====" << endl;
     ReferenceManager rman;
+    Reference *ref = new Reference();
+    rman.AddReference(ref);
 }
 
 int main()
@@ -111,4 +113,4 @@ int main()
     TestReferenceManager();
 
     return 0;
-} 
+}  

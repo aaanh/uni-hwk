@@ -13,4 +13,4 @@ Usage:
 
 -   Execute `$ make` at path/to/project/root
 -   Executable binary is created in `bin/` folder
--   If permission denied on Unix and Unix-like platforms, do `chmod +x ./main.o`
+-   If permission denied on Unix and Unix-like platforms, do `chmod +x ./main`

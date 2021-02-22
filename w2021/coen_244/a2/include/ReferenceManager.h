@@ -55,6 +55,6 @@ class ReferenceManager
 
     private:
         const int CAPACITY{500}; 
-        Reference *reference_list{ new Reference[CAPACITY]{} };
+        Reference **ref_arr = new Reference*[CAPACITY];
         int size = GetSize();
 };
