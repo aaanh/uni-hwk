@@ -21,6 +21,19 @@ Book::Book( int uid,
     this->SetNumberOfPages(number_of_pages);
 }
 
+Book::Book(Book &b) 
+{
+    // Reference base class
+    SetTitle(b.GetTitle());
+    Set(b.Get());
+    Set(b.Get());
+    Set(b.Get());
+
+    // Book derived class
+    Set(b.Get());
+    Set(b.Get());
+}
+
 Book::~Book() 
 {
     

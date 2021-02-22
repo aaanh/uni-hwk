@@ -28,6 +28,7 @@ class Book : public Reference
          * 
          */
         Book( int, string, string, int, string, int );
+        Book(Book &b);
         ~Book(); // destructor 
 
         /**

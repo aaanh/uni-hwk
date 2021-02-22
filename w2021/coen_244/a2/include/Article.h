@@ -20,8 +20,11 @@ class Article : public Reference {
          * @param int end_page
          * 
          */
-        Article(int, string, string, int, string, int, int); 
+        Article(int, string, string, int, string, int, int);
+        Article(Article &a); // copy constructor
         ~Article(); // destructor
+
+        
 
         /**
          * Get the string-type article_info data member from Article class object

@@ -27,7 +27,7 @@ Reference::Reference(int uid,
 
 Reference::~Reference(void) 
 {
-    delete copy_ptr;
+    
 }
 
 // title

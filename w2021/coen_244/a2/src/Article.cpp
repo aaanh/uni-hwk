@@ -22,6 +22,19 @@ Article::Article(int uid,
     this->SetEndPage(end_page);
 }
 
+Article::Article(Article &a) 
+{
+    // Reference base
+    SetTitle(a.GetTitle());
+    SetPubYear(a.GetPubYear());
+    SetAuthor(a.GetAuthor());
+    
+    // Article derived
+    SetStartPage(a.GetStartPage());
+    SetEndPage(a.GetEndPage());
+    SetArticleInfo(a.GetArticleInfo());
+}
+
 Article::~Article() 
 {
 
