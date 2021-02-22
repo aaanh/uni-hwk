@@ -18,6 +18,7 @@ using namespace std;
 void TestReference() {
     cout << "===== Reference test =====" << endl;
     Reference r;
+    r.SetUID(420);
     r.SetAuthor("Anh R");
     r.SetPubYear(1920);
     r.SetTitle("Mahouka Koukou no Rettousei");
@@ -27,48 +28,73 @@ void TestReference() {
     Reference r_new = r;
     r_new.PrintReferenceInfo();
 
-    // yeeter
+    // Reference yeeter
     r.~Reference();
 }
 
 void TestArticle() {
     cout << "===== Article test =====" << endl;
     Article a;
+    a.SetUID(421);
     a.SetAuthor("Anh A");
     a.SetTitle("Saenai Hiroin no Sodatekata");
-    a.SetEndPage(999);
-    a.SetStartPage(444);
     a.SetPubYear(1900);
+
+    a.SetArticleInfo("Megumi Katou x Tomoya Aki");
+    a.SetStartPage(444);
+    a.SetEndPage(999);
+
     a.PrintArticleInfo();
 
     // copy constructor
     Article a_new = a;
     a_new.PrintArticleInfo();
 
-    // yeeter
+    // Article yeeter
     a.~Article();
 }
 
 void TestBook() {
-    
     cout << "===== Book test =====" << endl;
     Book b;
+    b.SetUID(422);
     b.SetAuthor("Anh B");
+    b.SetTitle("Monogatari");
+    b.SetPubYear(1969);
+
     b.SetNumberOfPages(420);
     b.SetPublisher("Newyen Publishing House");
-    b.SetPubYear(1969);
-    b.SetTitle("Monogatari");
     b.PrintBookInfo();
+
+    // copy constructor
+    Book b_new = b;
+    b_new.PrintBookInfo();
+
+    // Book yeeter
     b.~Book();
 }
 
 void TestTextBook() {
     cout << "===== Textbook test =====" << endl;
     TextBook t;
+    t.SetUID(423);
     t.SetAuthor("Anh T");
     t.SetTitle("Adachi to Shimamura");
-    t.SetNumberOfPages(69420);
     t.SetPubYear(420);
+
+    t.SetNumberOfPages(69420);
+    t.SetPublisher("Anh Publishing House");
+    
+    t.SetURL("https://hoanganh.tech");
+    t.PrintTextBookInfo();
+
+    // copy constructor
+    TextBook t_new = t;
+    t_new.PrintTextBookInfo();
+
+    // TextBook yeeter
+    t.~TextBook();
+
 }
 
 void TestReferenceManager() {

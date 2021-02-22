@@ -49,7 +49,19 @@ string TextBook::GetURL() const
     return this->url;
 }
 
-void TextBook::SetURL(string url) 
+void TextBook::SetURL(string url)
 {
     this->url = url;
+}
+
+void TextBook::PrintTextBookInfo() 
+{
+    cout << "Unique Identifier: " << GetUID() << endl;
+    cout << "Title            : " << GetTitle() << endl;
+    cout << "Author           : " << GetAuthor() << endl;
+    cout << "Number of pages  : " << GetNumberOfPages() << endl;
+    cout << "Published year   : " << GetPubYear() << endl;
+    cout << "Published by     : " << GetPublisher() << endl;
+    cout << "URL              : " << GetURL() << endl;
+    cout << endl;
 }

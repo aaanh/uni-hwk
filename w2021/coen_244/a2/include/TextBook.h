@@ -38,6 +38,8 @@ class TextBook : public Book
          */
         void SetURL(string);
 
+        void PrintTextBookInfo();
+
     private:
         string url;
 

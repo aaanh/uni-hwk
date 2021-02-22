@@ -73,7 +73,7 @@ int Reference::GetUID() const
     return this->uid;
 }
 
-void Reference::SetUID(int) 
+void Reference::SetUID(int uid) 
 {
     this->uid = uid;
 }

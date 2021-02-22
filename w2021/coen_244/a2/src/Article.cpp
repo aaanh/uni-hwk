@@ -97,6 +97,8 @@ void Article::PrintArticleInfo() const
     cout << "Title            : " << GetTitle() << endl;
     cout << "Author           : " << GetAuthor() << endl;
     cout << "Article Info     : " << GetArticleInfo() << endl;
+    cout << "Start page       : " << GetStartPage() << endl;
+    cout << "End page         : " << GetEndPage() << endl;
     cout << "Number of pages  : " << GetNumberOfPages() << endl;
     cout << "Published year   : " << GetPubYear() << endl;
     cout << endl;
