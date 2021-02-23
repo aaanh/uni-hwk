@@ -41,6 +41,7 @@ bool ReferenceManager::AddReference(Reference *ref)
     if (size < capacity) {
         ref_list[size] = ref;
         size++;
+        cout << "size after adding: " << size << endl;
         return 1;
     } else {
         cout << "Reference Manager is full." << endl;
@@ -60,17 +61,20 @@ int ReferenceManager::GetReferenceID(int index)
  */
 bool ReferenceManager::DeleteReference(int index) 
 {
+    // cout << "size before delete: " << size << endl;
     bool op_flag = false;
-    if (size = 0) {
+    if (size == 0) {
         cout << "Nothing to delete." << endl;
         op_flag = false;
     } else {
-        for (size_t i = index; i < GetListSize(); i++) {
+        for (size_t i = index; i < size; i++) 
+        {
             ref_list[i] = ref_list[i+1];
         }
-        size--;
+        // cout << "size after delete: " << size << endl;
         op_flag = true;
     }
+    size--;
     return op_flag;
 }
 
