@@ -119,6 +119,8 @@ void TestReferenceManager() {
     rman_new->PrintReferenceList();
     rman_new->PrintRMProperties();
 
+    delete rman;
+
 }
 
 int main()
