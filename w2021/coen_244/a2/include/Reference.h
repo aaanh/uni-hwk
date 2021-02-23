@@ -95,13 +95,11 @@ class Reference {
 
         string GetErrorMsg(int) const; // these error msgs need to be inherited
 
-        ~Reference();
+        virtual ~Reference();
 
     private:
         int uid; // unique identifier
         string title;
         string author;
         int pub_year; // year of publication
-        int *copy_ptr;
-
 };

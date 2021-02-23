@@ -3,6 +3,7 @@
 #include "Article.h"
 #include "TextBook.h"
 #include "Book.h"
+#include "ReferenceManager.h"
 
 using namespace std;
 
@@ -27,5 +28,9 @@ int main() {
 
     Reference *a = new Article(); // this apparently determines the accessibility of the class methods
     a->PrintReferenceInfo(); // so there's no PrintArticleInfo() method in (pointer to) object "a".
+
+    // RefMan
+    ReferenceManager ref_man(4);
+    Reference *list = ref_man.GetReferenceList();
 
 }

@@ -99,9 +99,18 @@ void TestTextBook() {
 
 void TestReferenceManager() {
     cout << "===== ReferenceManager test =====" << endl;
-    ReferenceManager rman;
-    Reference *ref = new Reference();
-    rman.AddReference(ref);
+    int uid = 69;
+    ReferenceManager rman(4);
+    Reference *ref1 = new Reference(uid++, "Princess Connect: ReDive A", "KMR", 2018);
+    rman.AddReference(ref1);
+    Reference *ref2 = new Reference(uid++, "Princess Connect: ReDive A", "KMR", 2018);
+    rman.AddReference(ref2);
+    Reference *ref3 = new Reference(uid++, "Princess Connect: ReDive A", "KMR", 2018);
+    rman.AddReference(ref3);
+
+    rman.PrintReferenceList();
+    rman.PrintRMProperties();
+
 }
 
 int main()

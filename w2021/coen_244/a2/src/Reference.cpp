@@ -4,11 +4,15 @@
 
 Reference::Reference() 
 {
-    
+    SetUID(-1);
+    SetTitle("Not set");
+    SetAuthor("Not set");
+    SetPubYear(-1);
 }
 
 Reference::Reference(const Reference &ref) 
 {
+    SetUID(ref.GetUID());
     SetAuthor(ref.GetAuthor());
     SetPubYear(ref.GetPubYear());
     SetTitle(ref.GetTitle());
@@ -25,9 +29,9 @@ Reference::Reference(int uid,
     this->SetPubYear(pub_year);
 }
 
-Reference::~Reference(void) 
+Reference::~Reference() 
 {
-    cout << "Reference object destroyed." << endl;
+
 }
 
 // title
@@ -81,10 +85,10 @@ void Reference::SetUID(int uid)
 // print to console output
 
 void Reference::PrintReferenceInfo() {
-    cout << "Unique Identifier: " << this->uid << endl;
-    cout << "Title            : " << this->title << endl;
-    cout << "Author           : " << this->author << endl;
-    cout << "Published year   : " << this->pub_year << endl;
+    cout << "Unique Identifier: " << GetUID() << endl;
+    cout << "Title            : " << GetTitle() << endl;
+    cout << "Author           : " << GetAuthor() << endl;
+    cout << "Published year   : " << GetPubYear() << endl;
     cout << endl;
 }
 
