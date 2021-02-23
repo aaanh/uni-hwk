@@ -31,6 +31,5 @@ int main() {
 
     // RefMan
     ReferenceManager ref_man(4);
-    Reference *list = ref_man.GetReferenceList();
 
 }
