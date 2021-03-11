@@ -1,8 +1,23 @@
-#pragma once
+#ifndef EDGE_H
+#define EDGE_H
 
-#include "Graph.h"
+class Edge {
+    public:
+        Edge();
+        virtual ~Edge();
 
-class Edge
-{
-    Edge();
+        bool    SetWeight();
+
+        bool    SetStartVertex();
+        Vertex  GetStartVertex();
+        
+        bool    SetEndVertex();
+        Vertex  GetStartVertex();
+
+    private:
+        int     weight;
+        Vertex  start_vertex;
+        Vertex  end_vertex;
 };
+
+#endif

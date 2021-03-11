@@ -1,10 +1,18 @@
-#pragma once
+#ifndef VERTEX_H
+#define VERTEX_H
 
-#include "Graph.h"
+class Vertex {
+    public:
+        Vertex();
+        virtual ~Vertex();
 
-using namespace std;
+        bool    SetVertexID(int);
+        bool    SetVertexValue(string);
+        string  GetVertexValue();
 
-class Vertex
-{
-    Vertex();
+    private:
+        int     id;
+        string  value;
 };
+
+#endif
