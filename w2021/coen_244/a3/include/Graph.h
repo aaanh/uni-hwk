@@ -3,6 +3,7 @@
 
 // Standard libs
 #include <string>
+#include <vector>
 
 // Project libs
 #include "Edge.h"
@@ -31,10 +32,17 @@ class Graph {
         virtual bool    Clean()                         = 0; // Wipe Graph class obj of Vertex and Edge
 
     private:
-        
+        vector<Vertex>  list_of_vertex;
+        vector<Edge>    list_of_edge;
+        unsigned long int   num_of_vertex   = 0;
+        unsigned long int   num_of_edge     = 0;
+
+
 };
 
 class Directed_Graph : virtual Graph {
+    Directed_Graph();
+    virtual ~Directed_Graph();
 
 };
 

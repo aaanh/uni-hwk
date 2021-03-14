@@ -2,7 +2,7 @@
 
 Graph::Graph() 
 {
-
+    
 }
 
 Graph::~Graph()
@@ -10,27 +10,28 @@ Graph::~Graph()
 
 }
 
-bool Graph::AddVertex() 
+bool Graph::AddVertex(Vertex& v) 
 {
-
+    this->list_of_vertex.push_back(v);
+    
 }
 
-bool Graph::AddVertices()
+bool Graph::AddVertices(Vertex* array)
 {
 
 }
 
 bool Graph::RemoveVertex()
 {
-
+    this->list_of_vertex.pop_back();
 }
 
-bool Graph::SearchVertex()
+bool Graph::SearchVertex(const Vertex& v)
 {
 
 }
 
-bool Graph::SearchEdge()
+bool Graph::SearchEdge(const Edge& e)
 {
 
 }
