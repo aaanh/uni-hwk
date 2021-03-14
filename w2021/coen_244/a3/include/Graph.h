@@ -32,12 +32,14 @@ class Graph {
         virtual bool    Clean()                         = 0; // Wipe Graph class obj of Vertex and Edge
 
     private:
-        vector<Vertex>  list_of_vertex;
-        vector<Edge>    list_of_edge;
-        unsigned long int   num_of_vertex   = 0;
-        unsigned long int   num_of_edge     = 0;
+        const int           MAX_NUM_VERTICES    = 500;
+        const int           MAX_NUM_EDGES       = MAX_NUM_VERTICES*(MAX_NUM_VERTICES-1)/2; // general graph property
+        
+        unsigned long int   num_of_vertex       = 0; // <= MAX_NUM_VERTICES
+        unsigned long int   num_of_edge         = 0; // <= MAX_NUM_EDGES
 
-
+        vector<Vertex>      list_of_vertex;
+        vector<Edge>        list_of_edge;
 };
 
 class Directed_Graph : virtual Graph {

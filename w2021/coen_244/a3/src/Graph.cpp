@@ -12,13 +12,17 @@ Graph::~Graph()
 
 bool Graph::AddVertex(Vertex& v) 
 {
-    this->list_of_vertex.push_back(v);
-    
+    if (this->list_of_vertex[num_of_vertex].GetVertexID() != NULL)
+    {
+        this->list_of_vertex.push_back(v);
+        return 1;
+    }
+    else return 0;
 }
 
-bool Graph::AddVertices(Vertex* array)
+bool Graph::AddVertices(Vertex* vertices)
 {
-
+    return 0;
 }
 
 bool Graph::RemoveVertex()
