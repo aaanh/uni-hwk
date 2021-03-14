@@ -12,7 +12,7 @@ void TestGraph()
 }
 
 
-void TestVertext()
+void TestVertex()
 {
 
 }
@@ -26,5 +26,14 @@ void TestEdge()
 
 int main()
 {
-	
+    cout << "Testing Graph class" << endl;
+	TestGraph();
+
+    cout << "Testing Vertex class" << endl;
+    TestVertex();
+
+    cout << "Testing Edge class" << endl;
+    TestEdge();
+
+    cout << "\nEnd of driver." << endl;
 }

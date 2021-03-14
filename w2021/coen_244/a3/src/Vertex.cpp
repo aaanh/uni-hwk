@@ -10,17 +10,17 @@ Vertex::~Vertex()
 
 }
 
-bool SetVertexID(int)
+bool Vertex::SetVertexID(int id)
 {
-
+    this->id = id;
 }
 
-bool SetVertexValue(string)
+bool Vertex::SetVertexValue(string value)
 {
-
+    this->value = value;
 }
 
-string GetVertexValue()
+string Vertex::GetVertexValue()
 {
-
+    return this->value;
 }

@@ -13,6 +13,7 @@ class Vertex {
 
         bool    SetVertexID(int);
         bool    SetVertexValue(string);
+        int     GetVertexID();
         string  GetVertexValue();
 
     private:

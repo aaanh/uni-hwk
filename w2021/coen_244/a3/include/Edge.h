@@ -8,13 +8,13 @@ class Edge {
         Edge();
         virtual ~Edge();
 
-        bool    SetWeight();
+        bool    SetWeight(int);
 
-        bool    SetStartVertex();
+        bool    SetStartVertex(const Vertex& v_start);
         Vertex  GetStartVertex();
         
-        bool    SetEndVertex();
-        Vertex  GetStartVertex();
+        bool    SetEndVertex(const Vertex& v_end);
+        Vertex  GetEndVertex();
 
     private:
         int     weight;
