@@ -30,9 +30,14 @@ bool Graph::RemoveVertex()
     this->list_of_vertex.pop_back();
 }
 
-bool Graph::SearchVertex(const Vertex& v)
+bool Graph::SearchVertex(const Vertex& that_v)
 {
-
+    for (auto v : list_of_vertex)
+    {
+        if (v.GetVertexID() == that_v.GetVertexID())
+            return 1;
+        else return 0;
+    }
 }
 
 bool Graph::SearchEdge(const Edge& e)
