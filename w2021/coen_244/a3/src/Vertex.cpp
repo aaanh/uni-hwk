@@ -20,7 +20,7 @@ bool Vertex::SetVertexValue(string value)
     this->value = value;
 }
 
-string Vertex::GetVertexValue()
+string Vertex::GetVertexValue() const
 {
     return this->value;
 }

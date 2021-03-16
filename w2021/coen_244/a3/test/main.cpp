@@ -6,34 +6,16 @@
 using namespace std;
 
 
-void TestGraph() 
+void HollisticTest_1() 
 {
-
+    // initialize graph object
+    Graph g;
 }
-
-
-void TestVertex()
-{
-
-}
-
-
-void TestEdge()
-{
-
-}
-
 
 int main()
 {
     cout << "Testing Graph class" << endl;
-	TestGraph();
-
-    cout << "Testing Vertex class" << endl;
-    TestVertex();
-
-    cout << "Testing Edge class" << endl;
-    TestEdge();
+	HollisticTest_1();
 
     cout << "\nEnd of driver." << endl;
 }

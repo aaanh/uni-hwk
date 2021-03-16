@@ -11,10 +11,10 @@ class Edge {
         bool    SetWeight(int);
 
         bool    SetStartVertex(const Vertex& v_start);
-        Vertex  GetStartVertex();
+        Vertex  GetStartVertex() const;
         
         bool    SetEndVertex(const Vertex& v_end);
-        Vertex  GetEndVertex();
+        Vertex  GetEndVertex() const;
 
     private:
         int     weight;

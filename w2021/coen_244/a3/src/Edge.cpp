@@ -21,7 +21,7 @@ bool Edge::SetStartVertex(const Vertex& v_start)
     this->start_vertex = v_start;
 }
 
-Vertex Edge::GetStartVertex() 
+Vertex Edge::GetStartVertex() const
 {
     return this->start_vertex;
 }
@@ -31,7 +31,7 @@ bool Edge::SetEndVertex(const Vertex& v_end)
     this->end_vertex = v_end;
 }
 
-Vertex Edge::GetEndVertex() 
+Vertex Edge::GetEndVertex() const
 {
     return this->end_vertex;
 }
