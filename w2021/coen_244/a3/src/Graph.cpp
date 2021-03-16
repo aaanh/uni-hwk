@@ -40,9 +40,12 @@ bool Graph::SearchVertex(const Vertex& that_v)
     }
 }
 
-bool Graph::SearchEdge(const Edge& e)
+bool Graph::SearchEdge(const Edge& that_e)
 {
-
+    for (auto e : list_of_edge)
+    {
+    
+    }
 }
 
 string Graph::toString() const

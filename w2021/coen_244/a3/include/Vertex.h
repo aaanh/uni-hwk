@@ -13,8 +13,8 @@ class Vertex {
 
         bool    SetVertexID(int);
         bool    SetVertexValue(string);
-        int     GetVertexID();
-        string  GetVertexValue();
+        int     GetVertexID() const;
+        string  GetVertexValue() const;
 
     private:
         int     id;
