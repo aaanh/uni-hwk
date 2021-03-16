@@ -1,20 +1,21 @@
 #include <iostream>
-#include "Vertex.h"
-#include "Graph.h"
-#include "Edge.h"
+
+#include "vertex.h"
+#include "graph.h"
+#include "edge.h"
+#include "digraph.h"
 
 using namespace std;
-
 
 void HollisticTest_1() 
 {
     // initialize graph object
-    Graph g;
+    Graph *dg = new Directed_Graph();
 }
 
 int main()
 {
-    cout << "Testing Graph class" << endl;
+    cout << "Hollistic Test 1" << endl;
 	HollisticTest_1();
 
     cout << "\nEnd of driver." << endl;

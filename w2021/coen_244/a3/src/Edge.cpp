@@ -1,5 +1,4 @@
-#include "Edge.h"
-
+#include "edge.h"
 
 Edge::Edge() 
 {

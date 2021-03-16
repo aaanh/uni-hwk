@@ -1,7 +1,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include "Vertex.h"
+#include "vertex.h"
 
 class Edge {
     public:
