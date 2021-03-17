@@ -11,6 +11,9 @@ void HollisticTest_1()
 {
     // initialize graph object
     Graph *dg = new Directed_Graph();
+    cout << "new directed graph object created." << endl;
+    dg->AddVertex();
+    
 }
 
 int main()
