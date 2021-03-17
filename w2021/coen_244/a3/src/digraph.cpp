@@ -14,7 +14,7 @@ Directed_Graph::~Directed_Graph()
 
 bool Directed_Graph::AddVertex(Vertex& that_v) 
 {
-    if (this->list_of_vertex[num_of_vertex].GetVertexID() != 0)
+    if (list_of_vertex[num_of_vertex].GetVertexID() <= MAX_NUM_VERTICES)
     {
         this->list_of_vertex.push_back(that_v);
         return 1;

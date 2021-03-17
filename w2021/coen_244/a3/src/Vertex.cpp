@@ -5,6 +5,12 @@ Vertex::Vertex()
 
 }
 
+Vertex::Vertex(int id, string value) 
+{
+    SetVertexID(id);
+    SetVertexValue(value);
+}
+
 Vertex::~Vertex()
 {
 
@@ -17,7 +23,7 @@ bool Vertex::SetVertexID(int id)
 
 int Vertex::GetVertexID() const
 {
-    return this->id;
+    return id;
 }
 
 bool Vertex::SetVertexValue(string value)
@@ -28,4 +34,11 @@ bool Vertex::SetVertexValue(string value)
 string Vertex::GetVertexValue() const
 {
     return this->value;
+}
+
+void Vertex::PrintVertexInfo() const
+{
+    cout << "Vertex info: " << endl;
+    cout << "> ID   : " << GetVertexID() << endl;
+    cout << "> Value: " << GetVertexValue() << endl;
 }
