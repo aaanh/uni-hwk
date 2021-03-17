@@ -7,8 +7,24 @@
 
 using namespace std;
 
-void HollisticTest_1() 
+// test functions declarations
+
+void HollisticTest_1();
+
+
+// main driver
+
+int main()
 {
+    cout << "Hollistic Test 1" << endl;
+	HollisticTest_1();
+
+    cout << "\nEnd of driver." << endl;
+}
+
+// test functions implementations
+
+void HollisticTest_1() {
     // initialize graph object
     Directed_Graph dg;
     cout << "\nnew directed graph object created." << endl;
@@ -37,14 +53,8 @@ void HollisticTest_1()
 
     // add one vertex
     dg.AddVertex(*v1);
+    cout << "v1 added" << endl;
+    dg.GetVertexList()[0].PrintVertexInfo();
     // add multiple vertices
     
-}
-
-int main()
-{
-    cout << "Hollistic Test 1" << endl;
-	HollisticTest_1();
-
-    cout << "\nEnd of driver." << endl;
 }

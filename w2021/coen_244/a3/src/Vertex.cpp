@@ -23,7 +23,7 @@ bool Vertex::SetVertexID(int id)
 
 int Vertex::GetVertexID() const
 {
-    return id;
+    return this->id;
 }
 
 bool Vertex::SetVertexValue(string value)

@@ -8,20 +8,23 @@ class Directed_Graph : public Graph {
         Directed_Graph();
         virtual ~Directed_Graph();
         
-        bool    AddVertex(Vertex&)         override; // Add a Vertex class obj
-        bool    AddVertices(vector<Vertex>)override; // Add multiple Vertex class obj using array of type Vertex
-        bool    RemoveVertex()             override; // Remove a Vertex class obj and remove the connecting Edge obj
+        bool    AddVertex(Vertex&)          ; // Add a Vertex class obj
+        bool    AddVertices(vector<Vertex>) ; // Add multiple Vertex class obj using array of type Vertex
+        bool    RemoveVertex()              ; // Remove a Vertex class obj and remove the connecting Edge obj
         
-        bool    AddEdge(Edge&)             override; // Add an Edge class obj
-        bool    RemoveEdge(Edge&)          override; // Remove an Edge class obj
+        bool    AddEdge(Edge&)              ; // Add an Edge class obj
+        bool    RemoveEdge(Edge&)           ; // Remove an Edge class obj
         
-        bool    SearchVertex(const Vertex&)override; // Search for a Vertex class obj
+        bool    SearchVertex(const Vertex&) ; // Search for a Vertex class obj
         
-        bool    SearchEdge(const Edge&)    override; // Search for an Edge class obj
+        bool    SearchEdge(const Edge&)     ; // Search for an Edge class obj
+
+        vector<Vertex> GetVertexList() const;
+        vector<Edge>   GetEdgeList() const  ;
         
-        string  toString () const override         ;
+        string  toString () const           ;
         
-        bool    Clean()                    override; // Wipe Graph class obj of Vertex and Edge
+        bool    Clean()                     ; // Wipe Graph class obj of Vertex and Edge
 
     private:
         const int           MAX_NUM_VERTICES    = 500;

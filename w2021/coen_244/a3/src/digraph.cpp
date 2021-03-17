@@ -14,15 +14,7 @@ Directed_Graph::~Directed_Graph()
 
 bool Directed_Graph::AddVertex(Vertex& that_v) 
 {
-    if (list_of_vertex[num_of_vertex].GetVertexID() <= MAX_NUM_VERTICES)
-    {
-        this->list_of_vertex.push_back(that_v);
-        return 1;
-    }
-    else
-    {
-        return 0;
-    } 
+    list_of_vertex.push_back(that_v);
 }
 
 bool Directed_Graph::AddVertices(vector<Vertex> vertices)
@@ -74,6 +66,16 @@ bool Directed_Graph::SearchEdge(const Edge& that_e)
             return 0;
         } 
     }
+}
+
+vector<Vertex> Directed_Graph::GetVertexList() const
+{
+    return this->list_of_vertex;
+}
+
+vector<Edge> Directed_Graph::GetEdgeList() const
+{
+    return this->list_of_edge;
 }
 
 string Directed_Graph::toString() const
