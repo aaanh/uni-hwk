@@ -11,6 +11,12 @@ Vertex::Vertex(int id, string value)
     SetVertexValue(value);
 }
 
+Vertex::Vertex(const Vertex &v)  
+{
+    SetVertexID(v.GetVertexID());
+    SetVertexValue(v.GetVertexValue());
+}
+
 Vertex::~Vertex()
 {
 

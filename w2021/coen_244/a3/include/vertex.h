@@ -11,6 +11,7 @@ class Vertex {
     public:
         Vertex(); // default constructor
         Vertex(int id, string value); // regular constructor, id and value
+        Vertex(const Vertex&); // copy constructor
         virtual ~Vertex();
 
         bool    SetVertexID(int);

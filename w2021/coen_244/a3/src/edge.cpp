@@ -5,6 +5,20 @@ Edge::Edge()
     
 }
 
+Edge::Edge(int weight, Vertex& v_start, Vertex& v_end) 
+{
+    SetWeight(weight);
+    SetStartVertex(v_start);
+    SetEndVertex(v_end);
+}
+
+Edge::Edge(const Edge&e) 
+{
+    SetWeight(e.GetWeight());
+    SetStartVertex(e.GetStartVertex());
+    SetEndVertex(e.GetEndVertex());
+}
+
 Edge::~Edge() 
 {
     
@@ -13,6 +27,11 @@ Edge::~Edge()
 bool Edge::SetWeight(int weight) 
 {
     this->weight = weight;
+}
+
+int Edge::GetWeight() const 
+{
+    return this->weight;
 }
 
 bool Edge::SetStartVertex(const Vertex& v_start) 

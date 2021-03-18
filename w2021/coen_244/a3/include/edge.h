@@ -5,16 +5,19 @@
 
 class Edge {
     public:
-        Edge();
-        virtual ~Edge();
+        Edge(); // default constructor
+        Edge(int, Vertex&, Vertex&); // regular constructor
+        Edge(const Edge&); // copy constructor
+        virtual ~Edge(); // destructor
 
-        bool    SetWeight(int);
+        bool    SetWeight(int); // set weight
+        int     GetWeight() const; // get weight
 
-        bool    SetStartVertex(const Vertex& v_start);
-        Vertex  GetStartVertex() const;
+        bool    SetStartVertex(const Vertex& v_start); // set start vertex by passing in vertex obj
+        Vertex  GetStartVertex() const; // get start vertex
         
-        bool    SetEndVertex(const Vertex& v_end);
-        Vertex  GetEndVertex() const;
+        bool    SetEndVertex(const Vertex& v_end); // set end vertex by passing in vertex obj
+        Vertex  GetEndVertex() const; // get end vertex
 
     private:
         int     weight;
