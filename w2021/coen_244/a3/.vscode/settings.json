@@ -4,6 +4,7 @@
         "xstring": "cpp",
         "new": "cpp",
         "deque": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "ostream": "cpp"
     }
 }

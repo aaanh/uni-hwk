@@ -17,7 +17,7 @@ class Graph {
         virtual ~Graph() {};
 
         virtual bool    AddVertex(Vertex&)              = 0; // Add a Vertex class obj
-        virtual bool    AddVertices(vector<Vertex>)     = 0; // Add multiple Vertex class obj using array of type Vertex
+        virtual bool    AddVertices(vector<Vertex*>)     = 0; // Add multiple Vertex class obj using array of type Vertex
         virtual bool    RemoveVertex()                  = 0; // Remove a Vertex class obj and remove the connecting Edge obj
         
         virtual bool    AddEdge(Edge&)                  = 0; // Add an Edge class obj

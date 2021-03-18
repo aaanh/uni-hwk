@@ -52,9 +52,19 @@ void HollisticTest_1() {
     }
 
     // add one vertex
+    cout << "adding single vertex v1" << endl;
     dg.AddVertex(*v1);
     cout << "v1 added" << endl;
     dg.GetVertexList()[0].PrintVertexInfo();
-    // add multiple vertices
     
+    // remove that added vertex
+    dg.RemoveVertex();
+    cout << "Vertex removed" << endl;
+    cout << "Vertex list size after removal: " << dg.GetVertexList().size() << endl;
+    
+    // add multiple vertices
+    dg.AddVertices(v_list);
+    
+
+
 }

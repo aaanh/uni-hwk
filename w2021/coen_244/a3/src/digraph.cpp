@@ -15,10 +15,14 @@ Directed_Graph::~Directed_Graph()
 bool Directed_Graph::AddVertex(Vertex& that_v) 
 {
     list_of_vertex.push_back(that_v);
+    return 1;
 }
 
-bool Directed_Graph::AddVertices(vector<Vertex> vertices)
+bool Directed_Graph::AddVertices(vector<Vertex*> vertices)
 {
+    for (auto v : vertices) {
+        this->AddVertex(*v);
+    }
     return 1;
 }
 

@@ -9,7 +9,7 @@ class Directed_Graph : public Graph {
         virtual ~Directed_Graph();
         
         bool    AddVertex(Vertex&)          ; // Add a Vertex class obj
-        bool    AddVertices(vector<Vertex>) ; // Add multiple Vertex class obj using array of type Vertex
+        bool    AddVertices(vector<Vertex*>) ; // Add multiple Vertex class obj using array of type Vertex
         bool    RemoveVertex()              ; // Remove a Vertex class obj and remove the connecting Edge obj
         
         bool    AddEdge(Edge&)              ; // Add an Edge class obj
