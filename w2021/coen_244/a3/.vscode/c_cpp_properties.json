@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -11,10 +12,26 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.18362.0",
+<<<<<<< HEAD
             "compilerPath": "C:/MinGW/bin/g++.exe",
             "intelliSenseMode": "windows-gcc-x64",
+=======
+            "compilerPath": "/usr/bin/g++",
+            "intelliSenseMode": "windows-msvc-x64",
+>>>>>>> 0b8eafef08e8a013c9f1597a74b63f48b7ab4aed
             "cStandard": "c17",
             "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
