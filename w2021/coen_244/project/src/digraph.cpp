@@ -10,27 +10,27 @@ Directed_Graph::~Directed_Graph()
 
 }
 
-// Vertex vector list manipulations
+// Node vector list manipulations
 
-bool Directed_Graph::AddVertex(Vertex& that_v) 
+bool Directed_Graph::AddNode(Node& that_v) 
 {
-    list_of_vertex.push_back(that_v);
+    list_of_node.push_back(that_v);
     return 1;
 }
 
-bool Directed_Graph::AddVertices(vector<Vertex*> vertices)
+bool Directed_Graph::AddNodes(vector<Node*> nodes)
 {
-    for (auto v : vertices) {
-        this->AddVertex(*v);
-        num_of_vertex++;
+    for (auto v : nodes) {
+        this->AddNode(*v);
+        num_of_node++;
     }
     return 1;
 }
 
-bool Directed_Graph::RemoveVertex()
+bool Directed_Graph::RemoveNode()
 {
-    this->list_of_vertex.pop_back();
-    num_of_vertex--;
+    this->list_of_node.pop_back();
+    num_of_node--;
 }
 
 // Edge vector list manipulations
@@ -47,11 +47,11 @@ bool Directed_Graph::RemoveEdge(Edge& that_e)
     num_of_edge--;
 }
 
-bool Directed_Graph::SearchVertex(const Vertex& that_v)
+bool Directed_Graph::SearchNode(const Node& that_v)
 {
-    for (auto v : list_of_vertex)
+    for (auto v : list_of_node)
     {
-        if (v.GetVertexID() == that_v.GetVertexID())
+        if (v.GetNodeID() == that_v.GetNodeID())
             return 1;
         else 
         {
@@ -64,8 +64,8 @@ bool Directed_Graph::SearchEdge(const Edge& that_e)
 {
     for (auto e : list_of_edge)
     {
-        if (e.GetStartVertex().GetVertexID() == that_e.GetStartVertex().GetVertexID() 
-            && e.GetEndVertex().GetVertexID() == that_e.GetEndVertex().GetVertexID())
+        if (e.GetStartNode().GetNodeID() == that_e.GetStartNode().GetNodeID() 
+            && e.GetEndNode().GetNodeID() == that_e.GetEndNode().GetNodeID())
         {
             return 1;
         }
@@ -76,9 +76,9 @@ bool Directed_Graph::SearchEdge(const Edge& that_e)
     }
 }
 
-vector<Vertex> Directed_Graph::GetVertexList() const
+vector<Node> Directed_Graph::GetNodeList() const
 {
-    return this->list_of_vertex;
+    return this->list_of_node;
 }
 
 vector<Edge> Directed_Graph::GetEdgeList() const
@@ -86,9 +86,9 @@ vector<Edge> Directed_Graph::GetEdgeList() const
     return this->list_of_edge;
 }
 
-int Directed_Graph::GetNumVertices() 
+int Directed_Graph::GetNumNodes() 
 {
-    return this->num_of_vertex;
+    return this->num_of_node;
 }
 
 int Directed_Graph::GetNumEdges() 
@@ -100,17 +100,17 @@ void Directed_Graph::Display()
 {
     // using adjlist representation
     cout << "\nGraph representation by adjacency list: " << endl;
-    for (auto v : list_of_vertex)
+    for (auto v : list_of_node)
     {
-        cout << "\nVertex " << v.GetVertexID() << ":" << endl;
+        cout << "\nNode " << v.GetNodeID() << ":" << endl;
         for (auto e : this->list_of_edge) 
         {
-            if (e.GetStartVertex().GetVertexID() == v.GetVertexID())
+            if (e.GetStartNode().GetNodeID() == v.GetNodeID())
             {
                 cout << "> ";
-                cout << e.GetStartVertex().GetVertexValue() 
+                cout << e.GetStartNode().GetNodeValue() 
                 << " = " << e.GetWeight() << " => " 
-                << e.GetEndVertex().GetVertexValue()
+                << e.GetEndNode().GetNodeValue()
                 << endl;
             }
         }
@@ -120,5 +120,5 @@ void Directed_Graph::Display()
 bool Directed_Graph::Clean()
 {
     this->list_of_edge.clear();
-    this->list_of_vertex.clear();
+    this->list_of_node.clear();
 }

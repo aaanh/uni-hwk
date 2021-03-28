@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "vertex.h"
+#include "node.h"
 #include "graph.h"
 #include "edge.h"
 #include "digraph.h"
@@ -33,17 +33,17 @@ void HollisticTest_1() {
     cout << "\nnew directed graph object created." << endl;
     PressEnter();
     
-    // initialize some vertices
-    Vertex *v1 = new Vertex(1, "a");
-    Vertex *v2 = new Vertex(2, "b");
-    Vertex *v3 = new Vertex(3, "c");
-    Vertex *v4 = new Vertex(4, "d");
-    Vertex *v5 = new Vertex(5, "e");
-    cout << "\n5 new vertices initialized" << endl;
+    // initialize some nodes
+    Node *v1 = new Node(1, "a");
+    Node *v2 = new Node(2, "b");
+    Node *v3 = new Node(3, "c");
+    Node *v4 = new Node(4, "d");
+    Node *v5 = new Node(5, "e");
+    cout << "\n5 new nodes initialized" << endl;
     PressEnter();
 
-    // put created vertices into a storage vector
-    vector<Vertex*> v_list;
+    // put created nodes into a storage vector
+    vector<Node*> v_list;
     v_list.push_back(v1);
     v_list.push_back(v2);
     v_list.push_back(v3);
@@ -52,40 +52,40 @@ void HollisticTest_1() {
     cout << "created and stored in a vector" << endl;
     PressEnter();
 
-    // print vertices info to check
+    // print nodes info to check
     for (auto v : v_list) {
-        v->PrintVertexInfo();
+        v->PrintNodeInfo();
         PressEnter();
     }
 
-    // add one vertex
-    cout << "adding single vertex v1" << endl;
-    dg.AddVertex(*v1);
+    // add one node
+    cout << "adding single node v1" << endl;
+    dg.AddNode(*v1);
     cout << "v1 added" << endl;
-    dg.GetVertexList()[0].PrintVertexInfo();
+    dg.GetNodeList()[0].PrintNodeInfo();
     PressEnter();
     
-    // remove that added vertex
-    dg.RemoveVertex();
-    cout << "Vertex removed" << endl;
-    cout << "Vertex list size after removal: " << dg.GetVertexList().size() << endl;
+    // remove that added node
+    dg.RemoveNode();
+    cout << "Node removed" << endl;
+    cout << "Node list size after removal: " << dg.GetNodeList().size() << endl;
     PressEnter();
 
-    // add multiple vertices
-    dg.AddVertices(v_list);
+    // add multiple nodes
+    dg.AddNodes(v_list);
     for (auto v : v_list) {
-        v->PrintVertexInfo();
+        v->PrintNodeInfo();
         PressEnter();
     }
     PressEnter();
     
     // initilize a bunch of edges
-    Edge *e1 = new Edge(1, dg.GetVertexList()[1], dg.GetVertexList()[0]);
-    Edge *e2 = new Edge(5, dg.GetVertexList()[2], dg.GetVertexList()[3]);
-    Edge *e3 = new Edge(2, dg.GetVertexList()[3], dg.GetVertexList()[4]);
-    Edge *e4 = new Edge(8, dg.GetVertexList()[4], dg.GetVertexList()[2]);
-    Edge *e5 = new Edge(3, dg.GetVertexList()[0], dg.GetVertexList()[1]);
-    Edge *e6 = new Edge(2, dg.GetVertexList()[0], dg.GetVertexList()[2]);
+    Edge *e1 = new Edge(1, dg.GetNodeList()[1], dg.GetNodeList()[0]);
+    Edge *e2 = new Edge(5, dg.GetNodeList()[2], dg.GetNodeList()[3]);
+    Edge *e3 = new Edge(2, dg.GetNodeList()[3], dg.GetNodeList()[4]);
+    Edge *e4 = new Edge(8, dg.GetNodeList()[4], dg.GetNodeList()[2]);
+    Edge *e5 = new Edge(3, dg.GetNodeList()[0], dg.GetNodeList()[1]);
+    Edge *e6 = new Edge(2, dg.GetNodeList()[0], dg.GetNodeList()[2]);
     cout << "A bunch of new edges initialized" << endl;
     PressEnter();
 
