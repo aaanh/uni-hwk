@@ -122,3 +122,38 @@ bool Directed_Graph::Clean()
     this->list_of_edge.clear();
     this->list_of_node.clear();
 }
+
+bool Directed_Graph::operator == (Directed_Graph that_g) 
+{
+    
+}
+
+void Directed_Graph::operator = (Directed_Graph that_g) 
+{
+    
+}
+
+bool Directed_Graph::operator > (Directed_Graph that_g) 
+{
+    
+}
+
+void Directed_Graph::operator << (Directed_Graph that_g) 
+{
+    
+}
+
+Directed_Graph Directed_Graph::operator + (Directed_Graph that_g) 
+{
+    
+}
+
+void Directed_Graph::operator ++ (int) 
+{
+    
+}
+
+void Directed_Graph::operator ++ () 
+{
+    
+}
