@@ -175,28 +175,61 @@ bool Directed_Graph::operator > (Directed_Graph that_g)
 
 void Directed_Graph::operator << (Directed_Graph that_g) 
 {
-    this->Display();
+    // using adjlist representation
+    cout << "\nGraph representation by adjacency list: " << endl;
+    for (auto v : list_of_node)
+    {
+        cout << "\nNode " << v.GetNodeID() << ":" << endl;
+        for (auto e : this->list_of_edge) 
+        {
+            if (e.GetStartNode().GetNodeID() == v.GetNodeID())
+            {
+                cout << "> ";
+                cout << e.GetStartNode().GetNodeValue() 
+                << " = " << e.GetWeight() << " => " 
+                << e.GetEndNode().GetNodeValue()
+                << endl;
+            }
+        }
+    }
 }
 
 Directed_Graph Directed_Graph::operator + (Directed_Graph that_g) 
 {
     Directed_Graph g_sum;
+
     g_sum.num_of_edge = this->GetNumEdges() + that_g.GetNumEdges();
     g_sum.num_of_node = this->GetNumNodes() + that_g.GetNumNodes();
 
-    g_sum.AddNodes(list_of_node);
-    g_sum.AddEdge(list_of_edge);
+    // add the nodes
+    for (int i = 0; i <= this->GetNumNodes(); i++) {
+        g_sum.AddNode(this->GetNodeList()[i]);
+    }
+    for (int i = 0; i <= that_g.GetNumNodes(); i++) {
+        g_sum.AddNode(that_g.GetNodeList()[i]);
+    }
 
+    // add the edges
+    for (int i = 0; i <= this->GetNumEdges(); i++) {
+        g_sum.AddEdge(this->GetEdgeList()[i]);
+    }
+    for (int i = 0; i <= that_g.GetNumEdges(); i++) {
+        g_sum.AddEdge(that_g.GetEdgeList()[i]);
+    }
     
-
+    return g_sum;
 }
 
 void Directed_Graph::operator ++ (int) 
 {
-    
+    for (auto e : this->list_of_edge) {
+        e.SetWeight(e.GetWeight() + 1);
+    }
 }
 
 void Directed_Graph::operator ++ () 
 {
-    
+    for (auto e : this->list_of_edge) {
+        e.SetWeight(e.GetWeight() + 1);
+    }
 }

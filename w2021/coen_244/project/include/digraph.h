@@ -20,8 +20,8 @@ class Directed_Graph : public Graph
         
         bool    SearchEdge(const Edge&)     ; // Search for an Edge class obj
 
-        vector<Node> GetNodeList() const;
-        vector<Edge>   GetEdgeList() const  ;
+        vector<Node>    GetNodeList() const ;
+        vector<Edge>    GetEdgeList() const ;
         
         int     GetNumNodes()               ;
         int     GetNumEdges()               ;
@@ -33,8 +33,9 @@ class Directed_Graph : public Graph
         bool    operator == (Directed_Graph that_g); // compare nodes and edges
         void    operator = (Directed_Graph that_g); // assignment
         
-        void    operator ++ (); // prefix increment
-        void    operator ++ (int); // postfix increment
+        // Both increases all the edges' weight
+        void    operator ++ ();     // prefix increment
+        void    operator ++ (int);  // postfix increment
         
         bool    operator > (Directed_Graph);
         void    operator << (Directed_Graph);
