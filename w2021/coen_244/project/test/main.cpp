@@ -43,17 +43,17 @@ void HollisticTest_1() {
     PressEnter();
 
     // put created nodes into a storage vector
-    vector<Node*> v_list;
-    v_list.push_back(v1);
-    v_list.push_back(v2);
-    v_list.push_back(v3);
-    v_list.push_back(v4);
-    v_list.push_back(v5);
+    vector<Node*> n_list;
+    n_list.push_back(v1);
+    n_list.push_back(v2);
+    n_list.push_back(v3);
+    n_list.push_back(v4);
+    n_list.push_back(v5);
     cout << "created and stored in a vector" << endl;
     PressEnter();
 
     // print nodes info to check
-    for (auto v : v_list) {
+    for (auto v : n_list) {
         v->PrintNodeInfo();
         PressEnter();
     }
@@ -72,8 +72,8 @@ void HollisticTest_1() {
     PressEnter();
 
     // add multiple nodes
-    dg.AddNodes(v_list);
-    for (auto v : v_list) {
+    dg.AddNodes(n_list);
+    for (auto v : n_list) {
         v->PrintNodeInfo();
         PressEnter();
     }

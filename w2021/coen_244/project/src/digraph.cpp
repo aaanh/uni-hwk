@@ -125,27 +125,70 @@ bool Directed_Graph::Clean()
 
 bool Directed_Graph::operator == (Directed_Graph that_g) 
 {
+    bool flag = false;
     
+    // check nodes
+    if (this->num_of_node != that_g.GetNumNodes()) {
+        flag = false;
+    } else {
+        for (auto n : this->list_of_node) {
+            flag = that_g.SearchNode(n);
+        }
+    }
+
+    // check edges
+    if (this->num_of_edge != that_g.GetNumEdges()) {
+        flag = false;
+    } else {
+        for (auto e : this->list_of_edge) {
+            flag = that_g.SearchEdge(e);
+        }
+    }
+
+    return flag;
 }
 
 void Directed_Graph::operator = (Directed_Graph that_g) 
 {
-    
+    this->num_of_node = that_g.GetNumNodes();
+    this->num_of_edge = that_g.GetNumEdges();
+    this->list_of_node = that_g.GetNodeList();
+    this->num_of_node = that_g.GetNumNodes();
 }
 
 bool Directed_Graph::operator > (Directed_Graph that_g) 
 {
-    
+    unsigned long int sum_of_this = 0;
+    unsigned long int sum_of_that = 0;
+
+    for (auto e : this->GetEdgeList()) {
+        sum_of_this += e.GetWeight();
+    }
+
+    for (auto e : that_g.GetEdgeList()) {
+        sum_of_that += e.GetWeight();
+    }
+
+    return sum_of_this > sum_of_that;
+
 }
 
 void Directed_Graph::operator << (Directed_Graph that_g) 
 {
-    
+    this->Display();
 }
 
 Directed_Graph Directed_Graph::operator + (Directed_Graph that_g) 
 {
+    Directed_Graph g_sum;
+    g_sum.num_of_edge = this->GetNumEdges() + that_g.GetNumEdges();
+    g_sum.num_of_node = this->GetNumNodes() + that_g.GetNumNodes();
+
+    g_sum.AddNodes(list_of_node);
+    g_sum.AddEdge(list_of_edge);
+
     
+
 }
 
 void Directed_Graph::operator ++ (int) 
