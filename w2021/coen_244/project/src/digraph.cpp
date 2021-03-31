@@ -173,26 +173,28 @@ bool Directed_Graph::operator > (Directed_Graph that_g)
 
 }
 
-void Directed_Graph::operator << (Directed_Graph that_g) 
+std::ostream& operator<< (std::ostream &out, const Directed_Graph &dg) 
 {
     // using adjlist representation
-    cout << "\nGraph representation by adjacency list: " << endl;
-    for (auto v : list_of_node)
+    out << "\nGraph representation by adjacency list: " << "\n";
+    for (auto v : dg.GetNodeList())
     {
-        cout << "\nNode " << v.GetNodeID() << ":" << endl;
-        for (auto e : this->list_of_edge) 
+        out << "\nNode " << v.GetNodeID() << ":" << "\n";
+        for (auto e : dg.GetEdgeList()) 
         {
             if (e.GetStartNode().GetNodeID() == v.GetNodeID())
             {
-                cout << "> ";
-                cout << e.GetStartNode().GetNodeValue() 
+                out << "> ";
+                out << e.GetStartNode().GetNodeValue() 
                 << " = " << e.GetWeight() << " => " 
                 << e.GetEndNode().GetNodeValue()
-                << endl;
+                << "\n";
             }
         }
     }
+    return out;    
 }
+
 
 Directed_Graph Directed_Graph::operator + (Directed_Graph that_g) 
 {

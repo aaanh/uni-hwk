@@ -38,10 +38,10 @@ class Directed_Graph : public Graph
         void    operator ++ (int);  // postfix increment
         
         bool    operator > (Directed_Graph);
-        void    operator << (Directed_Graph);
 
         Directed_Graph operator + (Directed_Graph); // new Graph obj contains all nodes and edges of operands
 
+        friend std::ostream& operator<< (std::ostream &out, const Directed_Graph &dg);
 
 
     private:

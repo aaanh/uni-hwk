@@ -172,12 +172,19 @@ void HollisticTest_2() {
     
     // Testing the overloaded operators
     
-    cout << "dg1 == dg2: " << (dg1 == dg2); // == operator
-    cout << "dg1 >  dg2: " << (dg1 > dg2); // > operator
-    Directed_Graph dg3 = dg2; // = operatoraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    cout << dg1 << endl;
-    cout << dg2 << endl;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    cout << "dg1 == dg2: " << (dg1 == dg2) << "\n"; // == operator
+    cout << "dg1 >  dg2: " << (dg1 > dg2) << "\n"; // > operator
 
+    // assignment
+    cout << "= operator" << endl;
+    Directed_Graph dg3 = dg2; // = operator, assign to new dg3
+    cout << dg1 << endl;
+    cout << dg2 << endl;
+    cout << dg3 << endl;
+
+    cout << "Increment" << endl;
+    dg1++;
+    cout << dg1 << endl;
 
 
 }

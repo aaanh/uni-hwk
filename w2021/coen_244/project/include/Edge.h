@@ -6,7 +6,7 @@
 class Edge {
     public:
         Edge(); // default constructor
-        Edge(int weight, Node& v_start, Node& v_end) // regular constructor
+        Edge(int weight, Node& v_start, Node& v_end); // regular constructor
         Edge(const Edge&); // copy constructor
         virtual ~Edge(); // destructor
 
