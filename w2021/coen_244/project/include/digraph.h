@@ -34,8 +34,8 @@ class Directed_Graph : public Graph
         void    operator = (Directed_Graph that_g); // assignment
         
         // Both increases all the edges' weight
-        void    operator ++ ();     // prefix increment
-        void    operator ++ (int);  // postfix increment
+        Directed_Graph&    operator ++ ();     // prefix increment
+        Directed_Graph    operator ++ (int);  // postfix increment
         
         bool    operator > (Directed_Graph);
 

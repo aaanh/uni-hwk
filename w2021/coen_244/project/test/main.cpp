@@ -36,7 +36,7 @@ void HollisticTest_1() {
     // initialize graph object
     Directed_Graph dg;
     cout << "\nnew directed graph object created." << endl;
-    PressEnter();
+
     
     // initialize some nodes
     Node *v1 = new Node(1, "a");
@@ -45,7 +45,7 @@ void HollisticTest_1() {
     Node *v4 = new Node(4, "d");
     Node *v5 = new Node(5, "e");
     cout << "\n5 new nodes initialized" << endl;
-    PressEnter();
+
 
     // put created nodes into a storage vector
     vector<Node*> n_list;
@@ -55,12 +55,12 @@ void HollisticTest_1() {
     n_list.push_back(v4);
     n_list.push_back(v5);
     cout << "created and stored in a vector" << endl;
-    PressEnter();
+
 
     // print nodes info to check
     for (auto v : n_list) {
         v->PrintNodeInfo();
-        PressEnter();
+
     }
 
     // add one node
@@ -68,21 +68,21 @@ void HollisticTest_1() {
     dg.AddNode(*v1);
     cout << "v1 added" << endl;
     dg.GetNodeList()[0].PrintNodeInfo();
-    PressEnter();
+
     
     // remove that added node
     dg.RemoveNode();
     cout << "Node removed" << endl;
     cout << "Node list size after removal: " << dg.GetNodeList().size() << endl;
-    PressEnter();
+
 
     // add multiple nodes
     dg.AddNodes(n_list);
     for (auto v : n_list) {
         v->PrintNodeInfo();
-        PressEnter();
+
     }
-    PressEnter();
+
     
     // initilize a bunch of edges
     Edge *e1 = new Edge(1, dg.GetNodeList()[1], dg.GetNodeList()[0]);
@@ -92,7 +92,7 @@ void HollisticTest_1() {
     Edge *e5 = new Edge(3, dg.GetNodeList()[0], dg.GetNodeList()[1]);
     Edge *e6 = new Edge(2, dg.GetNodeList()[0], dg.GetNodeList()[2]);
     cout << "A bunch of new edges initialized" << endl;
-    PressEnter();
+
 
     // add edges into graph
     dg.AddEdge(*e1);
@@ -102,7 +102,7 @@ void HollisticTest_1() {
     dg.AddEdge(*e5);
     dg.AddEdge(*e6);
     cout << "A bunch of those edges added to graph" << endl;
-    PressEnter();
+
 
     // console.log(that_graph) eyy lmao, wrong language、 バーバカ!
     // print(dg) また違うよ、お前本気慣れるなさい！！！
@@ -142,6 +142,14 @@ void HollisticTest_2() {
     Edge *e5 = new Edge(3, dg1.GetNodeList()[0], dg1.GetNodeList()[1]);
     Edge *e6 = new Edge(2, dg1.GetNodeList()[0], dg1.GetNodeList()[2]);
     
+    // add the edges
+    dg1.AddEdge(*e1);
+    dg1.AddEdge(*e2);
+    dg1.AddEdge(*e3);
+    dg1.AddEdge(*e4);
+    dg1.AddEdge(*e5);
+    dg1.AddEdge(*e6);
+
     // --- prepare dg2 ---
 
     // initialize some nodes
@@ -170,6 +178,15 @@ void HollisticTest_2() {
     Edge *e11 = new Edge(3, dg2.GetNodeList()[0], dg2.GetNodeList()[1]);
     Edge *e12 = new Edge(2, dg2.GetNodeList()[0], dg2.GetNodeList()[2]);
     
+    // add the edges to dg2
+    dg2.AddEdge(*e7);
+    dg2.AddEdge(*e8);
+    dg2.AddEdge(*e9);
+    dg2.AddEdge(*e10);
+    dg2.AddEdge(*e11);
+    dg2.AddEdge(*e12);
+    
+
     // Testing the overloaded operators
     
     cout << "dg1 == dg2: " << (dg1 == dg2) << "\n"; // == operator
@@ -182,7 +199,7 @@ void HollisticTest_2() {
     cout << dg2 << endl;
     cout << dg3 << endl;
 
-    cout << "Increment" << endl;
+    cout << "++ Increment" << endl;
     dg1++;
     cout << dg1 << endl;
 

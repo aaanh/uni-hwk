@@ -1,28 +1,28 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include "vertex.h"
+#include "node.h"
 
 class Edge {
     public:
         Edge(); // default constructor
-        Edge(int, Vertex&, Vertex&); // regular constructor
+        Edge(int weight, Node& v_start, Node& v_end); // regular constructor
         Edge(const Edge&); // copy constructor
         virtual ~Edge(); // destructor
 
-        bool    SetWeight(int); // set weight
+        void    SetWeight(int); // set weight
         int     GetWeight() const; // get weight
 
-        bool    SetStartVertex(const Vertex& v_start); // set start vertex by passing in vertex obj
-        Vertex  GetStartVertex() const; // get start vertex
+        void    SetStartNode (const Node&); // set start node by passing in node obj
+        Node    GetStartNode() const; // get start node
         
-        bool    SetEndVertex(const Vertex& v_end); // set end vertex by passing in vertex obj
-        Vertex  GetEndVertex() const; // get end vertex
+        void    SetEndNode (const Node&); // set end node by passing in node obj
+        Node    GetEndNode() const; // get end node
 
     private:
         int     weight;
-        Vertex  start_vertex;
-        Vertex  end_vertex;
+        Node    start_node;
+        Node    end_node;
 };
 
 #endif

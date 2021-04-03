@@ -31,6 +31,7 @@ bool Directed_Graph::RemoveNode()
 {
     this->list_of_node.pop_back();
     num_of_node--;
+    return 1;
 }
 
 // Edge vector list manipulations
@@ -39,41 +40,47 @@ bool Directed_Graph::AddEdge(Edge& that_e)
 {
     this->list_of_edge.push_back(that_e);
     num_of_edge++;
+    return 1;
 }
 
 bool Directed_Graph::RemoveEdge(Edge& that_e)
 {
     this->list_of_edge.pop_back();
     num_of_edge--;
+    return 1;
 }
 
 bool Directed_Graph::SearchNode(const Node& that_v)
 {
+    bool flag;
     for (auto v : list_of_node)
     {
         if (v.GetNodeID() == that_v.GetNodeID())
-            return 1;
+            flag = 1;
         else 
         {
-            return 0;
+            flag = 0;
         }
     }
+    return flag;
 }
 
 bool Directed_Graph::SearchEdge(const Edge& that_e)
 {
+    bool flag;
     for (auto e : list_of_edge)
     {
         if (e.GetStartNode().GetNodeID() == that_e.GetStartNode().GetNodeID() 
             && e.GetEndNode().GetNodeID() == that_e.GetEndNode().GetNodeID())
         {
-            return 1;
+            flag = 1;
         }
         else
         {
-            return 0;
+            flag = 0;
         } 
     }
+    return flag;
 }
 
 vector<Node> Directed_Graph::GetNodeList() const
@@ -121,6 +128,7 @@ bool Directed_Graph::Clean()
 {
     this->list_of_edge.clear();
     this->list_of_node.clear();
+    return 1;
 }
 
 bool Directed_Graph::operator == (Directed_Graph that_g) 
@@ -222,16 +230,21 @@ Directed_Graph Directed_Graph::operator + (Directed_Graph that_g)
     return g_sum;
 }
 
-void Directed_Graph::operator ++ (int) 
+Directed_Graph Directed_Graph::operator ++ (int) 
 {
-    for (auto e : this->list_of_edge) {
+    Directed_Graph temp = *this;
+    vector<Edge> new_edge_list = temp.list_of_edge;
+    for (auto e : new_edge_list) {
         e.SetWeight(e.GetWeight() + 1);
     }
+    temp.list_of_edge = new_edge_list;
+    return temp;
 }
 
-void Directed_Graph::operator ++ () 
+Directed_Graph &Directed_Graph::operator ++ () 
 {
     for (auto e : this->list_of_edge) {
-        e.SetWeight(e.GetWeight() + 1);
+        e.SetWeight(e.GetWeight()+1);
     }
+    return *this;
 }

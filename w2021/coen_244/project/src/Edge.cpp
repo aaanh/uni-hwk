@@ -24,7 +24,7 @@ Edge::~Edge()
     
 }
 
-bool Edge::SetWeight(int weight) 
+void Edge::SetWeight(int weight) 
 {
     this->weight = weight;
 }
@@ -34,7 +34,7 @@ int Edge::GetWeight() const
     return this->weight;
 }
 
-bool Edge::SetStartNode(const Node& v_start) 
+void Edge::SetStartNode(const Node& v_start) 
 {
     this->start_node = v_start;
 }
@@ -44,7 +44,7 @@ Node Edge::GetStartNode() const
     return this->start_node;
 }
 
-bool Edge::SetEndNode(const Node& v_end) 
+void Edge::SetEndNode(const Node& v_end) 
 {
     this->end_node = v_end;
 }

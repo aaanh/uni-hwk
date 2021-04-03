@@ -10,13 +10,13 @@ class Edge {
         Edge(const Edge&); // copy constructor
         virtual ~Edge(); // destructor
 
-        bool    SetWeight(int); // set weight
+        void    SetWeight(int); // set weight
         int     GetWeight() const; // get weight
 
-        bool    SetStartNode (const Node&); // set start node by passing in node obj
+        void    SetStartNode (const Node&); // set start node by passing in node obj
         Node    GetStartNode() const; // get start node
         
-        bool    SetEndNode (const Node&); // set end node by passing in node obj
+        void    SetEndNode (const Node&); // set end node by passing in node obj
         Node    GetEndNode() const; // get end node
 
     private:

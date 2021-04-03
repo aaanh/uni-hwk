@@ -5,18 +5,18 @@ Edge::Edge()
     
 }
 
-Edge::Edge(int weight, Vertex& v_start, Vertex& v_end) 
+Edge::Edge(int weight, Node& v_start, Node& v_end) 
 {
     SetWeight(weight);
-    SetStartVertex(v_start);
-    SetEndVertex(v_end);
+    SetStartNode(v_start);
+    SetEndNode(v_end);
 }
 
 Edge::Edge(const Edge&e) 
 {
     SetWeight(e.GetWeight());
-    SetStartVertex(e.GetStartVertex());
-    SetEndVertex(e.GetEndVertex());
+    SetStartNode(e.GetStartNode());
+    SetEndNode(e.GetEndNode());
 }
 
 Edge::~Edge() 
@@ -24,7 +24,7 @@ Edge::~Edge()
     
 }
 
-bool Edge::SetWeight(int weight) 
+void Edge::SetWeight(int weight) 
 {
     this->weight = weight;
 }
@@ -34,22 +34,22 @@ int Edge::GetWeight() const
     return this->weight;
 }
 
-bool Edge::SetStartVertex(const Vertex& v_start) 
+void Edge::SetStartNode(const Node& v_start) 
 {
-    this->start_vertex = v_start;
+    this->start_node = v_start;
 }
 
-Vertex Edge::GetStartVertex() const
+Node Edge::GetStartNode() const
 {
-    return this->start_vertex;
+    return this->start_node;
 }
 
-bool Edge::SetEndVertex(const Vertex& v_end) 
+void Edge::SetEndNode(const Node& v_end) 
 {
-    this->end_vertex = v_end;
+    this->end_node = v_end;
 }
 
-Vertex Edge::GetEndVertex() const
+Node Edge::GetEndNode() const
 {
-    return this->end_vertex;
+    return this->end_node;
 }
