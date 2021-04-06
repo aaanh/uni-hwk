@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <string>
+#include <algorithm>
 
 #include "node.h"
 #include "edge.h"
@@ -23,9 +24,9 @@ class Graph {
 
         bool rmNode(int index);
         bool rmEdge(int index);
-        bool rmEdge(const Node&, const Node&);
+        bool rmEdge(Node&, Node&);
 
-        unsigned long int searchNode(int node_id);
+        unsigned long int searchNode(unsigned long int node_id);
         Node getNode(unsigned long int);
 
         unsigned long int getNodeCount();

@@ -67,18 +67,18 @@ bool Graph::rmEdge(int index)
     edge_count--;
 }
 
-bool Graph::rmEdge(const Node& n1, const Node& n2) 
+bool Graph::rmEdge(Node& n1, Node& n2) 
 {
     int counter = 0;
     for (auto edge : edge_list) {
-        if (*find(edge->getNodePair().begin(), edge->getNodePair().end(), n1) && *find(edge->getNodePair().begin(), edge->getNodePair().end(), n2)) {
+        if (*find(edge->getNodePair().begin(), edge->getNodePair().end(), &n1) && *find(edge->getNodePair().begin(), edge->getNodePair().end(), &n2)) {
             rmEdge(counter);
         }
         counter++;
     }
 }
 
-unsigned long int Graph::searchNode(int node_id) 
+unsigned long int Graph::searchNode(unsigned long int node_id) 
 {
     for (size_t i = 0; i <= node_list.size(); i++) {
         if (node_list[i]->getNodeId() == node_id) {
@@ -104,16 +104,6 @@ unsigned long int Graph::getNodeCount()
 unsigned long int Graph::getEdgeCount() 
 {
     return edge_count;
-}
-
-bool Graph::readDatabase() 
-{
-    
-}
-
-bool Graph::addDatabase() 
-{
-    
 }
 
 vector<Node*> Graph::getNodeList() 
