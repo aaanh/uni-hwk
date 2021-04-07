@@ -13,6 +13,7 @@ Graph::~Graph()
 
 bool Graph::addNode(Node& n) 
 {
+    // check if node_count is valid and add
     if (this->node_count < MAX_NODE_COUNT) {
         node_list.push_back(&n);
         node_count++;
@@ -25,11 +26,13 @@ bool Graph::addNode(Node& n)
 
 bool Graph::addEdge(Edge& e) 
 {
+    // check edge needs a graph containing >= 2 nodes
     if (node_count + node_count <= 1) {
         cout << "Not enough nodes.\n";
         return 0;
     } else {
         for (auto edge : edge_list) {
+            // check edge exist, add when not exist
             if (*find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[0]) && *find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[1])) {
                 cout << "Edge already existed in undirected graph.\n";
                 return 0;
@@ -108,12 +111,12 @@ unsigned long int Graph::getEdgeCount()
 
 vector<Node*> Graph::getNodeList() 
 {
-    
+    return this->node_list;
 }
 
 vector<Edge*> Graph::getEdgeList() 
 {
-    
+    return this->edge_list;
 }
 
 void Graph::display() 

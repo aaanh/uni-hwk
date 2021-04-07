@@ -6,9 +6,11 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <fstream>
 
 #include "node.h"
 #include "edge.h"
+
 
 using namespace std;
 
@@ -22,28 +24,31 @@ class Graph {
         bool addNode(Node&); // done
         bool addEdge(Edge&); // done
 
-        bool rmNode(int index);
-        bool rmEdge(int index);
-        bool rmEdge(Node&, Node&);
+        bool rmNode(int index); // done
+        bool rmEdge(int index); // done
+        bool rmEdge(Node&, Node&); // done
 
-        unsigned long int searchNode(unsigned long int node_id);
-        Node getNode(unsigned long int);
+        unsigned long int searchNode(unsigned long int node_id); // done
+        Node getNode(unsigned long int); // done
 
-        unsigned long int getNodeCount();
-        unsigned long int getEdgeCount();
+        unsigned long int getNodeCount(); // done
+        unsigned long int getEdgeCount(); // done
 
         // data ops
-
-        bool readDatabase();
+        /** TODO: Implement on April 9. These are in the data.cpp
+        */
+        bool readDatabase(string path);
         bool addDatabase();
 
         // list ops
-
+        /** TODO: Implement now!!
+         */
         vector<Node*> getNodeList();
         vector<Edge*> getEdgeList();
 
         // graph ops
-
+        /** TODO: Implement during the weekends
+        */
         void display();
         bool clean();
 
