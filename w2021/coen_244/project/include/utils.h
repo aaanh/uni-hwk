@@ -3,6 +3,7 @@
 
 #include <string>
 #include <filesystem>
+#include <iostream>
 
 namespace fs = std::filesystem;
 
@@ -10,7 +11,10 @@ namespace fs = std::filesystem;
 std::string getOsName();
 
 // patches data path with respect to host platform
-std::string patchDataPath(); 
+std::string patchDataPath();
+
+// data file directory
+void openDirectory(std::string path);
 
 
 #endif

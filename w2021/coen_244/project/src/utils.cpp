@@ -36,3 +36,12 @@ std::string patchDataPath(std::string path)
     }
     return patched;
 }
+
+void indexDirectory(std::string path)
+{
+    int file_count = 0;
+    for (const auto &entry : fs::directory_iterator(path)) ++file_count;
+        std::cout << "Found " << file_count << ": \n";
+    for (const auto &entry : fs::directory_iterator(path)) 
+        std::cout << "> " << entry.path() << "\n";
+}

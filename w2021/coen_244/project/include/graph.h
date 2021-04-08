@@ -35,7 +35,8 @@ class Graph {
         unsigned long int getEdgeCount(); // done
 
         // data ops
-        /** TODO: Implement on April 9. These are in the data.cpp
+        /** TODO: Finish implementation on April 9th. 
+         * source code is in data.cpp
         */
         bool readDatabase(string path);
         bool addDatabase();

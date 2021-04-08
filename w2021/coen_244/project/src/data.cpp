@@ -2,8 +2,6 @@
 
 bool Graph::readDatabase(string path) 
 {
-
-
     // init the file var
     ofstream db;
     //open the file
