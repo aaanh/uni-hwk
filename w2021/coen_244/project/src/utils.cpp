@@ -22,17 +22,23 @@ std::string getOsName()
     #endif
 }
 
-std::string patchDataPath(std::string path)
+std::string getCurrentPath()
 {
     std::string local_path = fs::current_path().string();
+    return local_path;
+}
+
+std::string patchDataPath()
+{
+    
     std::string patched;
     if (getOsName() == "Windows 64-bit" || getOsName() == "Windows 32-bit")
     {
-        patched = path.substr(0, (local_path.length() - 4)) + "\\data\\";
+        patched = getCurrentPath().substr(0, (getCurrentPath().length() - 4)) + "\\data\\cleaned\\";
     }
     else
     {
-        patched = path.substr(0, (local_path.length() - 4)) + "/data/";
+        patched = getCurrentPath().substr(0, (getCurrentPath().length() - 4)) + "/data/cleaned/";
     }
     return patched;
 }
@@ -44,4 +50,28 @@ void indexDirectory(std::string path)
         std::cout << "Found " << file_count << ": \n";
     for (const auto &entry : fs::directory_iterator(path)) 
         std::cout << "> " << entry.path() << "\n";
+}
+
+void openFiles(std::string path, std::ifstream &data)
+{
+    try {
+        if ((getOsName() == "Windows 64-bit") + (getOsName() == "Windows 32-bit")) 
+        {
+            data.open(path + "\\\\cleaned\\\\entity.csv");
+        } else if ((getOsName() == "macOS") || getOsName() == "Linux")
+        {
+            data.open(path + "/entity.csv");
+        }
+
+        if (!(data.is_open()))
+        {
+            throw "Failed to open database. Check path.\n";
+        } else {
+            std::cout << "Database opened successfully.\n";
+        }
+    }
+    catch (std::string e)
+    {
+        std::cout << "An exception has occurred: " << e << std::endl;
+    }
 }
