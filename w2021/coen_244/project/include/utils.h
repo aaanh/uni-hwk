@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 namespace fs = std::filesystem;
 
@@ -24,5 +25,7 @@ void openFiles(std::string, std::ifstream&);
 // get current path
 std::string getCurrentPath();
 
+// print data 
+void printDatabase(std::ifstream&);
 
 #endif

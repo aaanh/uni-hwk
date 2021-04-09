@@ -8,6 +8,9 @@ int main(int argc, char const* argv[])
 void TestDataUtils() 
 {
     ifstream data;
-    ifstream *data_ptr = &data;
-    openFiles(patchDataPath(), *data_ptr);
+    cout << getCurrentPath() << endl;
+    string patched = patchDataPath();
+    cout << patched << endl;
+    openFiles(patchDataPath(), data);
+    printDatabase(data);
 }

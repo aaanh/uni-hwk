@@ -34,11 +34,11 @@ std::string patchDataPath()
     std::string patched;
     if (getOsName() == "Windows 64-bit" || getOsName() == "Windows 32-bit")
     {
-        patched = getCurrentPath().substr(0, (getCurrentPath().length() - 4)) + "\\data\\cleaned\\";
+        patched = getCurrentPath().substr(0, (getCurrentPath().length())) + "\\data\\cleaned";
     }
     else
     {
-        patched = getCurrentPath().substr(0, (getCurrentPath().length() - 4)) + "/data/cleaned/";
+        patched = getCurrentPath().substr(0, (getCurrentPath().length())) + "/data/cleaned/";
     }
     return patched;
 }
@@ -54,10 +54,11 @@ void indexDirectory(std::string path)
 
 void openFiles(std::string path, std::ifstream &data)
 {
-    try {
+    // try {
         if ((getOsName() == "Windows 64-bit") + (getOsName() == "Windows 32-bit")) 
         {
-            data.open(path + "\\\\cleaned\\\\entity.csv");
+            data.open(path + "\\entity.csv");
+            std::cout << (path + "\\entity.csv") << "\n";
         } else if ((getOsName() == "macOS") || getOsName() == "Linux")
         {
             data.open(path + "/entity.csv");
@@ -65,13 +66,49 @@ void openFiles(std::string path, std::ifstream &data)
 
         if (!(data.is_open()))
         {
-            throw "Failed to open database. Check path.\n";
+            std::cout << "Failed to open database. Check path.\n";
         } else {
             std::cout << "Database opened successfully.\n";
         }
-    }
-    catch (std::string e)
+    // }
+    // catch (std::string e)
+    // {
+    //     // std::cout << "An exception has occurred: " << e << std::endl;
+    // }
+}
+
+void printDatabase(std::ifstream &data) 
+{
+    std::string line;
+    std::string temp_id, n, j, jd, cc, c;
+    unsigned long int id;
+    int line_count = 0;
+    while (std::getline(data, line))
     {
-        std::cout << "An exception has occurred: " << e << std::endl;
+        if (line_count != 0) 
+        {
+            // get the csv data
+            std::stringstream ss(line);
+            getline(ss, temp_id, ',');
+            getline(ss, n, ',');
+            getline(ss, j, ',');
+            getline(ss, jd, ',');
+            getline(ss, cc, ',');
+            getline(ss, c, ',');
+
+            // type conversion
+            id = stod(temp_id);
+        
+            // print data
+            std::cout << "> Entry ID       : " << id << "\n";
+            std::cout << ">> Name          : " << n << "\n";
+            std::cout << ">> Jurisdiction  : " << j << "\n";
+            std::cout << ">> J. Description: " << jd << "\n";
+            std::cout << ">> Country code  : " << cc << "\n";
+            std::cout << ">> Country       : " << c << "\n";
+
+            std::cout << "\n-------------------\n\n";
+        }
+        line_count++;
     }
 }
