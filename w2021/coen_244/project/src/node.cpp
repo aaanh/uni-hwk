@@ -5,10 +5,10 @@ Node::Node()
     
 }
 
-Node::Node(unsigned long int node_id, string name, string jurisdiction, string jurisdiction_desc, string country_code, string country_name) 
+Node::Node(unsigned long id, string name, string jurisdiction, string jurisdiction_desc, string country_code, string country_name) 
 {
     try {
-        setNodeId(node_id);
+        setNodeId(id);
         setName(name);
         setJurisdiction(jurisdiction);
         setJurisdictionDesc(jurisdiction_desc);

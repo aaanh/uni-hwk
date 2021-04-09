@@ -112,3 +112,32 @@ void printDatabase(std::ifstream &data)
         line_count++;
     }
 }
+
+void dataParser(Graph &graph, std::ifstream &data)
+{
+    std::string line;
+    std::string temp_id, name, j, jd, cc, c;
+    unsigned long id;
+    int line_count = 0;
+    while (std::getline(data, line))
+    {
+        if (line_count != 0) 
+        {
+            // get the csv data
+            std::stringstream ss(line);
+            getline(ss, temp_id, ',');
+            getline(ss, name, ',');
+            getline(ss, j, ',');
+            getline(ss, jd, ',');
+            getline(ss, cc, ',');
+            getline(ss, c, ',');
+            // type conversion
+            id = stoi(temp_id);
+
+            Node *n = new Node(id, name, j, jd, cc, c);
+
+            graph.addNode(*n);
+        }
+        line_count++;
+    }
+}

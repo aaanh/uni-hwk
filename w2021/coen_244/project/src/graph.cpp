@@ -13,15 +13,19 @@ Graph::~Graph()
 
 bool Graph::addNode(Node& n) 
 {
+    bool flag;
     // check if node_count is valid and add
     if (this->node_count < MAX_NODE_COUNT) {
         node_list.push_back(&n);
         node_count++;
-        return 1;
+        // cout << node_count << endl;
+        // cout << "Node added" << endl;
+        flag = true;
     } else {
         cout << "Error adding node.\n";
-        return 0;
+        flag = false;
     }
+    return flag;
 }
 
 bool Graph::addEdge(Edge& e) 
@@ -81,7 +85,7 @@ bool Graph::rmEdge(Node& n1, Node& n2)
     }
 }
 
-unsigned long int Graph::searchNode(unsigned long int node_id) 
+unsigned long int Graph::searchNode(unsigned long node_id) 
 {
     for (size_t i = 0; i <= node_list.size(); i++) {
         if (node_list[i]->getNodeId() == node_id) {

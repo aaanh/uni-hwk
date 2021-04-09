@@ -7,6 +7,10 @@
 #include <fstream>
 #include <sstream>
 
+#include "graph.h"
+#include "node.h"
+#include "edge.h"
+
 namespace fs = std::filesystem;
 
 
@@ -27,5 +31,8 @@ std::string getCurrentPath();
 
 // print data 
 void printDatabase(std::ifstream&);
+
+// data parser
+void dataParser(Graph &graph, std::ifstream &data);
 
 #endif

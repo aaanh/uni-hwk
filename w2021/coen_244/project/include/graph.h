@@ -1,7 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#define MAX_NODE_COUNT 100000
+#define MAX_NODE_COUNT 100000000
 
 #include <vector>
 #include <string>
@@ -28,7 +28,7 @@ class Graph {
         bool rmEdge(int index); // done
         bool rmEdge(Node&, Node&); // done
 
-        unsigned long int searchNode(unsigned long int node_id); // done
+        unsigned long int searchNode(unsigned long node_id); // done
         Node getNode(unsigned long int); // done
 
         unsigned long int getNodeCount(); // done
@@ -56,8 +56,8 @@ class Graph {
     private:
         vector<Node*> node_list;
         vector<Edge*> edge_list;
-        unsigned long int node_count = 0;
-        unsigned long int edge_count = 0;
+        unsigned long node_count = 0;
+        unsigned long edge_count = 0;
 
 };
 

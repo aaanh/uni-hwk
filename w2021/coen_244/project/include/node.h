@@ -9,7 +9,7 @@ using namespace std;
 class Node {
     public:
         Node();
-        Node(unsigned long int, string, string, string, string, string);
+        Node(unsigned long id, string name, string j, string jd, string cc, string c);
         Node(const Node&);
         ~Node();
 

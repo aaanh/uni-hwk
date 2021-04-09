@@ -8,9 +8,7 @@ int main(int argc, char const* argv[])
 void TestDataUtils() 
 {
     ifstream data;
-    cout << getCurrentPath() << endl;
-    string patched = patchDataPath();
-    cout << patched << endl;
+    Graph graph;
     openFiles(patchDataPath(), data);
-    printDatabase(data);
+    dataParser(graph, data);
 }
