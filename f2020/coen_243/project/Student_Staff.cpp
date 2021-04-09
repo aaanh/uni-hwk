@@ -42,9 +42,9 @@ Student_Staff::Student_Staff() {
 
     // Data folder path according to platform
     if (getOsName() == "Windows 64-bit" || getOsName() == "Windows 32-bit") {
-        sCorrectedDataPath = sDataPath.substr(0, (iLengthDataPath - 4)) + "\\Data\\";
+        sCorrectedDataPath = sDataPath.substr(0, (iLengthDataPath)) + "\\Data\\";
     } else if (getOsName() == "Mac OSX" || getOsName() == "Linux") {
-        sCorrectedDataPath = sDataPath.substr(0, (iLengthDataPath - 4)) + "/Data/";
+        sCorrectedDataPath = sDataPath.substr(0, (iLengthDataPath)) + "/Data/";
     }
     
     int iFileCount = 0;
