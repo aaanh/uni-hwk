@@ -139,5 +139,8 @@ void dataParser(Graph &graph, std::ifstream &data)
             graph.addNode(*n);
         }
         line_count++;
+        std::cout << "Parsing entry: " << line_count << "\r";
+        std::cout.flush();
     }
+    std::cout << "Database parsed successfully. Found: " << line_count << " entries.\n";
 }

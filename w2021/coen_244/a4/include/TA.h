@@ -10,16 +10,16 @@ class TA
 {
     public:
         TA();
-        TA(string, string, string, unsigned int, string, unsigned int);
+        TA(string, string, string, string, string, string);
         ~TA();
 
         // attr setters
         void SetStudentID(string);
         void SetLastName(string);
         void SetFirstName(string);
-        void SetHireYear(unsigned int);
+        void SetHireYear(string);
         void SetClassification(string);
-        void SetWorkHours(unsigned int);
+        void SetWorkHours(string);
 
         // attr getters
         string GetStudentID() const;
