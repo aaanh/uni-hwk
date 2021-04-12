@@ -23,7 +23,7 @@ void Q1()
     ifstream database;
     string line;
     unsigned int line_count = 0; // iter according to num of employees
-    string colnames = "ID,LastName,FirstName,HiredYear,Classification,WorkHours";
+    string colnames = "Student_ID,Last_Name,First_Name,Hire_Year,Classification,Num_of_Working_Hours";
 
     try {
         database.open("./db/TAs.csv");
@@ -115,12 +115,8 @@ void Q1()
     {
         system("touch ./db/TAs_edited.csv");
     }
-    else {
-        system("./db/TAs_edited.csv << \"\"");
-    }
 
     line_count = 1;
-    
     for (auto ta : ta_list)
     {
         cout << ta->GetStudentID() << ","
@@ -148,9 +144,9 @@ void Q1()
 
             write_database << id << "," << lname << "," << fname << "," << hireyear << "," << classification << "," << work_hours << "\n";
         }
-        
         line_count++;
     }
     write_database.close();
+    // write done
 }
 
