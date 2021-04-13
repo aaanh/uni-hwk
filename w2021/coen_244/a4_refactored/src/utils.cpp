@@ -133,6 +133,7 @@ vector<TA*> CheckDatabase(vector<TA*> parsed)
     {
         parsed.erase(parsed.begin() + e);
         entries--;
+        cout << "Entries after removal: " << entries << '\n';
     }
     cout << "Invalid entries removed.\n";
     return parsed;
@@ -144,41 +145,26 @@ void WriteDatabase(vector<TA*> checked)
     
     if (!db.is_open())
     {
-        system("touch ../db/TAs_cleaned.csv");
-        db.open("../db/TAs_edited.csv");
+        system("touch ./db/TAs_cleaned.csv");
+        db.open("./db/TAs_edited.csv");
     }
 
-    int line_count = 0;
+
+    db << entries << "\n";
+    db << col_names << "\n";
     for (auto ta : checked)
     {
-        cout << ta->GetStudentID() << ","
-            << ta->GetLastName() << ","
-            << ta->GetFirstName() << ","
-            << ta->GetHireYear() << ","
-            << ta->GetClassification() << ","
-            << ta->GetWorkHours() << "\n";
-        if (line_count == 0)
-        {
-            db << entries << "\n";
-        }
-        else if (line_count == 1)
-        {
-            db << col_names << "\n";
-        }
-        else
-        {
-            string id = ta->GetStudentID();
-            string lname = ta->GetLastName();
-            string fname = ta->GetFirstName();
-            int hireyear = ta->GetHireYear();
-            string classification = ta->GetClassification();
-            int work_hours = ta->GetWorkHours();
+        string id = ta->GetStudentID();
+        string lname = ta->GetLastName();
+        string fname = ta->GetFirstName();
+        int hireyear = ta->GetHireYear();
+        string classification = ta->GetClassification();
+        int work_hours = ta->GetWorkHours();
 
-            db << id << "," << lname << "," << fname << "," << hireyear << "," << classification << "," << work_hours << "\n";
-        }
-        line_count++;
+        db << id << "," << lname << "," << fname << "," << hireyear << "," << classification << "," << work_hours << "\n";
     }
     db.close();
+    cout << "File written successfully.\n";
 }
 
 bool IsExistTA(int id)
@@ -202,7 +188,7 @@ void AddNewTA()
     string id, lname, fname, hired_year, classification, work_hours;
     bool flag = true;
 
-    cout << "Enter new TA information: ";
+    cout << "Enter new TA information: \n";
 
     do {
         cout << "> ID: ";
@@ -214,14 +200,18 @@ void AddNewTA()
     cin >> lname;
     cout << "> First name: ";
     cin >> fname;
-    cout << "Hired year: ";
+    cout << "> Hired year: ";
     cin >> hired_year;
-    cout << "Classification: ";
+    cout << "> Classification: ";
     cin >> classification;
-    cout << "Hours worked: ";
+    cout << "> Hours worked: ";
     cin >> work_hours;
 
-    ofstream db("./db/TAs_edited.csv");
-    db << id << "," << lname << "," << fname << "," << hired_year << "," << classification << "," << work_hours << "\n";
+    TA *local_ta = new TA(id, lname, fname, hired_year, classification, work_hours);
 
+    ifstream db = OpenCheckedDatabase();
+    vector<TA*> ta_list = ParseDatabase(db);
+    entries++;
+    ta_list.push_back(local_ta);
+    WriteDatabase(ta_list);
 }

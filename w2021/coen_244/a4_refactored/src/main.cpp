@@ -3,6 +3,7 @@
 int main(int argc, char *argv[]) 
 {
     Q1a();
+    Q1b();
 
     return 1;
 }
