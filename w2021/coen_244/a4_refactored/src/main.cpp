@@ -13,7 +13,8 @@ void Q1a()
     cout << "-----------------------------\n";
     ifstream db = OpenDatabase();
     vector<TA*> ta_list = ParseDatabase(db);
-    cout << "\nDatabase contains: " << endl;
+    cout << "\nDatabase contains: " << "\n";
+    db = OpenDatabase();
     PrintDatabase(db);
     ta_list = CheckDatabase(ta_list);
     cout << "\nContainer now has: " << endl;

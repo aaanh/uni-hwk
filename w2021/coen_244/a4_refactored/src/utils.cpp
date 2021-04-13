@@ -90,6 +90,26 @@ void PrintDatabase(ifstream &db) // output lines in db file
     }
 }
 
+void PrintOldData()
+{
+    ifstream db("./db/TAs.csv");
+    string line;
+    while(getline(db, line))
+    {
+        cout << line << '\n';
+    }
+}
+
+void PrintNewData()
+{
+    ifstream db("./db/TAs_edited.csv");
+    string line;
+    while(getline(db, line))
+    {
+        cout << line << '\n';
+    }
+}
+
 vector<TA*> CheckDatabase(vector<TA*> parsed)
 {
     vector<int> entries_to_rm;

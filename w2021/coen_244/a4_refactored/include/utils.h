@@ -19,6 +19,8 @@ vector<TA*> ParseDatabase(ifstream &db);
 vector<TA*> CheckDatabase(vector<TA*> parsed);
 void WriteDatabase(vector<TA*> checked);
 void PrintDatabase(ifstream &db);
+void PrintOldData();
+void PrintNewData();
 void PrintContainer(vector<TA*> parsed);
 
 void AddNewTA();
