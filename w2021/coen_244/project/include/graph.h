@@ -35,17 +35,12 @@ class Graph {
         unsigned long int getEdgeCount(); // done
 
         // data ops
-        /** TODO: Finish implementation on April 9th. 
-         * source code is in data.cpp
-        */
-        bool readDatabase(string path);
-        bool addDatabase();
+        bool readDatabase(string path); // done
+        bool addDatabase(); // done
 
         // list ops
-        /** TODO: Implement now!!
-         */
-        vector<Node*> getNodeList();
-        vector<Edge*> getEdgeList();
+        vector<Node*> getNodeList(); // done
+        vector<Edge*> getEdgeList(); // done
 
         // graph ops
         /** TODO: Implement during the weekends

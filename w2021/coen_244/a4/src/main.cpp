@@ -10,15 +10,22 @@
 
 using namespace std;
 
-void Q1();
+void Q1a();
+void Q2();
 
 int main(int argc, char *argv[]) 
 {
-    Q1();
+    cout << "Start of question 1\n";
+    Q1a();
+    cout << "\nQuestion 1 Testing done\n";
+    
+    cout << "\nStart of question 2\n";
+    Q2();
+
     return 1;
 }
 
-void Q1() 
+void Q1a() 
 {
     ifstream database;
     string line;
@@ -36,20 +43,6 @@ void Q1()
     vector<int> line_to_rm; // store line to be removed
     string temp_num_of_entries; // temp num of entries
     int id, num_of_entries; // by stoi
-
-    // // print line to console
-    // while (getline(database, line)) {
-    //     if (line_count == 0)
-    //     {
-    //         cout << "Number of entries: " << line << "\n";
-    //     } else if (line_count == 1) {
-    //         cout << "Header" << "\n";
-    //         cout << line << "\n";
-    //     } else {
-    //         cout << line << '\n';
-    //     }
-    //     line_count++;
-    // }
 
     // a) remove entries
     // parsing entries
@@ -113,7 +106,7 @@ void Q1()
     
     if (!write_database.is_open())
     {
-        system("touch ./db/TAs_edited.csv");
+        system("touch ./db/TAs_cleaned.csv");
     }
 
     line_count = 1;
