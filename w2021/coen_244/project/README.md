@@ -19,3 +19,8 @@
 -   CHANGEDIR `cd` into the my uncompressed project submission folder
 -   COMPILE `make` my project
 -   executable binary should be in `/output` folder
+
+### Cross-platform support:
+
+-   Docker container: In progress
+-   Repl.it: In progress
