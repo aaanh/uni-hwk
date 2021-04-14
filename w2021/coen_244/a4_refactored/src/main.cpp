@@ -34,3 +34,10 @@ void Q1b()
     cout << "-----------------------------\n";
     AddNewTA();
 }
+
+void Q2()
+{
+    cout << "\nStart of Question 2a driver\n";
+    cout << "-----------------------------\n";
+    
+}

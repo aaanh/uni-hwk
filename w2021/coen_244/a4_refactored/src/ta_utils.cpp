@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "ta_utils.h"
 
 string col_names = "Student_ID,Last_Name,First_Name,Hire_Year,Classification,Num_of_Working_Hours";
 unsigned int entries;
@@ -193,7 +193,13 @@ void AddNewTA()
     do {
         cout << "> ID: ";
         cin >> id;
-        flag = IsExistTA(stoi(id));
+        try {
+            flag = IsExistTA(stoi(id));
+        } catch (...) {
+            cout << "Exception caught: ID needs to be a number.\n";
+            cout << "Exiting...\n";
+            exit(1);
+        }
     } while (!flag);
 
     cout << "> Last name: ";
