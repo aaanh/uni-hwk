@@ -55,5 +55,7 @@ void Laptop::setTouchscreen(bool touch)
 
 void Laptop::printLaptop()
 {
-
+    cout << "\nLaptop #" << getSerialNumber() << "\n";
+    cout << "brand,color,price,core_count,touchscreen\n";
+    cout << getBrand() << "," << getColor() << "," << getPrice() << "," << getCoreCount() << "," << getTouchscreen() << "\n";
 }

@@ -40,5 +40,7 @@ void Smartwatch::setBatteryLife(int hours)
 
 void Smartwatch::printSmartwatch()
 {
-
+    cout << "\nSmartwatch #" << getSerialNumber() << "\n";
+    cout << "brand,color,price,battery_life\n";
+    cout << getBrand() << "," << getColor() << "," << getPrice() << "," << getBatteryLife() << "\n";
 }

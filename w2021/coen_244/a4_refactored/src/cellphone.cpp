@@ -42,6 +42,8 @@ void Cellphone::setNumberOfCameras(int num_of_cameras)
 
 void Cellphone::printCellphone()
 {
-
+    cout << "\nCellphone #" << getSerialNumber() << "\n";
+    cout << "brand,color,price,num_of_cameras\n";
+    cout << getBrand() << "," << getColor() << "," << getPrice() << "," << getNumberOfCameras() << "\n";
 }
 

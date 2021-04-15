@@ -2,6 +2,7 @@
 #define ELECTRONIC_DECICE_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 

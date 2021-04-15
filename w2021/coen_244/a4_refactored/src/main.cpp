@@ -39,5 +39,13 @@ void Q2()
 {
     cout << "\nStart of Question 2a driver\n";
     cout << "-----------------------------\n";
-    
+    // init the base container
+    vector<ElectronicDevice*> container;
+    // init derived objects
+    Smartwatch *device_1 = new Smartwatch();
+    Smartwatch *device_2 = new Smartwatch();
+    Cellphone *device_3 = new Cellphone();
+    Cellphone *device_4 = new Cellphone();
+    Laptop *device_5 = new Laptop();
+    Laptop *device_6 = new Laptop();
 }

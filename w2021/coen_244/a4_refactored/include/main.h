@@ -12,6 +12,9 @@
 #include "ta.h"
 #include "ta_utils.h"
 
+#include "device_utils.h"
+#include "electronicdevice.h"
+
 using namespace std;
 
 void Q1a();
