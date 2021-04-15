@@ -42,10 +42,18 @@ void Q2()
     // init the base container
     vector<ElectronicDevice*> container;
     // init derived objects
-    Smartwatch *device_1 = new Smartwatch();
-    Smartwatch *device_2 = new Smartwatch();
-    Cellphone *device_3 = new Cellphone();
-    Cellphone *device_4 = new Cellphone();
-    Laptop *device_5 = new Laptop();
-    Laptop *device_6 = new Laptop();
+    Smartwatch *device_1 = new Smartwatch("Apple", 12345, "white", 499.0, 24);
+    Smartwatch *device_2 = new Smartwatch("Samsung", 54321, "black", 379.99, 20);
+    Cellphone *device_3 = new Cellphone("Apple", 13245, "midnight", 999.00, 3);
+    Cellphone *device_4 = new Cellphone("Google", 12435, "gray", 549.99, 2);
+    Laptop *device_5 = new Laptop("Lenovo", 12354, "titanium", 1424.49, 6, true);
+    Laptop *device_6 = new Laptop("Dell", 51234, "silver", 1699.99, 4, false);
+    // add objects to base container
+    container.push_back(device_1);
+    container.push_back(device_2);
+    container.push_back(device_3);
+    container.push_back(device_4);
+    container.push_back(device_5);
+    container.push_back(device_6);
+    
 }
