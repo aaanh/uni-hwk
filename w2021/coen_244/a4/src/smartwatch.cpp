@@ -1,4 +1,4 @@
-#include "electronicdevice.h"
+#include "smartwatch.h"
 
 Smartwatch::Smartwatch()
 {

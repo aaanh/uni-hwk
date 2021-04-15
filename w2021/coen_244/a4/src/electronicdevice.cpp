@@ -1,6 +1,11 @@
 #include "electronicdevice.h"
 
-ElectronicDevice::ElectronicDevice() 
+ElectronicDevice::ElectronicDevice()
+{
+    
+}
+
+ElectronicDevice::ElectronicDevice(string brand, int serial, string color, double price) 
 {
     
 }

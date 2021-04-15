@@ -1,4 +1,4 @@
-#include "electronicdevice.h"
+#include "cellphone.h"
 
 Cellphone::Cellphone()
 {

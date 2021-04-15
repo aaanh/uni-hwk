@@ -12,8 +12,11 @@
 #include "ta.h"
 #include "ta_utils.h"
 
-#include "device_utils.h"
 #include "electronicdevice.h"
+#include "smartwatch.h"
+#include "laptop.h"
+#include "cellphone.h"
+#include "device_utils.h"
 
 using namespace std;
 

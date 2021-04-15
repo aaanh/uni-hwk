@@ -2,14 +2,11 @@
 #define DEVICE_UTILS_H
 
 #include <vector>
-#include <sstream>
 #include <fstream>
 #include <string>
-#include <iostream>
+#include <sstream>
 
 #include "electronicdevice.h"
-
-using namespace std;
 
 void WriteDeviceDatabase(vector<ElectronicDevice*> devices);
 

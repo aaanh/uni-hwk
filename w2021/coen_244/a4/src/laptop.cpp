@@ -1,4 +1,4 @@
-#include "electronicdevice.h"
+#include "laptop.h"
 
 Laptop::Laptop()
 {
