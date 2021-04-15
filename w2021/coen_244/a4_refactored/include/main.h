@@ -9,7 +9,7 @@
 #include <iomanip>
 #include <algorithm>
 
-#include "TA.h"
+#include "ta.h"
 #include "ta_utils.h"
 
 using namespace std;
