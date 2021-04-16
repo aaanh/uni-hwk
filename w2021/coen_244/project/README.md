@@ -19,6 +19,7 @@
 -   CHANGEDIR `cd` into the my uncompressed project submission folder
 -   COMPILE `make` my project
 -   executable binary should be in `/output` folder
+-   RUN by `./output/main` \*Note: \*nix platforms' executable should have no extension or `.o` as extension when compiled. Windows x86 should have `main.exe` when compiled.
 
 ### Cross-platform support:
 
