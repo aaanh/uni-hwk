@@ -16,6 +16,8 @@ class Smartwatch : public ElectronicDevice
         void setBatteryLife(int);
         // printer
         void printSmartwatch();
+        // get type
+        string getType() { return "smartwatch"; };
 
     private:
         int battery_life;

@@ -25,6 +25,8 @@ class ElectronicDevice
         void setPrice(double price);
         // printer
         virtual void print();
+        // virtual type
+        virtual string getType() = 0;
         
     private:
         string brand;

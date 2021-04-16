@@ -18,6 +18,8 @@ class Laptop : public ElectronicDevice
         void setTouchscreen(bool);
         // printer
         void printLaptop();
+        // get type
+        string getType() { return "laptop"; };
 
     private:
         int core_count;

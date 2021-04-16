@@ -16,6 +16,8 @@ class Cellphone : public ElectronicDevice
         void setNumberOfCameras(int);
         // printer
         void printCellphone();
+        // get type
+        string getType() { return "cellphone"; };
 
     private:
         int num_of_cameras;
