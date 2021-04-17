@@ -157,7 +157,7 @@ void Graph::display()
         for (size_t i = begin; i <= end; i++)
         {
             checked.clear();
-            cout << "(" << this->getNodeList()[i]->getCountryCode() << ") " << this->getNodeList()[i]->getName();
+            cout << i <<  " (" << this->getNodeList()[i]->getCountryCode() << ") " << this->getNodeList()[i]->getName();
             checked.push_back(this->getNodeList()[i]->getName());
             for (auto e : this->getEdgeList())
             {
