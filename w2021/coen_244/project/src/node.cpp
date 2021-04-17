@@ -123,3 +123,15 @@ string Node::getCountryName()
 {
     return country_name;
 }
+
+void Node::printAttributes() 
+{
+    cout << "(Node attributes)\nnode_id,name,jurisdiction,jurisdiction_desc,country_code,country_name" << "\n";
+}
+
+void Node::print() 
+{
+    cout << getNodeId() << "," << getName() << "," 
+    << getJurisdiction() << "," << getJurisdictionDesc() << "," 
+    << getCountryCode() << "," << getCountryName() << "\n";
+}

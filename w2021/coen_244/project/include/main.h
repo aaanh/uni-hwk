@@ -10,6 +10,8 @@
 
 using namespace std;
 
-void TestDataUtils();
+Graph TestDataUtils();
+void TestIO(Graph graph);
+void TestGraphDisplay(Graph graph);
 
 #endif

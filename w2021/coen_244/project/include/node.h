@@ -27,6 +27,9 @@ class Node {
         string getCountryCode();
         string getCountryName();
 
+        void printAttributes();
+        void print();
+
     private:
         unsigned long int node_id;
         string name;
