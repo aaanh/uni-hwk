@@ -36,6 +36,7 @@ Node::~Node()
 bool Node::setNodeId(unsigned long int node_id) 
 {
     this->node_id = node_id;
+    return 1;
 }
 
 bool Node::setName(string name) 

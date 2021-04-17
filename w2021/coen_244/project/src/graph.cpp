@@ -94,7 +94,7 @@ bool Graph::rmEdge(Node& n1, Node& n2)
 
 unsigned long int Graph::searchNode(unsigned long node_id) 
 {
-    int id;
+    int id = 0;
     for (size_t i = 0; i <= node_list.size(); i++) {
         if (node_list[i]->getNodeId() == node_id) {
             id = i;
@@ -174,7 +174,14 @@ void Graph::display()
                 }
             }
             cout << "\n";
-        
+            
+            try {
+                system("read -n 1 -s -p \"Press any key to continue...\"");
+            } catch (...) {}
+            
+            try {
+                system("pause");
+            } catch(...) {}
         }
 
     } while (!flag);

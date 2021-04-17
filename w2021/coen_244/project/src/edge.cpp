@@ -36,7 +36,7 @@ bool operator==(const Edge& lhs, const Edge& rhs)
     b = lhs.getNodePair()[1]->getName();
     c = rhs.getNodePair()[0]->getName();
     d = rhs.getNodePair()[1]->getName();
-    flag = ((a == c && b == d) || (a == d && b == c) || (a == b) && (c == d));
+    flag = ((a == c && b == d) || (a == d && b == c) || ((a == b) && (c == d)));
 
     return flag;
 }

@@ -45,11 +45,11 @@ std::string patchDataPath()
 
 void indexDirectory(std::string path)
 {
-    int file_count = 0;
-    for (const auto &entry : fs::directory_iterator(path)) ++file_count;
-        std::cout << "Found " << file_count << ": \n";
+    // int file_count = 0;
+    // for (const auto &entry : fs::directory_iterator(path)) ++file_count;
+        std::cout << "Found" << ": \n";
     for (const auto &entry : fs::directory_iterator(path)) 
-        std::cout << "> " << entry.path() << "\n";
+        std::cout << " > " << entry.path() << "\n";
 }
 
 void openFiles(std::string path, std::ifstream &data)
