@@ -30,23 +30,35 @@ bool Graph::addNode(Node& n)
 
 bool Graph::addEdge(Edge& e) 
 {
+    bool flag = true;
     // check edge needs a graph containing >= 2 nodes
     if (node_count + node_count <= 1) {
         cout << "Not enough nodes.\n";
         return 0;
-    } else {
-        for (auto edge : edge_list) {
-            // check edge exist, add when not exist
-            if (*find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[0]) && *find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[1])) {
-                cout << "Edge already existed in undirected graph.\n";
-                return 0;
-            } else {
+    } 
+    // else 
+    // {
+    //     for (auto edge : edge_list) {
+    //         flag = true;
+    //         cout << "Find: " << (find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[0]) << "\n";
+    //         // check edge exist, add when not exist
+    //         if (*find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[0]) 
+    //             && *find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[1])) 
+    //         {
+    //             cout << "Edge already added.\n";
+    //             flag = false;
+    //             return 0;
+    //         }
+    //     }
+    //     if (flag)
+            {
                 edge_list.push_back(&e);
+                // cout << "add edge successful.\n";
                 edge_count++;
                 return 1;
             }
-        }
-    }
+    // }
+    return 1;
 }
 
 bool Graph::rmNode(int index) 
@@ -65,13 +77,15 @@ bool Graph::rmNode(int index)
     } else {
         cout << "Node does not exist at index or index is OOB.\n";
         return 0;
-    }       
+    }
+    return 1;       
 }
 
 bool Graph::rmEdge(int index) 
 {
     edge_list.erase(edge_list.begin() + index);
     edge_count--;
+    return 1;
 }
 
 bool Graph::rmEdge(Node& n1, Node& n2) 
@@ -83,19 +97,22 @@ bool Graph::rmEdge(Node& n1, Node& n2)
         }
         counter++;
     }
+    return 1;
 }
 
 unsigned long int Graph::searchNode(unsigned long node_id) 
 {
+    int id;
     for (size_t i = 0; i <= node_list.size(); i++) {
         if (node_list[i]->getNodeId() == node_id) {
-            return i;
+            id = i;
             break;
         } else {
             cout << "Node with node_id = " << node_id << " does not exist.\n";
             return -1;
         }
     }
+    return id;
 }
 
 Node Graph::getNode(unsigned long int index) 
@@ -116,6 +133,7 @@ unsigned long int Graph::getEdgeCount()
 bool Graph::setNumOfEntries(unsigned long entries) 
 {
     this->num_of_entries = entries;
+    return 1;
 }
 
 unsigned long Graph::getNumOfEntries() 
@@ -136,36 +154,43 @@ vector<Edge*> Graph::getEdgeList()
 void Graph::display() 
 {
     bool flag = false;
-    int begin, end;
+    unsigned long begin, end;
     unsigned long counter = 0;
     do {
         cout << "\nGraph display module:\n";
-        cout << "Enter range for data display (0 - " << getNumOfEntries() << "): \n";
+        begin = 1;
+        end = 5;
+        cout << "Enter range for data display (0 - " << getNumOfEntries() << "): ";
         try {
             cin >> begin >> end;
         } catch (...) {
             cout << "Invalid type.\n";
             cout << "Exiting...\n";
-            flag = false;
+            flag = true;
             exit(1);
         }
         if (end > num_of_entries - 1 || begin <= 0)
         {
             cout << "Out of bounds or (-1) was entered\n";
-            flag = false;
-        } else if (counter >= begin || counter <= end) {
+            flag = true;
+        } else {
             for (auto n : node_list)
             {
-                cout << "\n" << counter << " " << n->getName() << ":" << endl;
-                for (auto e : this->edge_list) 
+                if (counter >= begin && counter <= end)
                 {
-                    if (e->getNodePair()[0]->getCountryCode() == n->getCountryCode() || e->getNodePair()[1]->getCountryCode() == n->getCountryCode())
+                    cout << "\n" << counter << " " << n->getName() << ":" << "\n";
+                    // cout << this->getEdgeList()[0]->getNodePair()[0]->getName() << "\n";
+                    for (auto e : this->edge_list) 
                     {
-                        cout << "> ";
-                        cout << e->getNodePair()[0]->getName()
-                        << " === " 
-                        << e->getNodePair()[1]->getName()
-                        << endl;
+                        // cout << n->getCountryCode() << " " << e->getNodePair()[0]->getCountryCode() << "\n";
+                        if (e->getNodePair()[0]->getCountryCode() == n->getCountryCode() || e->getNodePair()[1]->getCountryCode() == n->getCountryCode())
+                        {
+                            cout << "> ";
+                            cout << e->getNodePair()[0]->getName()
+                            << " === " 
+                            << e->getNodePair()[1]->getName()
+                            << endl;
+                        }
                     }
                 }
                 counter++;
@@ -176,5 +201,5 @@ void Graph::display()
 
 bool Graph::clean() 
 {
-    
+    return 1;
 }

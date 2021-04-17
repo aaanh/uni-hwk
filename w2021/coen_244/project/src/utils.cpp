@@ -139,9 +139,11 @@ void dataParser(Graph &graph, std::ifstream &data)
             Node *n = new Node(id, name, j, jd, cc, c);
 
             graph.addNode(*n);
+
             for (auto node : graph.getNodeList())
             {
-                if (n->getJurisdiction() == node->getJurisdiction())
+                // cout << "n's cc: " << n->getCountryCode() << "; node's cc: " << node->getCountryCode() <<"\n";
+                if (n->getCountryCode() == node->getCountryCode())
                 {
                     Edge *e = new Edge(*n, *node);
                     graph.addEdge(*e);
