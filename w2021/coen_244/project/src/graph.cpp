@@ -18,8 +18,6 @@ bool Graph::addNode(Node& n)
     if (this->node_count < MAX_NODE_COUNT) {
         node_list.push_back(&n);
         node_count++;
-        // cout << node_count << endl;
-        // cout << "Node added" << endl;
         flag = true;
     } else {
         cout << "Error adding node.\n";
@@ -36,28 +34,13 @@ bool Graph::addEdge(Edge& e)
         cout << "Not enough nodes.\n";
         return 0;
     } 
-    // else 
-    // {
-    //     for (auto edge : edge_list) {
-    //         flag = true;
-    //         cout << "Find: " << (find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[0]) << "\n";
-    //         // check edge exist, add when not exist
-    //         if (*find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[0]) 
-    //             && *find(edge->getNodePair().begin(), edge->getNodePair().end(), e.getNodePair()[1])) 
-    //         {
-    //             cout << "Edge already added.\n";
-    //             flag = false;
-    //             return 0;
-    //         }
-    //     }
-    //     if (flag)
             {
                 edge_list.push_back(&e);
-                // cout << "add edge successful.\n";
+                
                 edge_count++;
                 return 1;
             }
-    // }
+    
     return 1;
 }
 
@@ -179,10 +162,10 @@ void Graph::display()
                 if (counter >= begin && counter <= end)
                 {
                     cout << "\n" << counter << " " << n->getName() << ":" << "\n";
-                    // cout << this->getEdgeList()[0]->getNodePair()[0]->getName() << "\n";
+                    
                     for (auto e : this->edge_list) 
                     {
-                        // cout << n->getCountryCode() << " " << e->getNodePair()[0]->getCountryCode() << "\n";
+                        
                         if (e->getNodePair()[0]->getCountryCode() == n->getCountryCode() || e->getNodePair()[1]->getCountryCode() == n->getCountryCode())
                         {
                             cout << "> ";

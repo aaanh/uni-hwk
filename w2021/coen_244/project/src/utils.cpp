@@ -70,11 +70,6 @@ void openFiles(std::string path, std::ifstream &data)
         } else {
             std::cout << "Database opened successfully.\n";
         }
-    // }
-    // catch (std::string e)
-    // {
-    //     // std::cout << "An exception has occurred: " << e << std::endl;
-    // }
 }
 
 void printDatabase(std::ifstream &data) 
@@ -142,7 +137,6 @@ void dataParser(Graph &graph, std::ifstream &data)
 
             for (auto node : graph.getNodeList())
             {
-                // cout << "n's cc: " << n->getCountryCode() << "; node's cc: " << node->getCountryCode() <<"\n";
                 if (n->getCountryCode() == node->getCountryCode())
                 {
                     Edge *e = new Edge(*n, *node);
