@@ -28,19 +28,28 @@ bool Graph::addNode(Node& n)
 
 bool Graph::addEdge(Edge& e) 
 {
-    bool flag = true;
     // check edge needs a graph containing >= 2 nodes
     if (node_count + node_count <= 1) {
         cout << "Not enough nodes.\n";
         return 0;
-    } 
+    } else if (edge_count == 0)
+    {
+        edge_list.push_back(&e);
+        edge_count++;
+    } else {
+        for (auto edge : edge_list)
+        {
+            if (*edge == e)
             {
+                // cout << "Edge existed.\n";
+                break;
+            } else {
                 edge_list.push_back(&e);
-                
                 edge_count++;
-                return 1;
+                break;
             }
-    
+        }
+    }
     return 1;
 }
 
@@ -139,46 +148,35 @@ void Graph::display()
     bool flag = false;
     unsigned long begin, end;
     unsigned long counter = 0;
+    vector<string> checked;
     do {
         cout << "\nGraph display module:\n";
-        begin = 1;
-        end = 5;
         cout << "Enter range for data display (0 - " << getNumOfEntries() << "): ";
-        try {
-            cin >> begin >> end;
-        } catch (...) {
-            cout << "Invalid type.\n";
-            cout << "Exiting...\n";
-            flag = true;
-            exit(1);
-        }
-        if (end > num_of_entries - 1 || begin <= 0)
+        cin >> begin >> end;
+
+        for (size_t i = begin; i <= end; i++)
         {
-            cout << "Out of bounds or (-1) was entered\n";
-            flag = true;
-        } else {
-            for (auto n : node_list)
+            checked.clear();
+            cout << "(" << this->getNodeList()[i]->getCountryCode() << ") " << this->getNodeList()[i]->getName();
+            checked.push_back(this->getNodeList()[i]->getName());
+            for (auto e : this->getEdgeList())
             {
-                if (counter >= begin && counter <= end)
+                if ((this->getNodeList()[i]->getCountryCode() == e->getNodePair()[0]->getCountryCode()) && !(find(checked.begin(), checked.end(), e->getNodePair()[1]->getName()) != checked.end()))
                 {
-                    cout << "\n" << counter << " " << n->getName() << ":" << "\n";
-                    
-                    for (auto e : this->edge_list) 
-                    {
-                        
-                        if (e->getNodePair()[0]->getCountryCode() == n->getCountryCode() || e->getNodePair()[1]->getCountryCode() == n->getCountryCode())
-                        {
-                            cout << "> ";
-                            cout << e->getNodePair()[0]->getName()
-                            << " === " 
-                            << e->getNodePair()[1]->getName()
-                            << endl;
-                        }
-                    }
+                    cout << " = " <<  e->getNodePair()[1]->getName();
+                    checked.push_back(e->getNodePair()[1]->getName());
+                    counter++;
                 }
-                counter++;
+                if (counter == 3)
+                {
+                    cout << "\n";
+                    counter = 0;
+                }
             }
+            cout << "\n";
+        
         }
+
     } while (!flag);
 }
 

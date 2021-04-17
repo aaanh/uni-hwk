@@ -16,7 +16,9 @@ class Edge {
         ~Edge();
 
         bool addNodePair(Node&, Node&);
-        vector<Node*> getNodePair();
+        vector<Node*> getNodePair() const;
+
+        friend bool operator==(const Edge& lhs, const Edge& rhs);
 
     private:
         vector<Node*> node_pair;
