@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
     Q1a();
     Q1b();
-
+    Q2();
     return 1;
 }
 
@@ -55,5 +55,6 @@ void Q2()
     container.push_back(device_4);
     container.push_back(device_5);
     container.push_back(device_6);
-    
+    // write device to database
+    WriteDeviceDatabase(container);
 }

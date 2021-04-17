@@ -12,6 +12,13 @@ void WriteDeviceDatabase(vector<ElectronicDevice*> devices)
 
     for (auto d : devices)
     {
-        
+        cout << d->getType() << "\n";
+        cout << d->getBrand() << "\n";
+        cout << d->getColor() << "\n";
+        cout << d->getSerialNumber() << "\n";
+        cout << d->getPrice() << "\n\n";
+        // data << d->getType() << "," << d->getBrand() << "," << d->getSerialNumber() << "," << d->getColor() << "," << d->getPrice() << "," << "\n";
     }
+    data.close();
+    cout << "File written successfully.\n";
 }
