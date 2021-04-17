@@ -119,6 +119,8 @@ void dataParser(Graph &graph, std::ifstream &data)
     std::string temp_id, name, j, jd, cc, c;
     unsigned long id;
     int line_count = 0;
+    clock_t start, end;
+    start = clock();
     while (std::getline(data, line))
     {
         if (line_count != 0) 
@@ -137,10 +139,22 @@ void dataParser(Graph &graph, std::ifstream &data)
             Node *n = new Node(id, name, j, jd, cc, c);
 
             graph.addNode(*n);
+            for (auto node : graph.getNodeList())
+            {
+                if (n->getJurisdiction() == node->getJurisdiction())
+                {
+                    Edge *e = new Edge(*n, *node);
+                    graph.addEdge(*e);
+                }
+            }
         }
         line_count++;
         std::cout << "Parsing entry: " << line_count << "\r";
+        graph.setNumOfEntries(line_count);
         std::cout.flush();
     }
+    end = clock();
+    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+    std::cout << "Parse time: " << fixed << time_taken << setprecision(5) << " seconds" << "\n";
     std::cout << "Database parsed successfully. Found: " << line_count << " entries.\n";
 }

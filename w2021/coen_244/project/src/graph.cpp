@@ -113,6 +113,16 @@ unsigned long int Graph::getEdgeCount()
     return edge_count;
 }
 
+bool Graph::setNumOfEntries(unsigned long entries) 
+{
+    this->num_of_entries = entries;
+}
+
+unsigned long Graph::getNumOfEntries() 
+{
+    return num_of_entries;
+}
+
 vector<Node*> Graph::getNodeList() 
 {
     return this->node_list;
@@ -125,7 +135,43 @@ vector<Edge*> Graph::getEdgeList()
 
 void Graph::display() 
 {
-    
+    bool flag = false;
+    int begin, end;
+    unsigned long counter = 0;
+    do {
+        cout << "\nGraph display module:\n";
+        cout << "Enter range for data display (0 - " << getNumOfEntries() << "): \n";
+        try {
+            cin >> begin >> end;
+        } catch (...) {
+            cout << "Invalid type.\n";
+            cout << "Exiting...\n";
+            flag = false;
+            exit(1);
+        }
+        if (end > num_of_entries - 1 || begin <= 0)
+        {
+            cout << "Out of bounds or (-1) was entered\n";
+            flag = false;
+        } else if (counter >= begin || counter <= end) {
+            for (auto n : node_list)
+            {
+                cout << "\n" << counter << " " << n->getName() << ":" << endl;
+                for (auto e : this->edge_list) 
+                {
+                    if (e->getNodePair()[0]->getCountryCode() == n->getCountryCode() || e->getNodePair()[1]->getCountryCode() == n->getCountryCode())
+                    {
+                        cout << "> ";
+                        cout << e->getNodePair()[0]->getName()
+                        << " === " 
+                        << e->getNodePair()[1]->getName()
+                        << endl;
+                    }
+                }
+                counter++;
+            }
+        }
+    } while (!flag);
 }
 
 bool Graph::clean() 

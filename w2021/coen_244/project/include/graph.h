@@ -10,14 +10,16 @@
 
 #include "node.h"
 #include "edge.h"
+#include "graph_base.h"
 
 
 using namespace std;
 
-class Graph {
+class Graph : public GraphBase
+{
     public:
         Graph();
-        ~Graph();
+        virtual ~Graph();
 
         // entity ops
 
@@ -35,8 +37,10 @@ class Graph {
         unsigned long int getEdgeCount(); // done
 
         // data ops
-        bool readDatabase(string path); // done
-        bool addDatabase(); // done
+        // bool readDatabase(string path); // done
+        // bool addDatabase(); // done
+        bool setNumOfEntries(unsigned long); // done
+        unsigned long getNumOfEntries(); // done
 
         // list ops
         vector<Node*> getNodeList(); // done
@@ -53,7 +57,7 @@ class Graph {
         vector<Edge*> edge_list;
         unsigned long node_count = 0;
         unsigned long edge_count = 0;
-
+        unsigned long num_of_entries = 0;
 };
 
 #endif

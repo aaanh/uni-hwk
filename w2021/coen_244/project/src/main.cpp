@@ -11,4 +11,5 @@ void TestDataUtils()
     Graph graph;
     openFiles(patchDataPath(), data);
     dataParser(graph, data);
+    graph.display();
 }
