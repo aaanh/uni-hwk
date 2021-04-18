@@ -7,7 +7,10 @@ ElectronicDevice::ElectronicDevice()
 
 ElectronicDevice::ElectronicDevice(string brand, int serial, string color, double price) 
 {
-    
+    this->setBrand(brand);
+    this->setSerialNumber(serial);
+    this->setColor(color);
+    this->setPrice(price);
 }
 
 ElectronicDevice::ElectronicDevice(const ElectronicDevice& ed)
