@@ -6,8 +6,6 @@
 #include "node.h"
 #include "utils.h"
 
-#include <typeinfo>
-
 using namespace std;
 
 Graph TestDataUtils();

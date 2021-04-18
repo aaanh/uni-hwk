@@ -26,6 +26,7 @@ Graph TestDataUtils()
 
 void TestIO(Graph graph)
 {
+    // node and edge
     auto node_list = graph.getNodeList();
     auto edge_list = graph.getEdgeList();
 
@@ -49,6 +50,20 @@ void TestIO(Graph graph)
         cout << e->getNodePair()[0]->getNodeId() << "," << e->getNodePair()[1]->getNodeId() << "\n";
         if (edge_counter == 1000) break;
         edge_counter++;
+    }
+
+    // graph
+    cout << "\nTesting graph accessors:\n";
+    try {
+        graph.getEdgeCount();
+        graph.getEdgeList();
+        graph.getNode(1);
+        graph.getNodeList();
+        graph.getNodeCount();
+        graph.getNumOfEntries();
+    } catch (...)
+    {
+        cout << "One or many graph accessors malfunctioned.\n";
     }
 }
 

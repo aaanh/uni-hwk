@@ -6,12 +6,14 @@
 
 ### License:
 
-\> MIT
+\> [(CC BY-NC-ND 4.0) Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ### Requirements:
 
--   gcc/c++ | >= c++17
--   make | v3.81
+-   gcc/c++ | std >= c++17
+-   Windows: MinGW gcc | >=9.2.0 this includes the required `filesystem.h`; gnuWin make | v3.81
+-   Apple/macOS/Darwin: Xcode command line tools (install by opening `Terminal.app` and invoke `git` or `c++` or some ubiquitous tools, unix tools like `cd` will not invoke the installation)
+-   Ubuntu: `build-essential` package | latest
 
 ### Usage:
 
@@ -23,5 +25,6 @@
 
 ### Cross-platform support:
 
--   Docker container: In progress
+-   Docker container: Completed
+    -   Using the docker extension in VSCode, build image and run it.
 -   Repl.it: In progress
