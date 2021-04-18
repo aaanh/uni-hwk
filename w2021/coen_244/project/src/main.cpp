@@ -61,10 +61,15 @@ void TestIO(Graph graph)
         graph.getNodeList();
         graph.getNodeCount();
         graph.getNumOfEntries();
+        system("pause");
+        system("read -n 1 -s -p \"Press any key to continue...\"");
     } catch (...)
     {
         cout << "One or many graph accessors malfunctioned.\n";
+        system("pause");
+        system("read -n 1 -s -p \"Press any key to continue...\"");
     }
+    cout << "\nAll method calls passed." << "\n";
 }
 
 void TestGraphDisplay(Graph graph)
