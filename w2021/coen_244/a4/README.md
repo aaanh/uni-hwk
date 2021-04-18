@@ -21,7 +21,7 @@ $ tar -xzvf my_submission.tar.gz # extract submission tarball
 $ cd path/to/folder # change dir to submission folder
 $ make clean # clean all outputs if any
 # (only works on *nix platforms, Windows needs manual deletion of *.o binaries)
-$ make # comile, link, etc.
+$ make # compile, link, etc.
 $ ./output/main # execute the main driver
 # if unable to execute on *nix platforms
 $ chmod +x ./output/main
