@@ -152,7 +152,17 @@ void Graph::display()
     do {
         cout << "\nGraph display module:\n";
         cout << "Enter range for data display (0 - " << getNumOfEntries() << "): ";
-        cin >> begin >> end;
+        try {
+            if (begin < 0)
+            {
+                throw "Out of range or -1 was input. Exiting program.\n";    
+            }
+            cin >> begin >> end;
+            
+        } catch (string s)
+        {
+            exit(1);
+        }
 
         for (size_t i = begin; i <= end; i++)
         {
@@ -163,11 +173,11 @@ void Graph::display()
             {
                 if ((this->getNodeList()[i]->getCountryCode() == e->getNodePair()[0]->getCountryCode()) && !(find(checked.begin(), checked.end(), e->getNodePair()[1]->getName()) != checked.end()))
                 {
-                    cout << " = " <<  e->getNodePair()[1]->getName();
+                    cout << " -- " <<  e->getNodePair()[1]->getName();
                     checked.push_back(e->getNodePair()[1]->getName());
                     counter++;
                 }
-                if (counter == 3)
+                if (counter == 4)
                 {
                     cout << "\n";
                     counter = 0;

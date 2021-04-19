@@ -13,7 +13,6 @@
 
 namespace fs = std::filesystem;
 
-
 // get platform name
 std::string getOsName();
 
